@@ -1,62 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="850" height="350" viewBox="0 0 850 350">
+<svg xmlns="http://www.w3.org/2000/svg" width="950" height="380" viewBox="0 0 950 380">
   <defs>
     <style type="text/css">
-      .label-bold { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 14px; fill: #000; }
-      .label-small { font-family: Helvetica, Arial, sans-serif; font-size: 11px; fill: #000; }
-      .product-label { font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #424242; }
+      .label-bold { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 14px; fill: #000; text-anchor: middle; }
+      .label-small { font-family: Helvetica, Arial, sans-serif; font-size: 11px; fill: #000; text-anchor: middle; }
+      .product-label { font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #424242; text-anchor: middle; }
     </style>
   </defs>
-  <rect width="850" height="350" fill="#fff"/>
+  <rect width="950" height="380" fill="#fff"/>
   
   <!-- Level 1: Root -->
-  <rect x="345" y="10" width="160" height="60" rx="5" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2"/>
-  <text x="385" y="45" class="label-bold">Finastra Org</text>
+  <rect x="395" y="10" width="160" height="60" rx="5" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2"/>
+  <text x="475" y="45" class="label-bold">Finastra Org</text>
   
   <!-- Level 2: BU Stacks -->
   <!-- Lending -->
-  <rect x="40" y="120" width="140" height="70" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
-  <text x="50" y="145" class="label-small">AZR-C03-LEND-0001</text>
-  <text x="50" y="165" class="label-bold">Lending BU</text>
+  <rect x="40" y="120" width="160" height="70" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+  <text x="120" y="145" class="label-small">AZR-C03-LEND-0001</text>
+  <text x="120" y="165" class="label-bold">Lending BU</text>
   
   <!-- Payment -->
-  <rect x="200" y="120" width="140" height="70" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
-  <text x="210" y="145" class="label-small">AZR-C03-PAYM-0001</text>
-  <text x="210" y="165" class="label-bold">Payment BU</text>
+  <rect x="220" y="120" width="160" height="70" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+  <text x="300" y="145" class="label-small">AZR-C03-PAYM-0001</text>
+  <text x="300" y="165" class="label-bold">Payment BU</text>
   
   <!-- Universal Banking -->
-  <rect x="360" y="120" width="140" height="70" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
-  <text x="370" y="145" class="label-small">AZR-C03-UBNK-0001</text>
-  <text x="370" y="165" class="label-bold">Univ. Banking</text>
+  <rect x="400" y="120" width="160" height="70" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+  <text x="480" y="145" class="label-small">AZR-C03-UBNK-0001</text>
+  <text x="480" y="165" class="label-bold">Univ. Banking</text>
   
   <!-- TCM -->
-  <rect x="520" y="120" width="140" height="70" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
-  <text x="530" y="145" class="label-small">AZR-C03-TCMG-0001</text>
-  <text x="530" y="165" class="label-bold">TCM</text>
+  <rect x="580" y="120" width="160" height="70" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+  <text x="660" y="145" class="label-small">AZR-C03-TCMG-0001</text>
+  <text x="660" y="165" class="label-bold">TCM</text>
   
   <!-- Cornerstone -->
-  <rect x="680" y="120" width="140" height="70" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
-  <text x="690" y="145" class="label-small">AZR-C03-CORN-0001</text>
-  <text x="690" y="165" class="label-bold">Cornerstone</text>
+  <rect x="760" y="120" width="160" height="70" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+  <text x="840" y="145" class="label-small">AZR-C03-CORN-0001</text>
+  <text x="840" y="165" class="label-bold">Cornerstone</text>
 
   <!-- Connectors L1 to L2 -->
-  <path d="M 425 70 L 425 95 L 110 95 L 110 120" fill="none" stroke="#0d47a1" stroke-width="2"/>
-  <path d="M 425 70 L 425 95 L 270 95 L 270 120" fill="none" stroke="#0d47a1" stroke-width="2"/>
-  <path d="M 425 70 L 425 120" fill="none" stroke="#0d47a1" stroke-width="2"/>
-  <path d="M 425 70 L 425 95 L 590 95 L 590 120" fill="none" stroke="#0d47a1" stroke-width="2"/>
-  <path d="M 425 70 L 425 95 L 750 95 L 750 120" fill="none" stroke="#0d47a1" stroke-width="2"/>
+  <path d="M 475 70 L 475 95 L 120 95 L 120 120" fill="none" stroke="#0d47a1" stroke-width="2"/>
+  <path d="M 475 70 L 475 95 L 300 95 L 300 120" fill="none" stroke="#0d47a1" stroke-width="2"/>
+  <path d="M 475 70 L 475 120" fill="none" stroke="#0d47a1" stroke-width="2"/>
+  <path d="M 475 70 L 475 95 L 660 95 L 660 120" fill="none" stroke="#0d47a1" stroke-width="2"/>
+  <path d="M 475 70 L 475 95 L 840 95 L 840 120" fill="none" stroke="#0d47a1" stroke-width="2"/>
 
   <!-- Level 3: Products -->
-  <rect x="30" y="240" width="75" height="50" rx="5" fill="#fff" stroke="#424242" stroke-width="2" stroke-dasharray="5,5"/>
-  <text x="35" y="270" class="product-label">LaserPro</text>
-  <rect x="110" y="240" width="75" height="50" rx="5" fill="#fff" stroke="#424242" stroke-width="2" stroke-dasharray="5,5"/>
-  <text x="115" y="270" class="product-label">LoanIQ</text>
-  <path d="M 110 190 L 110 215 L 67 215 L 67 240" fill="none" stroke="#e65100" stroke-width="1"/>
-  <path d="M 110 190 L 110 215 L 147 215 L 147 240" fill="none" stroke="#e65100" stroke-width="1"/>
+  <rect x="40" y="240" width="75" height="50" rx="5" fill="#fff" stroke="#424242" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="77" y="270" class="product-label">LaserPro</text>
+  <rect x="125" y="240" width="75" height="50" rx="5" fill="#fff" stroke="#424242" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="162" y="270" class="product-label">LoanIQ</text>
+  <path d="M 120 190 L 120 215 L 77 215 L 77 240" fill="none" stroke="#e65100" stroke-width="1"/>
+  <path d="M 120 190 L 120 215 L 162 215 L 162 240" fill="none" stroke="#e65100" stroke-width="1"/>
 
-  <rect x="190" y="240" width="75" height="50" rx="5" fill="#fff" stroke="#424242" stroke-width="2" stroke-dasharray="5,5"/>
-  <text x="195" y="270" class="product-label">Pay2Go</text>
-  <rect x="270" y="240" width="75" height="50" rx="5" fill="#fff" stroke="#424242" stroke-width="2" stroke-dasharray="5,5"/>
-  <text x="275" y="270" class="product-label">GlobalPay</text>
-  <path d="M 270 190 L 270 215 L 227 215 L 227 240" fill="none" stroke="#e65100" stroke-width="1"/>
-  <path d="M 270 190 L 270 215 L 307 215 L 307 240" fill="none" stroke="#e65100" stroke-width="1"/>
+  <rect x="220" y="240" width="75" height="50" rx="5" fill="#fff" stroke="#424242" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="257" y="270" class="product-label">Pay2Go</text>
+  <rect x="305" y="240" width="75" height="50" rx="5" fill="#fff" stroke="#424242" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="342" y="270" class="product-label">GlobalPay</text>
+  <path d="M 300 190 L 300 215 L 257 215 L 257 240" fill="none" stroke="#e65100" stroke-width="1"/>
+  <path d="M 300 190 L 300 215 L 342 215 L 342 240" fill="none" stroke="#e65100" stroke-width="1"/>
 </svg>

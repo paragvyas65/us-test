@@ -62,7 +62,7 @@ Based on the architectural requirements established by the Observability Pod lea
 
 The following diagram illustrates the end-to-end control plane, ingestion tier, and cloud boundary for the BU-aligned model.
 
-![High-Level Architecture](./diagrams/01-high-level-architecture.svg)
+![High-Level Architecture](./diagrams/01-high-level-architecture.png)
 
 *Editable source: [01-high-level-architecture.drawio](./diagrams/01-high-level-architecture.drawio)*
 
@@ -70,7 +70,7 @@ The following diagram illustrates the end-to-end control plane, ingestion tier, 
 
 The physical boundary moves from 100+ Product stacks to ~5-6 BU stacks. Products are logically segregated into folders within these stacks.
 
-![BU-Aligned Org Structure](./diagrams/02-bu-aligned-org-structure.svg)
+![BU-Aligned Org Structure](./diagrams/02-bu-aligned-org-structure.png)
 
 *Editable source: [02-bu-aligned-org-structure.drawio](./diagrams/02-bu-aligned-org-structure.drawio)*
 
@@ -83,7 +83,7 @@ Within each BU stack, Products are segregated into **Folders**. This addresses t
 
 The naming convention is simplified to represent the BU and an Index, replacing the specific Product ID. The environment tier is removed from the stack name to allow Dev/Stage/Prod to coexist in the same stack for cross-tier visibility.
 
-![Naming Convention](./diagrams/03-naming-convention.svg)
+![Naming Convention](./diagrams/03-naming-convention.png)
 
 *Editable source: [03-naming-convention.drawio](./diagrams/03-naming-convention.drawio)*
 Example: `AZR-C03-LEND-0001`
@@ -107,7 +107,7 @@ All ingested data MUST contain the following enforced taxonomy:
 
 Consolidating 100+ product stacks into a shared BU-aligned architecture centralizes the Alertmanager. Without strict controls, a poorly written `inhibit_rule` by one product team could inadvertently suppress critical alerts for another product team (cross-tenant suppression).
 
-![Hardened Alertmanager Flow](./diagrams/04-hardened-alertmanager-flow.svg)
+![Hardened Alertmanager Flow](./diagrams/04-hardened-alertmanager-flow.png)
 
 *Editable source: [04-hardened-alertmanager-flow.drawio](./diagrams/04-hardened-alertmanager-flow.drawio)*
 
@@ -181,7 +181,7 @@ The repository layout is adjusted to group configurations by BU and then by Prod
 
 ## Adoption Strategy
 
-![Adoption Strategy](./diagrams/05-adoption-strategy.svg)
+![Adoption Strategy](./diagrams/05-adoption-strategy.png)
 
 *Editable source: [05-adoption-strategy.drawio](./diagrams/05-adoption-strategy.drawio)*
 
