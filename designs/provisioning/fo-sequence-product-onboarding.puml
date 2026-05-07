@@ -1,0 +1,212 @@
+@startuml
+
+header Product Provisioning
+footer Page %page% of %lastpage%
+title Tenant Management
+
+actor       "Product\nOwner"                        as product_owner
+database    "git://tenant-mgmt\ntfc://tenant-mgmt"  as tenant_mgmt_repo
+participant "Terraform\nCloud"                      as tfc
+'participant "Naming\nProvider"                      as imp_naming_provider
+participant "DataProxy\nProvider"                   as imp_dataproxy_provider
+participant "Azure AD\nProvider"                    as imp_azuread_provider
+participant "IMP TFC\nWorkspace Module"             as imp_workspace_module
+participant "ServiceNow"                            as service_now
+participant "GH Provider"                           as gh_provider
+participant "GH/finastra-platform"                  as github
+database    "git://laserpro-zone-infra"             as laserpro_zone_infra
+participant "Grafana\nCloud"                        as grafana_cloud
+participant "Cloudability"                          as cloudability
+participant "DevSecOps\nTools (e.g. Aqua)"          as aqua
+participant "Product\nComms"                        as comms_channels
+
+
+note left of product_owner
+    Assumptions
+    1. Product is bringing their own
+    AAD Groups, binding to our roles
+    2. Example configuration for this
+    sequence is in product_laserpro.yaml
+endnote
+
+product_owner -> tenant_mgmt_repo ++ : PR for product.yml
+note left
+    product_short_name: laserprocloud
+    operating_model: platform_managed
+    zones:  <defined here>
+    environments: <defined here>
+    teams: <bring your own AAD groups>
+endnote
+
+group GitOps Governance Process
+    tenant_mgmt_repo --> tenant_mgmt_repo : FO Product\nOwner Approval
+    tenant_mgmt_repo --> tenant_mgmt_repo : PR merged
+end
+
+group Product Provisioning in IMP
+    tenant_mgmt_repo -> imp_dataproxy_provider ++: Create Product
+    imp_dataproxy_provider -[#F9423A]> service_now ++: CMDB Artifacts created
+    service_now -[#F9423A]> imp_dataproxy_provider --: {BusinessServiceId: 123}
+    imp_dataproxy_provider -> tenant_mgmt_repo --: {ProductId: 0456}
+end
+
+group Team Provisioning
+
+    group GitHub Teams
+    tenant_mgmt_repo -> imp_azuread_provider ++: Get members from AAD
+    tenant_mgmt_repo <- imp_azuread_provider --:
+
+    tenant_mgmt_repo -> gh_provider ++: Create GitHub Team {Product Name}
+    gh_provider -> github ++:
+    github -> gh_provider --:
+    gh_provider -> tenant_mgmt_repo --:
+
+    tenant_mgmt_repo -> gh_provider ++: Create GitHub sub-teams
+    note right
+        ["Stakeholder", "Architect",
+         "Developer", "ProductOwner"]
+
+        Members from AAD
+    endnote
+    gh_provider -> github ++:
+    github -> gh_provider --:
+    gh_provider -> tenant_mgmt_repo --:
+    end
+
+    group Terraform Cloud Teams
+    tenant_mgmt_repo -> imp_azuread_provider ++: Get members from AAD
+    tenant_mgmt_repo <- imp_azuread_provider --:
+
+    tenant_mgmt_repo -> tfc_provider ++: Create GitHub Team {Product Name}
+    tfc_provider -> tfc ++:
+    tfc -> tfc_provider --:
+    tfc_provider -> tenant_mgmt_repo --:
+
+    tenant_mgmt_repo -> tfc_provider ++: Create GitHub sub-teams
+    note right
+        ["Stakeholder", "Architect",
+         "Developer", "ProductOwner"]
+
+        Members from AAD
+    endnote
+    tfc_provider -> tfc ++:
+    tfc -> tfc_provider --:
+    tfc_provider -> tenant_mgmt_repo --:
+    end
+end
+
+group Create Product GitOps Repos
+
+    group Zone Management Infra (Terraform GitOps)
+        tenant_mgmt_repo -> gh_provider ++: Create git://FO-LaserProCloud-Zone-Infra
+        gh_provider -> github ++: Create from TFC-Zone-GitOps\ntemplate repo
+        gh_provider <- github --:
+        gh_provider -> github ++: Product GH Teams Granted
+        gh_provider <- github --:
+        gh_provider -> github ++: seed with product data
+        note right
+            CODEOWNERS modified
+            concensus.yaml
+            zone folders and config
+        endnote
+        gh_provider <- github --:
+        tenant_mgmt_repo <- gh_provider --:
+    end
+
+    group Zone Management Apps (FluxCD GitOps)
+        tenant_mgmt_repo -> gh_provider ++: Create git://FO-LaserProCloud-Zone-Apps
+        gh_provider -> github ++: Create from Flux-GitOps\ntemplate repo
+        gh_provider <- github --:
+        gh_provider -> github ++: Product GH Teams Granted
+        gh_provider <- github --:
+        gh_provider -> github ++: seed with product data
+        note right
+            CODEOWNERS modified
+            concensus.yaml
+            zone/namespace folders and config
+        endnote
+        gh_provider <- github --:
+        tenant_mgmt_repo <- gh_provider --:
+    end
+
+    group Product Infra (Terraform GitOps)
+        tenant_mgmt_repo -> gh_provider ++: Create git://FO-LaserProCloud-Product-Infra
+        gh_provider -> github ++: Create from TFC-GitOps\ntemplate repo
+        gh_provider <- github --:
+        gh_provider -> github ++: Product GH Teams Granted
+        gh_provider <- github --:
+        gh_provider -> github ++: seed with product data
+        note right
+            CODEOWNERS modified
+            concensus.yaml
+            initial folders/sample resources
+        endnote
+        gh_provider <- github --:
+        tenant_mgmt_repo <- gh_provider --:
+    end
+end
+
+group Zone Creation
+    tenant_mgmt_repo -> laserpro_zone_infra ++: create resources for initial zones
+    note left
+        Example Per Zone Resources:
+            Azure RG
+        Platform
+            TFC Workspace + SP
+            git://laserpro-zone-infra/platform/config/{zone}.yaml
+        Product
+            git://laserpro-zone-infra/product/config/{zone}.yaml
+            TFC Workspace + SP
+        SEE Zone Creation Sequence for Details
+    endnote
+    tenant_mgmt_repo <- laserpro_zone_infra --:
+end
+
+group Onboard to Cost Management
+    tenant_mgmt_repo -> cloudability ++:
+    note right
+        TODO: get details from Tony+Engene
+        Create team/org/whatever for Product team
+        Setup product owner for budget mgmt
+        Setup product owner (+ archs?) for dashboard creation
+        Provision correct perms for each other product group
+    endnote
+    tenant_mgmt_repo <- cloudability --:
+end
+
+group Onboard to Observability
+    tenant_mgmt_repo -> grafana_cloud ++:
+    note right
+        TODO: get details from Vladimir
+        Create GC Stack
+        Provision correct perms for each other product group
+        Access to cost reporting dashboard
+    endnote
+    tenant_mgmt_repo <- grafana_cloud --:
+end
+
+group Onboard to DevSecOps Tooling
+    tenant_mgmt_repo -> aqua ++:
+    note right
+        TODO: get details from Hui and Alex F
+        Provision correct perms for each other product group
+    endnote
+    tenant_mgmt_repo <- aqua --:
+end
+
+group Communicate Provisioned Resources and Documentation
+    tenant_mgmt_repo -> comms_channels ++:
+    note right
+        TODO: design thinking for comms
+        Known:
+        1. test the distribution list and other comms channels
+        in the product.yaml
+        2. Documented inventory for resources that are provisioned
+        for products must be kept up-to-date as they change
+        3. Product teams should have a constant stream of change
+        notifications via chosen comms path
+    endnote
+    tenant_mgmt_repo <- comms_channels --:
+end
+
+@enduml

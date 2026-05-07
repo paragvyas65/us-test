@@ -1,0 +1,52 @@
+image:
+  repository: kong/kong-gateway
+  tag: '2.8'
+
+env:
+  role: data_plane
+  cluster_control_plane: cluster.kong.pintc010040040201050a001.img.azr.fusionoperate.io:8005
+  cluster_telemetry_endpoint: clustertelemetry.kong.pintc010040040201050a001.img.azr.fusionoperate.io:8006
+  lua_ssl_trusted_certificate: /etc/secrets/kong-cluster-cert/tls.crt
+  cluster_cert: /etc/secrets/kong-cluster-cert/tls.crt
+  cluster_cert_key: /etc/secrets/kong-cluster-cert/tls.key
+  ssl_cert: /etc/secrets/kong-cluster-cert2/tls.crt
+  ssl_cert_key: /etc/secrets/kong-cluster-cert2/tls.key
+  proxy_listen: 0.0.0.0:8443 ssl
+
+secretVolumes:
+  - kong-cluster-cert
+  - kong-cluster-cert2
+
+ingressController:
+  enabled: false
+  installCRDs: false
+
+enterprise:
+  enabled: true
+  license_secret: kong-gateway-license
+  vitals:
+    enabled: false
+
+proxy:
+  enabled: true
+  type: LoadBalancer
+  http:
+    enabled: false
+  tls:
+    enabled: true
+    servicePort: 8443
+    containerPort: 8443
+  ingress:
+    enabled: false
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: 'true'
+    service.beta.kubernetes.io/azure-load-balancer-internal-subnet: pintc010040040201050f001
+
+manager:
+  enabled: false
+
+portal:
+  enabled: false
+
+portalapi:
+  enabled: false

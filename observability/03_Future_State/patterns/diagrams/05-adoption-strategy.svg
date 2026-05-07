@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="260" viewBox="0 0 760 260">
+  <defs>
+    <style type="text/css">
+      .label-phase { font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #333; text-transform: uppercase; }
+      .label-bold { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 16px; fill: #000; }
+      .label-italic { font-family: Helvetica, Arial, sans-serif; font-style: italic; font-size: 11px; fill: #424242; }
+      .label-risk-low { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 12px; fill: #16a34a; }
+      .label-risk-med { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 12px; fill: #f59e0b; }
+      .note-text { font-family: Helvetica, Arial, sans-serif; font-size: 12px; fill: #424242; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="760" height="260" fill="#fff"/>
+  
+  <rect x="40" y="40" width="140" height="100" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="110" y="65" text-anchor="middle" class="label-phase">Phase 1</text>
+  <text x="110" y="85" text-anchor="middle" class="label-bold">Provision</text>
+  <text x="110" y="105" text-anchor="middle" class="label-italic">Week 1-2</text>
+  <text x="110" y="125" text-anchor="middle" class="label-risk-low">Risk: Low</text>
+  
+  <rect x="220" y="40" width="140" height="100" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="290" y="65" text-anchor="middle" class="label-phase">Phase 2</text>
+  <text x="290" y="85" text-anchor="middle" class="label-bold">Update Coll.</text>
+  <text x="290" y="105" text-anchor="middle" class="label-italic">Week 3-6</text>
+  <text x="290" y="125" text-anchor="middle" class="label-risk-med">Risk: Medium</text>
+  
+  <rect x="400" y="40" width="140" height="100" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="470" y="65" text-anchor="middle" class="label-phase">Phase 3</text>
+  <text x="470" y="85" text-anchor="middle" class="label-bold">Migrate Assets</text>
+  <text x="470" y="105" text-anchor="middle" class="label-italic">Week 7-10</text>
+  <text x="470" y="125" text-anchor="middle" class="label-risk-med">Risk: Medium</text>
+  
+  <rect x="580" y="40" width="140" height="100" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="650" y="65" text-anchor="middle" class="label-phase">Phase 4</text>
+  <text x="650" y="85" text-anchor="middle" class="label-bold">Deprecate</text>
+  <text x="650" y="105" text-anchor="middle" class="label-italic">Week 11+</text>
+  <text x="650" y="125" text-anchor="middle" class="label-risk-low">Risk: Low</text>
+  
+  <path d="M 180 90 L 220 90" stroke="#0d47a1" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M 360 90 L 400 90" stroke="#0d47a1" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M 540 90 L 580 90" stroke="#0d47a1" stroke-width="3" marker-end="url(#arrow)"/>
+  
+  <rect x="220" y="180" width="320" height="60" rx="5" fill="#f1f5f9" stroke="#64748b" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="380" y="205" class="note-text">Old and new stacks run in parallel.</text>
+  <text x="380" y="225" class="note-text">Rollback possible through Phase 3.</text>
+  
+  <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#0d47a1" />
+  </marker>
+</svg>

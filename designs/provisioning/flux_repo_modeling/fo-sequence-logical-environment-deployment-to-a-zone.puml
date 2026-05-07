@@ -1,0 +1,56 @@
+@startuml
+
+header Logical environment deployment to a zone
+footer Page %page% of %lastpage%
+title Type: Modification to promotion.yaml\nUse case: Add new zone to the environment\nScenario: Deploy LPro `preprod` environment to the `eastus_prod` zone
+
+actor       "Product\nRequester"                    as product_requester
+actor       "Product\nApprover"                     as product_approver
+database    "git://laserpro-env-apps/feature"       as laserpro_environment_apps_feature_branch
+participant "PR Pipeline"                           as gitopspp_pr_pipeline
+database    "git://laserpro-env-apps/main"          as laserpro_environment_apps_main
+participant "Main OnMerge Pipeline"                 as gitopspp_main_onmerge_pipeline
+database    "git://laserpro-env-apps/release"       as laserpro_environment_apps_release
+
+product_requester -> laserpro_environment_apps_feature_branch ++ : PR to promotion.yaml
+note left
+    edge-local/promotion.yaml modified
+      ```
+      promotion:
+        - name: preprod
+          zones:
+          - alias: eastus_prod
+            name: platform-engineering-eastus-02
+            priority: 1
+      ```
+    edge-local/values/eastus_prod-preprod.yaml added
+    external-secrets-resources/promotion.yaml modified
+    external-secrets-resources/values/eastus_prod-preprod.yaml added
+    ...
+endnote
+laserpro_environment_apps_feature_branch -> gitopspp_pr_pipeline ++: PR checks executed
+note right
+    File linting
+    Validate filename schemas
+    Validate yaml schemas
+    Check branch rebase
+    Validate target namespace
+    Validate zone-env mapping in promotion.yaml is up-to-date with tenant-mgmt
+endnote
+return success
+product_approver -> laserpro_environment_apps_feature_branch : PR approve
+laserpro_environment_apps_feature_branch -> laserpro_environment_apps_main ++: PR merge to main
+deactivate laserpro_environment_apps_feature_branch
+
+laserpro_environment_apps_main -> gitopspp_main_onmerge_pipeline ++: Triggers
+note right
+    1. Detect which applications have changed
+    2. Detect if this is addition of a new zone to environment
+    3. Validate only promotion.yaml and value overrides changed
+        for the zones from step 2
+    4. Generate resources for the zone based on the content of
+        the main branch
+endnote
+gitopspp_main_onmerge_pipeline -> laserpro_environment_apps_release : Merge generated resources for the zone
+laserpro_environment_apps_main <-- gitopspp_main_onmerge_pipeline --: Success
+deactivate laserpro_environment_apps_main

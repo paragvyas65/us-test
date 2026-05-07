@@ -1,0 +1,37 @@
+product_short_name: laserprocloud
+product_owner: finastra.com email
+product_owner_contact:
+product_distribution_list:
+operating_model: platform_managed
+# isolation: shared | dedicated # only supporting dedicated/STIZ for v2
+
+zones:
+  eastus_dev1:
+    class: engineering
+    region: eastus
+    security_class: non_prod
+    compliance: (future)
+
+environments:
+  - name: dev
+    zones:
+      - eastus_dev1
+
+domains:
+  - name: tenant_services
+    apps:
+      - tenant_service
+
+teams:
+  - name: laserpro_pos
+  #role: product_owners
+    distribution_list: laserproproductowners@f.c
+    aad_group_id: fancyguid
+  - name: laserpro_developers
+  #role: developers
+    distribution_list: laserprodevs@f.c
+    aad_group_id: fancyguid
+  - name: laserpro_ops_nonprod
+  #role: operators
+    distribution_list: laserprodevs@f.c
+    aad_group_id: fancyguid

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram id="high-level-arch" name="Architecture">
+    <mxGraphModel dx="1400" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1400" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- User Tier -->
+        <mxCell id="Dev" value="Product Developers&lt;br&gt;View ONLY their product" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=1;fontStyle=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;gradientColor=#ffd966;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SRE" value="DevOps &amp;amp; SRE&lt;br&gt;Cross-product views" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=1;fontStyle=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;gradientColor=#ffd966;" vertex="1" parent="1">
+          <mxGeometry x="350" y="50" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP" value="VP / P&amp;amp;L Owners&lt;br&gt;Cost Showback &amp;amp; Billing" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=1;fontStyle=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;gradientColor=#ffd966;" vertex="1" parent="1">
+          <mxGeometry x="650" y="50" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Entra" value="Azure Entra ID&lt;br&gt;SSO &amp;amp; Security Groups" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=1;fontStyle=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;gradientColor=#d4c1ec;" vertex="1" parent="1">
+          <mxGeometry x="950" y="50" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Edges User -> Entra -->
+        <mxCell id="edge_dev" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1" source="Dev" target="Entra">
+          <mxGeometry relative="1" as="geometry">
+             <Array as="points">
+                <mxPoint x="160" y="160"/>
+                <mxPoint x="1060" y="160"/>
+             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_sre" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1" source="SRE" target="Entra">
+          <mxGeometry relative="1" as="geometry">
+             <Array as="points">
+                <mxPoint x="460" y="160"/>
+                <mxPoint x="1060" y="160"/>
+             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_vp" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1" source="VP" target="Entra">
+          <mxGeometry relative="1" as="geometry">
+             <Array as="points">
+                <mxPoint x="760" y="160"/>
+                <mxPoint x="1060" y="160"/>
+             </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Control Plane -->
+        <mxCell id="GH" value="GitHub Repositories&lt;br&gt;CODEOWNERS Approvals" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=1;fontStyle=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;gradientColor=#d4c1ec;" vertex="1" parent="1">
+          <mxGeometry x="50" y="230" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="TFC" value="Terraform Cloud&lt;br&gt;Stateful Provisioning" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=1;fontStyle=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;gradientColor=#d4c1ec;" vertex="1" parent="1">
+          <mxGeometry x="350" y="230" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AKV" value="Azure Key Vault&lt;br&gt;Secrets Management" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=1;fontStyle=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;gradientColor=#d4c1ec;" vertex="1" parent="1">
+          <mxGeometry x="650" y="230" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge_gh_tfc" value="On PR Merge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#333333;fontSize=12;fontStyle=1;" edge="1" parent="1" source="GH" target="TFC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_tfc_akv" value="Fetches Secrets" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#333333;fontSize=12;fontStyle=1;" edge="1" parent="1" source="TFC" target="AKV">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_tfc_entra" value="Syncs Groups" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#333333;fontSize=12;fontStyle=1;" edge="1" parent="1" source="TFC" target="Entra">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Ingestion Tier -->
+        <mxCell id="AKS" value="AKS (LaserPro)&lt;br&gt;Labels: bu=lend" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=1;fontStyle=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#cdeb8b;" vertex="1" parent="1">
+          <mxGeometry x="50" y="410" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VM" value="Azure VMs (Pay2Go)&lt;br&gt;Labels: bu=pay" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=1;fontStyle=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#cdeb8b;" vertex="1" parent="1">
+          <mxGeometry x="350" y="410" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DB" value="DB (Univ Banking)&lt;br&gt;Labels: bu=ubnk" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=1;fontStyle=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#cdeb8b;" vertex="1" parent="1">
+          <mxGeometry x="650" y="410" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Alloy" value="Grafana Alloy Collectors&lt;br&gt;Enforces Taxonomy" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;glass=1;fontStyle=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#cdeb8b;" vertex="1" parent="1">
+          <mxGeometry x="950" y="410" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge_aks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1" source="AKS" target="Alloy"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="160" y="520"/><mxPoint x="1060" y="520"/></Array></mxGeometry></mxCell>
+        <mxCell id="edge_vm" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1" source="VM" target="Alloy"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="460" y="520"/><mxPoint x="1060" y="520"/></Array></mxGeometry></mxCell>
+        <mxCell id="edge_db" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1" source="DB" target="Alloy"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="760" y="520"/><mxPoint x="1060" y="520"/></Array></mxGeometry></mxCell>
+
+        <!-- Cloud Tier -->
+        <mxCell id="Org" value="Single Finastra Organization" style="swimlane;whiteSpace=wrap;html=1;shadow=1;fontStyle=1;fontSize=16;fillColor=#dae8fc;strokeColor=#6c8ebf;gradientColor=#7ea6e0;startSize=40;" vertex="1" parent="1">
+          <mxGeometry x="50" y="590" width="1120" height="500" as="geometry" />
+        </mxCell>
+
+        <mxCell id="StackL" value="AZR-C03-LEND-0001" style="swimlane;whiteSpace=wrap;html=1;shadow=1;fontStyle=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;startSize=40;" vertex="1" parent="Org">
+          <mxGeometry x="30" y="60" width="320" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="LBACL" value="LBAC: Isolates 'product'" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontStyle=3;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="StackL">
+          <mxGeometry x="40" y="60" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FLaser" value="Folder: LaserPro" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;shadow=1;fontStyle=1;fontSize=14;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="StackL">
+          <mxGeometry x="40" y="180" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FLoan" value="Folder: LoanIQ" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;shadow=1;fontStyle=1;fontSize=14;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="StackL">
+          <mxGeometry x="40" y="290" width="240" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="StackP" value="AZR-C03-PAYM-0001" style="swimlane;whiteSpace=wrap;html=1;shadow=1;fontStyle=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;startSize=40;" vertex="1" parent="Org">
+          <mxGeometry x="400" y="60" width="320" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="LBACP" value="LBAC: Isolates 'product'" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontStyle=3;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="StackP">
+          <mxGeometry x="40" y="60" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FPay" value="Folder: Pay2Go" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;shadow=1;fontStyle=1;fontSize=14;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="StackP">
+          <mxGeometry x="40" y="180" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FGlobal" value="Folder: GlobalPay" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;shadow=1;fontStyle=1;fontSize=14;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="StackP">
+          <mxGeometry x="40" y="290" width="240" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="StackS" value="Shared Services (CTIO)" style="swimlane;whiteSpace=wrap;html=1;shadow=1;fontStyle=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;startSize=40;" vertex="1" parent="Org">
+          <mxGeometry x="770" y="60" width="320" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="FBilling" value="Folder: Central Billing&lt;br&gt;(Cost Attribution)" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;shadow=1;fontStyle=1;fontSize=14;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="StackS">
+          <mxGeometry x="40" y="60" width="240" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Global Edges -->
+        <mxCell id="edge_tf_org" value="Provisions Stacks/Folders via API" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#333333;fontSize=12;fontStyle=1;" edge="1" parent="1" source="TFC" target="Org">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="460" y="360"/>
+              <mxPoint x="20" y="360"/>
+              <mxPoint x="20" y="550"/>
+              <mxPoint x="100" y="550"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_alloy_org" value="OTLP Push" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#333333;fontSize=12;fontStyle=1;" edge="1" parent="1" source="Alloy" target="Org">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="550"/>
+              <mxPoint x="610" y="550"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

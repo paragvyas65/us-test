@@ -1,0 +1,129 @@
+kuma:
+  cni:
+    enabled: true
+  nameOverride: kong-mesh
+  # The default registry and tag to use for all Kuma images
+  global:
+    image:
+      registry: "docker.io/kong"
+      tag: "1.6.0"
+
+  controlPlane:
+    envVars:
+      KUMA_RUNTIME_KUBERNETES_INJECTOR_SIDECAR_CONTAINER_UID: "1001270001"
+    image:
+      repository: "kuma-cp"
+
+    # -- Kuma CP log level: one of off,info,debug
+    logLevel: "info"
+
+    # -- Kuma CP modes: one of standalone,zone,global
+    mode: "zone"
+
+    # -- (string) Kuma CP zone, if running multizone
+    zone: sut-eastus01-zone
+
+    # -- Only used in `zone` mode
+    kdsGlobalAddress: "grpcs://global-cp.apps.pintc010040040201050a001.img.azr.fusionoperate.io:5685"
+
+    autoScaling:
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 3
+
+    injectorFailurePolicy: "Ignore"
+
+    service:
+      # -- Service type of the Kuma Control Plane
+      type: ClusterIP
+
+    defaults:
+      # -- Whether or not to skip creating the default Mesh
+      skipMeshCreation: false
+
+    # TLS for various servers
+    tls:
+      general:
+        # -- Secret that contains tls.crt, key.crt and ca.crt for protecting Kuma in-cluster communication
+        secretName: "tls-secret"
+        # -- Base64 encoded CA certificate (the same as in controlPlane.tls.general.secret#ca.crt)
+        caBundle: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM0VENDQWNtZ0F3SUJBZ0lSQUo0QXF5c1pJQ3FCSjZ3QWRYbVJTK1l3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNakF6TWpVeE56RTNORGxhRncweU5UQXpNalV4TVRFMwpORGxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFEZnQyOWhDTlQ1V3krMWhkWU9tNFE2ZFA3dkMxck12OW9Zeno2dDJrV2R5NVhWaWcvVEM1NHgKU29yc0lVZDJnMkhvZFZsdGxRWWpJRkN4YXZ1ckVMdWVHb2xXL0hFazFyY0pVQU1vN09ZNC9IVjljMDZnNTBxLwptYzFIYW5sSE8xQ1lzTzg2aElOYWZwWXROUXROSFVNc1FLeC9ROHJZWjlQRlcrakc2OG9sUVNCN3ZWZXhrK2wzCjZjejkwa0o3NWN5Y2M1RFZrTjZyMUJybEFFUGNFU2lFakxyMUR5enB0UEFMWlJFcEJacCthNjhvUzdaS0lUOHUKdXpWT29JMTRzMHF2OEU1aTV5eFJuTGFhMm1JY0x2UnhRdHFlKzA3anFrR2Y3VVlqOVdpU3hsZUwwdy9tTFl2MgpLR2lSZUovMHBxc3NZVjMxNXBSd0szM1hwN0ZIc2dDMUFnTUJBQUdqTWpBd01BOEdBMVVkRXdFQi93UUZNQU1CCkFmOHdIUVlEVlIwT0JCWUVGRndvVC9rZThvU1VjdHVmdUhEeTdJbUx1SjNITUEwR0NTcUdTSWIzRFFFQkN3VUEKQTRJQkFRQURQdElyakNiVWkybnUxQWF1TndTakFrYXQ3TGdCWC82MGlPK1J0bjlRQTZucmllNmVvTHhkYkdzZgp2WHRCRDN5VGFxNS9tSm9SOE8xZExQNjh0cStndXgyUGIrdXROQ0NmVzdRdHNGdzZLaGRZek4xaUoxZzZxbXpFCldidHhwWHpjaTVkVXhMTkZHNG9IR0ZLMVZ5MFJSTW95N0hGN0pMdEUrMXRoaCt2d0lEOFE2WHNsYzQyMDVmUWYKSU1ld0JzRFhPcC9GS2JSRXRpUmkrS0xCMXR6ZW5yWWpLQnlWOHZGQ2lQc0RTY05pQ2hMK1RPRVlZVEl0WTlDcQp3am5HYnRvU3UxWW1vOGZycjIwR2g1TStWd3k0OGtNZXZNcWhuK0dzVjVlc1BsZmdVc2N5WEliOUxRcjk2NFFtCmJyeGQ5VlhCa1pEQWZ5TjZsMmZHSWRCczVTK2wKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+      apiServer:
+        # -- Secret that contains tls.crt, key.crt for protecting Kuma API on HTTPS
+        secretName: "tls-secret"
+        # -- Secret that contains list of .pem certificates that can access admin endpoints of Kuma API on HTTPS
+        clientCertsSecretName: ""
+      kdsGlobalServer:
+        # -- Secret that contains tls.crt, key.crt for protecting cross cluster communication
+        secretName: "tls-secret"
+      kdsZoneClient:
+        # -- Secret that contains ca.crt which was used to sign KDS Global server. Used for CP verification
+        secretName: "tls-secret"
+
+    image:
+      # -- Kuma CP ImagePullPolicy
+      pullPolicy: IfNotPresent
+      # -- Kuma CP image repository
+      repository: "kuma-cp"
+
+    webhooks:
+      validator:
+        additionalRules: |
+          - apiGroups:
+              - kuma.io
+            apiVersions:
+              - v1alpha1
+            operations:
+              - CREATE
+              - UPDATE
+              - DELETE
+            resources:
+              - opapolicies
+      ownerReference:
+        additionalRules: |
+          - apiGroups:
+              - kuma.io
+            apiVersions:
+              - v1alpha1
+            operations:
+              - CREATE
+            resources:
+              - opapolicies
+  # Configuration for the kuma dataplane sidecar
+  dataPlane:
+    image:
+      repository: "kuma-dp"
+
+    # Configuration for the kuma init phase in the sidecar
+    initImage:
+      repository: "kuma-init"
+
+  ingress:
+    enabled: true
+    drainTime: 30s
+    replicas: 2
+    service:
+      type: LoadBalancer
+      port: 10001
+      annotations:
+        "service.beta.kubernetes.io/azure-load-balancer-internal": "true"
+        "service.beta.kubernetes.io/azure-load-balancer-internal-subnet": "pintc010042040201050f001"
+        "kuma.io/ingress-public-address": "20.185.46.239"
+        "kuma.io/ingress-public-port": "10001"
+    nodeSelector:
+      kubernetes.io/os: linux
+      kubernetes.io/arch: amd64
+    annotations:
+      "kuma.io/ingress-public-address": "20.185.46.239"
+      "kuma.io/ingress-public-port": "10001"
+
+  egress:
+    enabled: true
+    drainTime: 30s
+    replicas: 2
+    service:
+      type: ClusterIP
+    # -- Node Selector for the Egress pods
+    nodeSelector:
+      kubernetes.io/os: linux
+      kubernetes.io/arch: amd64

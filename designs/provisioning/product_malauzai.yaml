@@ -1,0 +1,99 @@
+#
+#  TODO change for MLZ
+#
+
+product_short_name: laserprocloud
+product_owner: finastra.com email
+product_owner_contact:
+product_distribution_list:
+operating_model: platform_managed
+# isolation: shared | dedicated # only supporting dedicated/STIZ for v2
+
+zones:
+  eastus_dev1:
+    class: engineering
+    region: eastus
+    security_class: non_prod
+    compliance:  (future)
+  eastus_perf:
+    class: engineering
+    region: eastus
+    security_class: non_prod
+    compliance:  (future)
+  eastus_prod:
+    class: customer
+    region: eastus
+    security_class: prod
+    compliance:  (future)
+  westus_prod:
+    class: customer
+    region: westus
+    security_class: prod
+    compliance:  (future)
+
+#
+#  PRIMARY CASE FOR MLZ
+#
+environments:
+- name: uat1
+  zones:
+  - eastus_uat
+- name: uat2
+  zones:
+  - eastus_uat
+- name: uat3
+  zones:
+  - eastus_uat
+
+domains:
+
+# v1
+# All team definitions are maintained by the PO "here" and all integrated
+# platform systems will be synchronized via tf as a result of this GitOps
+# change process.
+# PO manages team membership via AAD Groups directly
+# Our "automation" uses that group membership for building state
+
+#
+# enum ROLE = {operators, developers, product_owners, operators_elevated}
+# Need comparision to today
+#
+teams:
+- name: # product chosen name
+  #role: # role enum that specifies the privilege set that will be granted to this team, based on FO docs
+  distribution_list: # email dist list
+  aad_group_id: # AAD group id that the PO self-manages membership of
+- name: laserpro_pos
+  #role: product_owners
+  distribution_list: laserproproductowners@f.c
+  aad_group_id: fancyguid
+- name: laserpro_developers
+  #role: developers
+  distribution_list: laserprodevs@f.c
+  aad_group_id: fancyguid
+- name: laserpro_ops_nonprod
+  #role: operators
+  distribution_list: laserprodevs@f.c
+  aad_group_id: fancyguid
+
+# v2
+# All team definitions are maintained by the PO "here" and all integrated
+# platform systems will be synchronized via tf as a result of this GitOps
+# change process.
+# Team membership is maintained here, not AAD Group membership directly.
+#
+# Need to seed teams files with current data (e.g. AAD)
+teams:
+  product_owners:
+  - Paul.Imel@f.c
+
+  developers:
+  - Paul.Imel@finastra.com
+  - Michael.Tison@finastra.com
+
+  operators_non_prod:
+  - Michael.Tison@finastra.com
+  -
+
+  operators_prod:
+  -

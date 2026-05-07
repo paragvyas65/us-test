@@ -1,0 +1,251 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+  <diagram id="alertmanager-inhibit-flow-v2" name="Alertmanager Inhibit Flow v2 (Hardened)">
+    <mxGraphModel dx="2623" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;Alertmanager: Inhibit Rules &amp;amp; Routing Flow&amp;nbsp;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="450" y="10" width="500" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="alerts-header" value="&lt;b&gt;ALERTS FIRING&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="-30" y="60" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="alert-app-crit" value="&lt;b&gt;AppAvailabilityUnhealthy&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;──────────────────&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#CC0000&quot;&gt;notify: jira&lt;/font&gt;&lt;br&gt;alert_family: app-availability&lt;br&gt;priority: &lt;b&gt;&lt;font color=&quot;#FF0000&quot;&gt;Critical&lt;/font&gt;&lt;/b&gt;&lt;br&gt;namespace: prod-app&lt;br&gt;pod: myapp-abc123" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="-30" y="100" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="alert-app-high" value="&lt;b&gt;AppAvailabilityUnhealthy&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;──────────────────&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#CC0000&quot;&gt;notify: jira&lt;/font&gt;&lt;br&gt;alert_family: app-availability&lt;br&gt;priority: &lt;b&gt;&lt;font color=&quot;#FF6600&quot;&gt;High&lt;/font&gt;&lt;/b&gt;&lt;br&gt;namespace: prod-app&lt;br&gt;pod: myapp-abc123" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="-30" y="240" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="alert-app-high2" value="&lt;b&gt;AppAvailabilityUnhealthy&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;──────────────────&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#CC0000&quot;&gt;notify: jira&lt;/font&gt;&lt;br&gt;alert_family: app-availability&lt;br&gt;priority: &lt;b&gt;&lt;font color=&quot;#FF6600&quot;&gt;High&lt;/font&gt;&lt;/b&gt;&lt;br&gt;namespace: prod-app&lt;br&gt;pod: &lt;b&gt;otherapp-xyz789&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="-30" y="380" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="alert-x509-crit" value="&lt;b&gt;ExternalSecretSyncError&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;──────────────────&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#CC0000&quot;&gt;notify: jira&lt;/font&gt;&lt;br&gt;alert_family: custom-resource&lt;br&gt;priority: &lt;b&gt;&lt;font color=&quot;#FF0000&quot;&gt;Critical&lt;/font&gt;&lt;/b&gt;&lt;br&gt;exported_namespace: zone-system&lt;br&gt;name: my-external-secret" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry y="560" width="220" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="alert-x509-high" value="&lt;b&gt;ExternalSecretSyncError&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;──────────────────&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#CC0000&quot;&gt;notify: jira&lt;/font&gt;&lt;br&gt;alert_family: custom-resource&lt;br&gt;priority: &lt;b&gt;&lt;font color=&quot;#FF6600&quot;&gt;High&lt;/font&gt;&lt;/b&gt;&lt;br&gt;exported_namespace: zone-system&lt;br&gt;name: my-external-secret" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry y="700" width="220" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="alert-bb-crit" value="&lt;b&gt;BlackboxSSLCertificateExpiring&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;──────────────────&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#CC0000&quot;&gt;notify: jira&lt;/font&gt;&lt;br&gt;priority: &lt;b&gt;&lt;font color=&quot;#FF0000&quot;&gt;Critical&lt;/font&gt;&lt;/b&gt;&lt;br&gt;fingerprint_sha256: abc123..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="40" y="860" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="alert-oncall" value="&lt;b&gt;KubePodCrashLooping&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;──────────────────&lt;/font&gt;&lt;br&gt;severity: &lt;b&gt;&lt;font color=&quot;#FF0000&quot;&gt;Critical&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#999999&quot;&gt;(no notify, no alert_family)&lt;/font&gt;&lt;br&gt;namespace: kube-system&lt;br&gt;pod: coredns-abc123" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1010" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="inhibit-header" value="&lt;b&gt;INHIBIT RULES&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;(All rules evaluated independently)&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="330" y="80" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="inhibit-app" value="&lt;b&gt;App Availability Inhibit&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;────────────────────&lt;/font&gt;&lt;br&gt;&lt;b&gt;source_match:&lt;/b&gt;&lt;br&gt;  &lt;font color=&quot;#CC0000&quot;&gt;notify: jira&lt;/font&gt;&lt;br&gt;  alert_family: app-availability&lt;br&gt;  priority: Critical&lt;br&gt;&lt;b&gt;target_match_re:&lt;/b&gt;&lt;br&gt;  &lt;font color=&quot;#CC0000&quot;&gt;notify: jira&lt;/font&gt;&lt;br&gt;  alert_family: app-availability&lt;br&gt;  priority: High|Medium|Low&lt;br&gt;&lt;b&gt;equal:&lt;/b&gt;&lt;br&gt;  - alertname&lt;br&gt;  - cluster&lt;br&gt;  - &lt;font color=&quot;#0066CC&quot;&gt;namespace&lt;/font&gt;&lt;br&gt;-&amp;nbsp;&lt;font color=&quot;#009900&quot;&gt;name&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;arcSize=14;" parent="1" vertex="1">
+          <mxGeometry x="340" y="130" width="230" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="inhibit-cr" value="&lt;b&gt;Custom Resource Inhibit&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;────────────────────&lt;/font&gt;&lt;br&gt;&lt;b&gt;source_match:&lt;/b&gt;&lt;br&gt;  &lt;font color=&quot;#CC0000&quot;&gt;notify: jira&lt;/font&gt;&lt;br&gt;  alert_family: custom-resource&lt;br&gt;  priority: Critical&lt;br&gt;&lt;b&gt;target_match_re:&lt;/b&gt;&lt;br&gt;  &lt;font color=&quot;#CC0000&quot;&gt;notify: jira&lt;/font&gt;&lt;br&gt;  alert_family: custom-resource&lt;br&gt;  priority: High|Medium|Low&lt;br&gt;&lt;b&gt;equal:&lt;/b&gt;&lt;br&gt;  - alertname&lt;br&gt;  - cluster&lt;br&gt;  - &lt;font color=&quot;#009900&quot;&gt;namespace&lt;/font&gt;&lt;br&gt;  - &lt;font color=&quot;#009900&quot;&gt;name&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="340" y="390" width="230" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="inhibit-bb" value="&lt;b&gt;Blackbox Inhibit&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;────────────────────&lt;/font&gt;&lt;br&gt;&lt;b&gt;source_match:&lt;/b&gt;&lt;br&gt;  &lt;font color=&quot;#CC0000&quot;&gt;notify: jira&lt;/font&gt;&lt;br&gt;  alertname: BlackboxSSL...&lt;br&gt;  priority: Critical&lt;br&gt;&lt;b&gt;target_match_re:&lt;/b&gt;&lt;br&gt;  &lt;font color=&quot;#CC0000&quot;&gt;notify: jira&lt;/font&gt;&lt;br&gt;  alertname: BlackboxSSL...&lt;br&gt;  priority: High|Medium&lt;br&gt;&lt;b&gt;equal:&lt;/b&gt;&lt;br&gt;  - alertname&lt;br&gt;  - cluster&lt;br&gt;  - &lt;font color=&quot;#990099&quot;&gt;fingerprint_sha256&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="340" y="650" width="230" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="inhibit-severity" value="&lt;b&gt;Severity Inhibit (OnCall)&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;────────────────────&lt;/font&gt;&lt;br&gt;&lt;b&gt;source_match:&lt;/b&gt;&lt;br&gt;  severity: Critical&lt;br&gt;&lt;b&gt;target_match_re:&lt;/b&gt;&lt;br&gt;  severity: High|Medium|Low&lt;br&gt;&lt;b&gt;equal:&lt;/b&gt;&lt;br&gt;  - alertname&lt;br&gt;  - cluster&lt;br&gt;  - exported_namespace&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot;&gt;&lt;i&gt;Only affects alerts with severity label&lt;br&gt;(Jira alerts use priority, not severity)&lt;/i&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="340" y="890" width="230" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="result-header" value="&lt;b&gt;INHIBIT RESULT&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="650" y="80" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="result-crit" value="✅ &lt;b&gt;ACTIVE&lt;/b&gt;&lt;br&gt;Critical (same pod)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="660" y="150" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="result-high" value="🚫 &lt;b&gt;INHIBITED&lt;/b&gt;&lt;br&gt;High (same pod)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="660" y="210" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="result-high2" value="✅ &lt;b&gt;ACTIVE&lt;/b&gt;&lt;br&gt;High (different pod)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="660" y="280" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="result-x509-crit" value="✅ &lt;b&gt;ACTIVE&lt;/b&gt;&lt;br&gt;Critical (same secret)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="660" y="480" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="result-x509-high" value="🚫 &lt;b&gt;INHIBITED&lt;/b&gt;&lt;br&gt;High (same secret)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="660" y="380" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="result-bb" value="✅ &lt;b&gt;ACTIVE&lt;/b&gt;&lt;br&gt;Critical" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="660" y="730" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="result-oncall" value="✅ &lt;b&gt;ACTIVE&lt;/b&gt;&lt;br&gt;Critical (OnCall)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="660" y="965" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="routes-header" value="&lt;b&gt;ROUTES&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;1&quot;&gt;(First match wins)&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="900" y="80" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="route-app" value="&lt;b&gt;Route 1: App Availability&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;──────────────────&lt;/font&gt;&lt;br&gt;&lt;b&gt;matchers:&lt;/b&gt;&lt;br&gt;  - notify = jira&lt;br&gt;  - alert_family = app-availability&lt;br&gt;&lt;b&gt;group_by:&lt;/b&gt;&lt;br&gt;  - alertname&lt;br&gt;  - cluster&lt;br&gt;  - &lt;font color=&quot;#0066CC&quot;&gt;namespace&lt;/font&gt;&lt;br&gt;  - &lt;font color=&quot;#0066CC&quot;&gt;name&lt;/font&gt;&lt;br&gt;&lt;b&gt;receiver:&lt;/b&gt; jiralert" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="870" y="130" width="210" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="route-cr" value="&lt;b&gt;Route 3: Custom Resource&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;──────────────────&lt;/font&gt;&lt;br&gt;&lt;b&gt;matchers:&lt;/b&gt;&lt;br&gt;  - notify = jira&lt;br&gt;  - alert_family = custom-resource&lt;br&gt;&lt;b&gt;group_by:&lt;/b&gt;&lt;br&gt;  - alertname&lt;br&gt;  - cluster&lt;br&gt;  - &lt;font color=&quot;#009900&quot;&gt;namespace&lt;/font&gt;&lt;br&gt;  - &lt;font color=&quot;#009900&quot;&gt;name&lt;/font&gt;&lt;br&gt;&lt;b&gt;receiver:&lt;/b&gt; jiralert" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="870" y="340" width="210" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="route-bb" value="&lt;b&gt;Route 2: Blackbox&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;──────────────────&lt;/font&gt;&lt;br&gt;&lt;b&gt;matchers:&lt;/b&gt;&lt;br&gt;  - notify = jira&lt;br&gt;  - alertname = BlackboxSSL...&lt;br&gt;&lt;b&gt;group_by:&lt;/b&gt;&lt;br&gt;  - alertname&lt;br&gt;  - cluster&lt;br&gt;  - &lt;font color=&quot;#990099&quot;&gt;fingerprint_sha256&lt;/font&gt;&lt;br&gt;&lt;b&gt;receiver:&lt;/b&gt; jiralert" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="870" y="560" width="210" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="route-oncall" value="&lt;b&gt;Root Route: OnCall (Default)&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;──────────────────&lt;/font&gt;&lt;br&gt;&lt;b&gt;matchers:&lt;/b&gt;&lt;br&gt;  - (none - catches all)&lt;br&gt;&lt;b&gt;group_by:&lt;/b&gt;&lt;br&gt;  - &quot;...&quot;&lt;br&gt;&lt;b&gt;receiver:&lt;/b&gt; oncall" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="870" y="780" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="jiralert" value="&lt;b&gt;JIRALERT&lt;/b&gt;&lt;br&gt;webhook receiver&lt;br&gt;Creates/Updates&lt;br&gt;Jira Tickets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="1245" y="390" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="oncall" value="&lt;b&gt;GRAFANA ONCALL&lt;/b&gt;&lt;br&gt;webhook receiver&lt;br&gt;Pages On-Call&lt;br&gt;Engineers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="1170" y="805" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.3;" parent="1" source="alert-app-crit" target="inhibit-app" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;" parent="1" source="alert-app-high" target="inhibit-app" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.8;" parent="1" source="alert-app-high2" target="inhibit-app" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.3;" parent="1" source="alert-x509-crit" target="inhibit-cr" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.7;" parent="1" source="alert-x509-high" target="inhibit-cr" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;" parent="1" source="alert-bb-crit" target="inhibit-bb" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-oncall" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;" parent="1" source="alert-oncall" target="inhibit-severity" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="inhibit-app" target="result-crit" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="245" />
+              <mxPoint x="620" y="175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;dashed=1;" parent="1" source="inhibit-app" target="result-high" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="245" />
+              <mxPoint x="640" y="245" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="inhibit-app" target="result-high2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="280" />
+              <mxPoint x="620" y="305" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="inhibit-cr" target="result-x509-crit" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;dashed=1;" parent="1" source="inhibit-cr" target="result-x509-high" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="inhibit-bb" target="result-bb" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-oncall-result" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="inhibit-severity" target="result-oncall" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="result-crit" target="route-app" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="result-high2" target="route-app" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="830" y="305" />
+              <mxPoint x="830" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="result-x509-crit" target="route-cr" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="725" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="result-bb" target="route-bb" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="725" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-oncall-route" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="result-oncall" target="route-oncall" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="route-app" target="jiralert" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1130" y="220" />
+              <mxPoint x="1130" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="route-cr" target="jiralert" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1190" y="430" />
+              <mxPoint x="1190" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="route-bb" target="jiralert" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1130" y="645" />
+              <mxPoint x="1130" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-oncall-receiver" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="route-oncall" target="oncall" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="80" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="&lt;b&gt;LEGEND&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="85" width="240" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-active" value="✅ ACTIVE - Alert sent to receiver" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="110" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-inhibited" value="🚫 INHIBITED - Alert suppressed" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="130" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-line1" value="" style="endArrow=classic;html=1;strokeColor=#000000;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1215" y="165" as="sourcePoint" />
+            <mxPoint x="1275" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-line1-text" value="Normal flow" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="1280" y="155" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-line2" value="" style="endArrow=classic;html=1;strokeColor=#FF0000;dashed=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1215" y="190" as="sourcePoint" />
+            <mxPoint x="1275" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-line2-text" value="Inhibited (blocked)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="1280" y="180" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-note" value="&lt;i&gt;Inhibit rules: ALL evaluated&lt;br&gt;Routes: FIRST match wins&lt;/i&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="210" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-hardening" value="&lt;font color=&quot;#CC0000&quot;&gt;&lt;b&gt;notify: jira&lt;/b&gt;&lt;/font&gt; = Hardening label&lt;br&gt;(prevents non-Jira alerts from&lt;br&gt;participating in family inhibition)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="250" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="insight-box" value="&lt;b&gt;KEY PROTECTIONS&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;───────────────────────&lt;/font&gt;&lt;br&gt;✅ &lt;b&gt;notify: jira&lt;/b&gt; on all family inhibit rules&lt;br&gt;   → Only Jira alerts can inhibit each other&lt;br&gt;&lt;br&gt;✅ &lt;b&gt;alert_family&lt;/b&gt; scopes each ladder&lt;br&gt;   → app-availability can&#39;t inhibit custom-resource&lt;br&gt;&lt;br&gt;✅ &lt;b&gt;Identity labels in equal[]&lt;/b&gt;&lt;br&gt;   → Only same resource gets inhibited&lt;br&gt;&lt;br&gt;✅ &lt;b&gt;Severity ladder is isolated&lt;/b&gt;&lt;br&gt;   → Uses severity (not priority)&lt;br&gt;   → Can&#39;t affect Jira alerts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="540" width="280" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="no-cross-box" value="&lt;b&gt;❌ CROSS-LADDER SUPPRESSION PREVENTED&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;────────────────────────&lt;/font&gt;&lt;br&gt;&lt;br&gt;• ExternalSecretSyncError (Critical) &lt;b&gt;CANNOT&lt;/b&gt;&lt;br&gt;  suppress AppAvailabilityUnhealthy (High)&lt;br&gt;  → Different alert_family" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="1130" y="990" width="270" height="190" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

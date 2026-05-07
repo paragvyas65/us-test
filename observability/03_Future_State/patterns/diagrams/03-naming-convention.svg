@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="200" viewBox="0 0 680 200">
+  <defs>
+    <style type="text/css">
+      .label-small { font-family: Helvetica, Arial, sans-serif; font-size: 11px; fill: #424242; }
+      .label-large { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 18px; fill: #000; }
+      .example { font-family: Helvetica, Arial, sans-serif; font-size: 14px; fill: #424242; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="680" height="200" fill="#fff"/>
+  
+  <rect x="40" y="40" width="120" height="80" rx="10" fill="#fce4ec" stroke="#c2185b" stroke-width="2"/>
+  <text x="100" y="65" text-anchor="middle" class="label-small">Provider</text>
+  <text x="100" y="95" text-anchor="middle" class="label-large">AZR</text>
+  
+  <rect x="200" y="40" width="120" height="80" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="260" y="65" text-anchor="middle" class="label-small">Region</text>
+  <text x="260" y="95" text-anchor="middle" class="label-large">C03</text>
+  
+  <rect x="360" y="40" width="120" height="80" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="420" y="65" text-anchor="middle" class="label-small">Business Unit</text>
+  <text x="420" y="95" text-anchor="middle" class="label-large">LEND</text>
+  
+  <rect x="520" y="40" width="120" height="80" rx="10" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+  <text x="580" y="65" text-anchor="middle" class="label-small">Index</text>
+  <text x="580" y="95" text-anchor="middle" class="label-large">0001</text>
+  
+  <path d="M 160 80 L 200 80" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 320 80 L 360 80" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 480 80 L 520 80" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <text x="340" y="170" class="example">Example: <tspan font-weight="bold">AZR-C03-LEND-0001</tspan></text>
+  
+  <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+  </marker>
+</svg>

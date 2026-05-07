@@ -1,0 +1,105 @@
+@startuml
+
+header Logical environment update zone specific value override
+footer Page %page% of %lastpage%
+title Type: Modify zone value override\nUse case: Changes to zone specific configuration\nScenario: Update `edge-local` configuration for preprod environment in `eastus_prod` zone
+
+actor       "Product\nRequester"                       as product_requester
+actor       "Product\nApprover"                        as product_approver
+participant "Pull Request to Main"                     as laserpro_environment_apps_feature_branch
+participant "Main PR workflow"                         as gitopspp_pr_workflow
+database    "git://laserpro-env-apps/main"             as laserpro_environment_apps_main
+participant "Main OnMerge workflow"                    as gitopspp_merge_workflow
+participant "Main OnTag workflow"                      as gitopspp_tag_workflow
+participant "Pull Request to Release"                  as laserpro_environment_apps_release_feature_branch
+participant "Release PR workflow"                      as gitopspp_release_pr_workflow
+database    "git://laserpro-env-apps/release"          as laserpro_environment_apps_release
+participant "Release OnMerge workflow"                 as gitopspp_release_merge_workflow
+participant "Kubernetes Cluster"                       as kubernetes_cluster
+
+product_requester -> laserpro_environment_apps_feature_branch ++ : Modified value overrides
+note left
+    edge-local/values/eastus_prod-preprod.yaml modified
+      ```
+      values:
+        productMap:
+          arm_tenant_id: e17e2402-2a40-42ce-ad75-5848b8d4f6b6
+      ```
+endnote
+laserpro_environment_apps_feature_branch -> gitopspp_pr_workflow ++: PR checks executed
+note right
+    File linting
+    Validate filename schemas
+    Validate yaml schemas
+    Check branch rebase
+    Validate target namespace
+    Validate zone-env mapping in promotion.yaml is up-to-date with tenant-mgmt
+endnote
+return Success
+
+product_approver -> laserpro_environment_apps_feature_branch : PR approve
+laserpro_environment_apps_feature_branch -> laserpro_environment_apps_main ++: PR merge to main
+deactivate laserpro_environment_apps_feature_branch
+
+laserpro_environment_apps_main -> gitopspp_merge_workflow ++: Trigger
+note right
+    1. Detect which applications have changed
+    2. Detect current changes
+    3. Tag main branch with <app>-<ver>-<rev>
+endnote
+return Tag added to main <app>-<ver>-<rev>
+
+
+laserpro_environment_apps_main -> gitopspp_tag_workflow ++: Trigger
+note right
+    1. Detect which applications have changed
+    2. Detect current changes
+    3. Detect lowest env and zones in promotion.yaml
+        based on order an priority level
+    4. Generate resources
+endnote
+
+loop through promotion.yaml
+
+gitopspp_tag_workflow -> laserpro_environment_apps_release_feature_branch ++: Raise PR to release branch
+laserpro_environment_apps_main <-- gitopspp_tag_workflow --: Success
+
+
+laserpro_environment_apps_release_feature_branch -> gitopspp_release_pr_workflow ++: Trigger
+note right
+    1. Validate that PR was raised by GitOpsPP SA
+endnote
+return Success
+
+product_approver -> laserpro_environment_apps_release_feature_branch : PR approve
+laserpro_environment_apps_release_feature_branch -> laserpro_environment_apps_release: Merge PR to Release branch
+deactivate laserpro_environment_apps_release_feature_branch
+
+laserpro_environment_apps_release -> gitopspp_release_merge_workflow ++: On Merge Workflow
+note right
+    1. Wait for feedback about deployment: smee.io/gitops-connector
+endnote
+
+alt Deployment succeeded
+kubernetes_cluster -> gitopspp_release_merge_workflow: Deployment successful
+gitopspp_release_merge_workflow -> laserpro_environment_apps_release_feature_branch
+note right
+    1. Detect which applications have changed
+    2. Detect current changes
+    3. Detect target zone
+    4. Generate resources
+    5. Create tag <app>-<ver>-<rev>-<env>-<zone>-success
+endnote
+
+else Deployment failed
+kubernetes_cluster -> gitopspp_release_merge_workflow: Deployment failed
+gitopspp_release_merge_workflow -> laserpro_environment_apps_release_feature_branch
+note right
+    1. Create auto-remediation (revert) PR.
+        It's a future consideration
+    2. Create tag <app>-<ver>-<rev>-<env>-<zone>-fail
+endnote
+end
+
+return Success
+end

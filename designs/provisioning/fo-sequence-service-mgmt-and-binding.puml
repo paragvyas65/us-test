@@ -1,0 +1,96 @@
+@startuml
+!theme vibrant
+header Service Provisioning and Binding
+footer Page %page% of %lastpage%
+title Service Provisioning and Binding
+
+actor    "Product\nOwner"                               as product_owner
+database "git://tenant-mgmt"                            as tenant_mgmt_repo
+database "git://zone-infra\n/product"                   as zone_infra_repo
+participant "tfc://plat-zone-infra-eastus"              as tfc_zone_infra
+database "git://LaserPro-Product-Infra"                 as product_infra_repo
+participant "tfc://product-infra-perf"                  as tfc_product_infra
+participant "rg://product-infra-perf"                  as rg_product_env_infra
+participant "rg://zone-infra-platform"                  as rg_zone_infra_platform
+database "kv://product-infra-perf"                      as kv_product_env_infra
+
+group Zone Provisioning
+  product_owner -> tenant_mgmt_repo ++: PR Approved
+
+  note left
+  zones:
+    eastus:
+      class: engineering
+      region: eastus
+      security_class: non_prod
+      compliance:  (future)
+
+  environments:
+  - name: perf
+    zones:
+    - eastus
+  end note
+
+  tenant_mgmt_repo -> zone_infra_repo ++: manage `config/eastus-01.yaml`
+  zone_infra_repo -> tfc_zone_infra ++ : applies state
+  tfc_zone_infra -> rg_zone_infra_platform ++: zone resources created
+  tfc_zone_infra <- rg_zone_infra_platform --:
+  zone_infra_repo <- tfc_zone_infra -- :
+  tenant_mgmt_repo <- zone_infra_repo --: Zone Created
+
+  product_owner <- tenant_mgmt_repo --:
+end
+
+group Environment Provisioning
+  tenant_mgmt_repo -> product_infra_repo ++: create PERF environment config
+  note left
+  Depict the creation of the env-specific
+  config in git://LaserPro-Product_infra
+  Including TFC workspace, RG + SP
+  Implied:  env KV
+  end note
+  tenant_mgmt_repo <- product_infra_repo -- :
+end
+
+group Service Management and Binding
+  product_owner -> product_infra_repo ++: PR Approved
+
+  note left
+  "services.yaml"
+
+  mongodb:
+    environments:
+    - name: perf
+      zones:
+      # optional overrides,
+      # defaults to env-zone binding
+      - westus
+      - # preprod1
+    # impl note:  validation required
+    # (coming from tenant-mgmt data)
+  end note
+
+  product_infra_repo -> tfc_product_infra ++: create TF state
+  tfc_product_infra -> rg_product_env_infra ++: db:mongodb-123
+  tfc_product_infra -> rg_product_env_infra : pe:mongodb-123
+  tfc_product_infra <- rg_product_env_infra --:
+  tfc_product_infra -> kv_product_env_infra ++: write mongo conn keys
+  note right
+  MONGODB_123_CONN_STRING=pe://name
+  MONGODB_123_CREDS=output from mongodb provider
+  #  (or set CREDS via external observer - SPIKE)
+  end note
+  tfc_product_infra <- kv_product_env_infra --:
+
+  note right
+  tfc://product-infra-perf SP permissions:
+  write perm to rg://product-infra-perf
+  NetworkContributor to rg://zone-infra-platform
+  end note
+  tfc_product_infra -> rg_zone_infra_platform ++: pe:mongodb-123 bound to zone VNet
+  tfc_product_infra <- rg_zone_infra_platform --:
+  product_infra_repo <- tfc_product_infra --:
+
+product_owner <- product_infra_repo --:
+end
+@enduml

@@ -1,0 +1,22 @@
+rule_type: BlockVolumes
+enabled: true
+settings:
+  blocked_volumes:
+    - /
+    - /bin
+    - /boot
+    - /etc
+    - /lib
+    - /slib
+
+# ------ non-negotiable controls ------
+#  - NonNegotiableAudit
+#  - NonNegotiableEnforcedOnNonRevenueGeneratingEnvs -> audit on all other envs
+#  - NonNegotiableEnforcedOnRevenueGeneratingEnvs    -> audit on all other envs
+#  - NonNegotiableEnforced
+# ------ default controls which may be overridden ------
+#  - Audit
+#  - EnforcedOnNonRevenueGeneratingEnvs -> audit on all other envs
+#  - EnforcedOnRevenueGeneratingEnvs    -> audit on all other envs
+#  - Enforced
+mode: EnforcedOnRevenueGeneratingEnvs

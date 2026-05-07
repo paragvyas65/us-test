@@ -1,0 +1,89 @@
+<mxfile host="app.diagrams.net" modified="2026-05-07T19:40:00.000Z" agent="Antigravity" version="21.0.0" type="device">
+  <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <root>
+      <mxCell id="0" />
+      <mxCell id="1" parent="0" />
+      
+      <!-- Finastra Org (Root) -->
+      <mxCell id="root" value="&lt;b&gt;Finastra Org&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#0d47a1;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+        <mxGeometry x="340" y="20" width="160" height="60" as="geometry" />
+      </mxCell>
+      
+      <!-- BU Stacks (Level 2) -->
+      <mxCell id="bu1" value="&lt;b&gt;AZR-C03-LEND-0001&lt;/b&gt;&lt;br&gt;Lending BU" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="1">
+        <mxGeometry x="40" y="140" width="140" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="bu2" value="&lt;b&gt;AZR-C03-PAYM-0001&lt;/b&gt;&lt;br&gt;Payment BU" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="1">
+        <mxGeometry x="200" y="140" width="140" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="bu3" value="&lt;b&gt;AZR-C03-UBNK-0001&lt;/b&gt;&lt;br&gt;Universal Banking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="1">
+        <mxGeometry x="360" y="140" width="140" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="bu4" value="&lt;b&gt;AZR-C03-TCMG-0001&lt;/b&gt;&lt;br&gt;TCM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="1">
+        <mxGeometry x="520" y="140" width="140" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="bu5" value="&lt;b&gt;AZR-C03-CORN-0001&lt;/b&gt;&lt;br&gt;Cornerstone &amp; SES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="1">
+        <mxGeometry x="680" y="140" width="140" height="70" as="geometry" />
+      </mxCell>
+      
+      <!-- Connectors (Level 1 to 2) -->
+      <mxCell id="l1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="root" target="bu1" />
+      <mxCell id="l2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="root" target="bu2" />
+      <mxCell id="l3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="root" target="bu3" />
+      <mxCell id="l4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="root" target="bu4" />
+      <mxCell id="l5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="root" target="bu5" />
+      
+      <!-- Products (Level 3) -->
+      <!-- Lending -->
+      <mxCell id="p1" value="Product: LaserPro" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
+        <mxGeometry x="30" y="260" width="70" height="50" as="geometry" />
+      </mxCell>
+      <mxCell id="p2" value="Product: LoanIQ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
+        <mxGeometry x="110" y="260" width="70" height="50" as="geometry" />
+      </mxCell>
+      <mxCell id="lp1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu1" target="p1" />
+      <mxCell id="lp2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu1" target="p2" />
+      
+      <!-- Payment -->
+      <mxCell id="p3" value="Product: Pay2Go" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
+        <mxGeometry x="190" y="260" width="70" height="50" as="geometry" />
+      </mxCell>
+      <mxCell id="p4" value="Product: GlobalPay" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
+        <mxGeometry x="270" y="260" width="70" height="50" as="geometry" />
+      </mxCell>
+      <mxCell id="pp1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu2" target="p3" />
+      <mxCell id="pp2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu2" target="p4" />
+      
+      <!-- Universal Banking -->
+      <mxCell id="p5" value="Product: FusionBank" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
+        <mxGeometry x="350" y="260" width="70" height="50" as="geometry" />
+      </mxCell>
+      <mxCell id="p6" value="Product: Equation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
+        <mxGeometry x="430" y="260" width="70" height="50" as="geometry" />
+      </mxCell>
+      <mxCell id="up1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu3" target="p5" />
+      <mxCell id="up2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu3" target="p6" />
+      
+      <!-- TCM -->
+      <mxCell id="p7" value="Product: Kondor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
+        <mxGeometry x="510" y="260" width="70" height="50" as="geometry" />
+      </mxCell>
+      <mxCell id="p8" value="Product: Front Arena" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
+        <mxGeometry x="590" y="260" width="70" height="50" as="geometry" />
+      </mxCell>
+      <mxCell id="tp1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu4" target="p7" />
+      <mxCell id="tp2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu4" target="p8" />
+      
+      <!-- Cornerstone -->
+      <mxCell id="p9" value="Product: Cornerstone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
+        <mxGeometry x="670" y="260" width="70" height="50" as="geometry" />
+      </mxCell>
+      <mxCell id="p10" value="Product: SES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
+        <mxGeometry x="750" y="260" width="70" height="50" as="geometry" />
+      </mxCell>
+      <mxCell id="cp1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu5" target="p9" />
+      <mxCell id="cp2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu5" target="p10" />
+
+    </root>
+  </mxGraphModel>
+</mxfile>

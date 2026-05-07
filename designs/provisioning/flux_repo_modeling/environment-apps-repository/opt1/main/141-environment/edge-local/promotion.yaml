@@ -1,0 +1,27 @@
+promotion:
+  - name: dev
+    zones:
+      - alias: eastus_nonprod
+        name: platform-engineering-eastus-01
+        priority: 0
+  - name: perf
+    zones:
+      - alias: eastus_nonprod
+        name: platform-engineering-eastus-01
+        priority: 0
+  - name: preprod
+    zones:
+      - alias: eastus_prod
+        name: platform-customer-eastus-01
+        priority: 1
+      - alias: westus_prod
+        name: platform-customer-westus-01
+        priority: 2
+  - name: prod
+    zones:
+      - alias: eastus_prod
+        name: platform-customer-eastus-01
+        priority: 1
+      - alias: westus_prod
+        name: platform-customer-westus-01
+        priority: 2

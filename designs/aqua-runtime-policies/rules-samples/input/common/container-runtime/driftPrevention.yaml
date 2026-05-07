@@ -1,0 +1,16 @@
+rule_type: BlockCryptoMining
+enabled: true
+settings:
+  enable_drift_prevention: true
+
+# ------ non-negotiable controls ------
+#  - NonNegotiableAudit
+#  - NonNegotiableEnforcedOnNonRevenueGeneratingEnvs -> audit on all other envs
+#  - NonNegotiableEnforcedOnRevenueGeneratingEnvs    -> audit on all other envs
+#  - NonNegotiableEnforced
+# ------ default controls which may be overridden ------
+#  - Audit
+#  - EnforcedOnNonRevenueGeneratingEnvs -> audit on all other envs
+#  - EnforcedOnRevenueGeneratingEnvs    -> audit on all other envs
+#  - Enforced
+mode: NonNegotiableEnforcedOnRevenueGeneratingEnvs

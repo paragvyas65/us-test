@@ -1,0 +1,43 @@
+{
+  "admin_claim": "upn",
+  "auth_methods": [
+    "authorization_code"
+  ],
+  "authenticated_groups_claim": [
+    "groups"
+  ],
+  "client_id": [
+    "5c7e9df6-6778-480a-bf40-6555ad02bd8c"
+  ],
+  "client_secret": [
+    "2Eq.SYl6-EYE1_3k5~eCOuNte417M.1l1K"
+  ],
+  "ignore_signature": [
+    "authorization_code"
+  ],
+  "issuer": "https://login.microsoftonline.com/e17e2402-2a40-42ce-ad75-5848b8d4f6b6/v2.0/.well-known/openid-configuration",
+  "leeway": 60,
+  "login_redirect_uri": [
+    "https://manager.kong.pintc010040040201050a001.img.azr.fusionoperate.io:8445"
+  ],
+  "logout_methods": [
+    "GET",
+    "DELETE"
+  ],
+  "logout_query_arg": "logout",
+  "logout_redirect_uri": [
+    "https://manager.kong.pintc010040040201050a001.img.azr.fusionoperate.io:8445"
+  ],
+  "redirect_uri": [
+    "https://manager.kong.pintc010040040201050a001.img.azr.fusionoperate.io:8445"
+  ],
+  "scopes": [
+    "openid",
+    "profile",
+    "email",
+    "offline_access"
+  ],
+  "ssl_verify": false,
+  "verify_claims": false,
+  "verify_parameters": false
+}

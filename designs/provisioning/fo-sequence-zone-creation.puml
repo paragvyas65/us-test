@@ -1,0 +1,116 @@
+@startuml
+
+header Product Provisioning
+footer Page %page% of %lastpage%
+title Zone Management - Initial Onboarding
+
+actor    "Product\nOwner"                               as product_owner
+database "git://tenant-mgmt\ntfc://tenant-mgmt"         as tenant_mgmt_repo
+database "git://LaserPro-Zone-Infra"                    as laserpro_zone_infra
+database "git://LaserPro-Zone-Apps"                     as zone_apps_repo
+database "git://LaserPro-Product-Infra"                 as product_infra_repo
+participant "DataProxy\nProvider"                       as imp_dataproxy_provider
+participant "IMP Zone Module"                           as imp_zone_module
+participant "Terraform\nCloud"                          as tfc
+participant "Azure RM\nProvider"                        as imp_azurerm_provider
+participant "Azure AD\nProvider"                        as imp_azuread_provider
+
+product_owner -> tenant_mgmt_repo ++: PR Approved
+
+note left
+zones:
+  eastus_dev1:
+    class: engineering
+    region: eastus
+    security_class: non_prod
+    compliance:  (future)
+
+environments:
+- name: dev
+  zones:
+  - eastus_dev1
+
+promotion_sequence:
+- eastus_dev1
+
+
+end note
+group Create TFC and Azure Resources for Zone, stage config
+tenant_mgmt_repo -> imp_dataproxy_provider ++:  Find available RG counter
+tenant_mgmt_repo <- imp_dataproxy_provider --:  RG counter: 02
+
+tenant_mgmt_repo -> imp_zone_module ++: New Zone - engineering-eastus-02
+
+    group Platform Provisioning Scope (Zone Infra)
+    imp_zone_module -> imp_azurerm_provider ++: Create RG
+    imp_zone_module <- imp_azurerm_provider --:
+
+    imp_zone_module -> imp_azuread_provider ++: Create SP (scoped to RG)
+    imp_zone_module <- imp_azuread_provider --:
+
+    imp_zone_module -> tfc ++: Create workspace (scoped to RG + SP)
+    imp_zone_module <- tfc --: workspace {name: rg123}
+    end
+
+    group Platform Bootstrap Scope (Flux & Dependencies)
+    imp_zone_module -> tfc ++: Create workspace (scoped to RG + SP)
+    imp_zone_module <- tfc --: workspace {name: rg123-bootstrap}
+    end
+
+    group Platform App Config Staging (Flux & Dependencies)
+    imp_zone_module -> zone_apps_repo ++: stage engineering-eastus-02 baseline app config
+    note right
+      Config for baseline helm release for this zone
+      /values/engineering-eastus-02.yaml
+      Add to promotion.yaml
+      ```
+        - name: preprod
+          zones:
+          - name: engineering-eastus-02
+            alias: eastus_preprod
+            priority: 0
+      ```
+    endnote
+    imp_zone_module <- zone_apps_repo --:
+    end
+
+    group Product Infra Scope (Zone Infra)
+    imp_zone_module -> imp_azurerm_provider ++: Create RG
+    imp_zone_module <- imp_azurerm_provider --:
+
+    imp_zone_module -> imp_azuread_provider ++: Create SP (scoped to RG)
+    imp_zone_module <- imp_azuread_provider --:
+
+    imp_zone_module -> tfc ++: Create workspace (scoped to RG + SP)
+    imp_zone_module <- tfc --: workspace {name: rg123-product}
+    end
+
+tenant_mgmt_repo <- imp_zone_module --:
+end
+
+group Create Zone
+tenant_mgmt_repo -> laserpro_zone_infra ++: push to main
+  note over laserpro_zone_infra
+
+      create /platform/config/engineering-eastus-02.yaml
+      add to /promotion.yaml:
+          zone 'engineering-eastus-02' + tfc workspace 'rg123'
+
+      from template: /product/code/firewall.tf
+      from template: /product/code/nodepools.tf
+      create /product/config/engineering-eastus-02.yaml
+
+  end note
+  laserpro_zone_infra -> tfc ++: create state for eastus-02 zone (platfrom workspace, rg123)
+  laserpro_zone_infra <- tfc --:
+  laserpro_zone_infra -> tfc ++: create state for eastus-02 zone (product workspace, rg123-product)
+  laserpro_zone_infra <- tfc --:
+
+tenant_mgmt_repo <- laserpro_zone_infra --:
+
+
+
+end
+product_owner <- tenant_mgmt_repo --:
+
+@enduml

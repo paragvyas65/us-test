@@ -1,0 +1,180 @@
+<mxfile host="app.diagrams.net" modified="2026-05-07T19:35:00.000Z" agent="Antigravity" version="21.0.0" type="device">
+  <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <root>
+      <mxCell id="0" />
+      <mxCell id="1" parent="0" />
+      
+      <!-- Tier Labels -->
+      <mxCell id="t1" value="USERS &amp; IDENTITY" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=14;fontColor=#424242;" vertex="1" parent="1">
+        <mxGeometry x="10" y="80" width="130" height="30" as="geometry" />
+      </mxCell>
+      <mxCell id="t2" value="CONTROL PLANE" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=14;fontColor=#424242;" vertex="1" parent="1">
+        <mxGeometry x="10" y="280" width="130" height="30" as="geometry" />
+      </mxCell>
+      <mxCell id="t3" value="INGESTION" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=14;fontColor=#424242;" vertex="1" parent="1">
+        <mxGeometry x="10" y="520" width="130" height="30" as="geometry" />
+      </mxCell>
+      <mxCell id="t4" value="CLOUD BOUNDARY" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=14;fontColor=#424242;" vertex="1" parent="1">
+        <mxGeometry x="10" y="820" width="130" height="30" as="geometry" />
+      </mxCell>
+
+      <!-- Tier 1: User & Identity -->
+      <mxCell id="c1" value="User &amp; Identity Tier" style="swimlane;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#fbc02d;strokeWidth=2;fontStyle=1;rounded=1;" vertex="1" parent="1">
+        <mxGeometry x="150" y="40" width="600" height="150" as="geometry" />
+      </mxCell>
+      <mxCell id="u1" value="&lt;b&gt;Product Developers&lt;/b&gt;&lt;br&gt;View ONLY their product" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#fbc02d;strokeWidth=2;" vertex="1" parent="c1">
+        <mxGeometry x="20" y="40" width="130" height="80" as="geometry" />
+      </mxCell>
+      <mxCell id="u2" value="&lt;b&gt;DevOps &amp; SRE&lt;/b&gt;&lt;br&gt;Cross-product operational view" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#fbc02d;strokeWidth=2;" vertex="1" parent="c1">
+        <mxGeometry x="165" y="40" width="130" height="80" as="geometry" />
+      </mxCell>
+      <mxCell id="u3" value="&lt;b&gt;VP / P&amp;L Owners&lt;/b&gt;&lt;br&gt;Cost Showback &amp; Billing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#fbc02d;strokeWidth=2;" vertex="1" parent="c1">
+        <mxGeometry x="310" y="40" width="130" height="80" as="geometry" />
+      </mxCell>
+      <mxCell id="u4" value="&lt;b&gt;Azure Entra ID&lt;/b&gt;&lt;br&gt;SSO &amp; Security Groups" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#4a148c;strokeWidth=2;" vertex="1" parent="c1">
+        <mxGeometry x="455" y="40" width="120" height="80" as="geometry" />
+      </mxCell>
+      <mxCell id="l1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="c1" source="u1" target="u4">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+      <mxCell id="l2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="c1" source="u2" target="u4">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+      <mxCell id="l3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="c1" source="u3" target="u4">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+
+      <!-- Tier 2: Control Plane -->
+      <mxCell id="c2" value="GitOps Control Plane" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#4a148c;strokeWidth=2;fontStyle=1;rounded=1;" vertex="1" parent="1">
+        <mxGeometry x="150" y="240" width="600" height="150" as="geometry" />
+      </mxCell>
+      <mxCell id="gh" value="&lt;b&gt;GitHub Repositories&lt;/b&gt;&lt;br&gt;CODEOWNERS Approvals" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4a148c;strokeWidth=2;" vertex="1" parent="c2">
+        <mxGeometry x="40" y="50" width="150" height="60" as="geometry" />
+      </mxCell>
+      <mxCell id="tfc" value="&lt;b&gt;Terraform Cloud&lt;/b&gt;&lt;br&gt;Stateful Provisioning" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4a148c;strokeWidth=2;" vertex="1" parent="c2">
+        <mxGeometry x="270" y="50" width="150" height="60" as="geometry" />
+      </mxCell>
+      <mxCell id="akv" value="&lt;b&gt;Azure Key Vault&lt;/b&gt;&lt;br&gt;Secrets Management" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4a148c;strokeWidth=2;" vertex="1" parent="c2">
+        <mxGeometry x="480" y="50" width="100" height="60" as="geometry" />
+      </mxCell>
+      <mxCell id="f1" value="On PR Merge" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="gh" target="tfc">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+      <mxCell id="f2" value="Fetches Secrets" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="tfc" target="akv">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+      <mxCell id="f3" value="Syncs Groups" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="tfc" target="u4">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="345" y="210" />
+            <mxPoint x="665" y="210" />
+          </Array>
+        </mxGeometry>
+      </mxCell>
+
+      <!-- Tier 3: Ingestion -->
+      <mxCell id="c3" value="Telemetry Ingestion" style="swimlane;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#1b5e20;strokeWidth=2;fontStyle=1;rounded=1;" vertex="1" parent="1">
+        <mxGeometry x="150" y="440" width="600" height="200" as="geometry" />
+      </mxCell>
+      <mxCell id="s1" value="&lt;b&gt;AKS Clusters&lt;/b&gt;&lt;br&gt;LaserPro&lt;br&gt;&lt;i&gt;bu=lend, env=prod&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1b5e20;strokeWidth=2;" vertex="1" parent="c3">
+        <mxGeometry x="20" y="40" width="120" height="80" as="geometry" />
+      </mxCell>
+      <mxCell id="s2" value="&lt;b&gt;Azure VMs&lt;/b&gt;&lt;br&gt;Pay2Go&lt;br&gt;&lt;i&gt;bu=pay, env=prod&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1b5e20;strokeWidth=2;" vertex="1" parent="c3">
+        <mxGeometry x="160" y="40" width="120" height="80" as="geometry" />
+      </mxCell>
+      <mxCell id="s3" value="&lt;b&gt;Databases&lt;/b&gt;&lt;br&gt;Universal Banking&lt;br&gt;&lt;i&gt;bu=ubnk, env=stage&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1b5e20;strokeWidth=2;" vertex="1" parent="c3">
+        <mxGeometry x="300" y="40" width="120" height="80" as="geometry" />
+      </mxCell>
+      <mxCell id="alloy" value="&lt;b&gt;Grafana Alloy&lt;/b&gt;&lt;br&gt;Enforces Label Discipline" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#ffffff;strokeColor=#1b5e20;strokeWidth=2;fontStyle=1;" vertex="1" parent="c3">
+        <mxGeometry x="450" y="50" width="130" height="60" as="geometry" />
+      </mxCell>
+      <mxCell id="f4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="c3" source="s1" target="alloy">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+      <mxCell id="f5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="c3" source="s2" target="alloy">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+      <mxCell id="f6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="c3" source="s3" target="alloy">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+
+      <!-- Tier 4: Cloud Boundary -->
+      <mxCell id="c4" value="Grafana Cloud (Finastra Global Org)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#0d47a1;strokeWidth=2;fontStyle=1;rounded=1;" vertex="1" parent="1">
+        <mxGeometry x="150" y="690" width="600" height="350" as="geometry" />
+      </mxCell>
+      
+      <!-- Stacks -->
+      <mxCell id="st1" value="Lending BU Stack&lt;br&gt;AZR-C03-LEND-0001" style="swimlane;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;fontStyle=1;rounded=1;" vertex="1" parent="c4">
+        <mxGeometry x="20" y="40" width="180" height="280" as="geometry" />
+      </mxCell>
+      <mxCell id="lbac1" value="LBAC: Enforces 'product' isolation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;fontSize=10;" vertex="1" parent="st1">
+        <mxGeometry x="10" y="40" width="160" height="40" as="geometry" />
+      </mxCell>
+      <mxCell id="fol1" value="Folder: LaserPro&lt;br&gt;Dashboards &amp; Alerts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="st1">
+        <mxGeometry x="10" y="100" width="160" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="fol2" value="Folder: LoanIQ&lt;br&gt;Dashboards &amp; Alerts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="st1">
+        <mxGeometry x="10" y="190" width="160" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="l4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;" edge="1" parent="st1" source="lbac1" target="fol1">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+      <mxCell id="l5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;" edge="1" parent="st1" source="lbac1" target="fol2">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+
+      <mxCell id="st2" value="Payment BU Stack&lt;br&gt;AZR-C03-PAYM-0001" style="swimlane;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;fontStyle=1;rounded=1;" vertex="1" parent="c4">
+        <mxGeometry x="210" y="40" width="180" height="280" as="geometry" />
+      </mxCell>
+      <mxCell id="lbac2" value="LBAC: Enforces 'product' isolation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;fontSize=10;" vertex="1" parent="st2">
+        <mxGeometry x="10" y="40" width="160" height="40" as="geometry" />
+      </mxCell>
+      <mxCell id="fol3" value="Folder: Pay2Go&lt;br&gt;Dashboards &amp; Alerts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="st2">
+        <mxGeometry x="10" y="100" width="160" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="fol4" value="Folder: GlobalPay&lt;br&gt;Dashboards &amp; Alerts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="st2">
+        <mxGeometry x="10" y="190" width="160" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="l6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;" edge="1" parent="st2" source="lbac2" target="fol3">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+      <mxCell id="l7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;" edge="1" parent="st2" source="lbac2" target="fol4">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+
+      <mxCell id="st3" value="Shared Services Stack" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=2;fontStyle=1;rounded=1;strokeDasharray=5 5;" vertex="1" parent="c4">
+        <mxGeometry x="400" y="40" width="180" height="150" as="geometry" />
+      </mxCell>
+      <mxCell id="fol5" value="Folder: Central Billing&lt;br&gt;Cost Attribution filterable by 'product'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;fontSize=10;" vertex="1" parent="st3">
+        <mxGeometry x="10" y="40" width="160" height="90" as="geometry" />
+      </mxCell>
+
+      <!-- External Connections -->
+      <mxCell id="f7" value="Provisions API (Stacks, Folders, RBAC, LBAC)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="tfc" target="c4">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="100" y="315" />
+            <mxPoint x="100" y="865" />
+          </Array>
+        </mxGeometry>
+      </mxCell>
+      <mxCell id="f8" value="OTLP (Metrics, Logs, Traces)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="alloy" target="st2">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="665" y="660" />
+            <mxPoint x="450" y="660" />
+          </Array>
+        </mxGeometry>
+      </mxCell>
+      <mxCell id="f9" value="Maps to RBAC/LBAC rules" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="u4" target="c4">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="800" y="120" />
+            <mxPoint x="800" y="865" />
+          </Array>
+        </mxGeometry>
+      </mxCell>
+
+    </root>
+  </mxGraphModel>
+</mxfile>

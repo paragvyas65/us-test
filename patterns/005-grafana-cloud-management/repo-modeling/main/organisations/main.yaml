@@ -1,0 +1,6 @@
+# This file contains default settings that can be overriden by per-stack configuration
+# It is expected for the python code to execute deep-merge for main.yaml and per-stack main.yaml
+grafana:
+  # Setting up SSO. Should be defined on the global level
+  sso:
+    # ...

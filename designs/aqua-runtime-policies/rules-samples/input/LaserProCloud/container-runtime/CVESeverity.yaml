@@ -1,0 +1,12 @@
+rule_type: CVESeverity
+enabled: true
+settings:
+  custom_severity_enabled: true
+  cvss_severity: high
+  cvss_severity_enabled: true
+
+scope:
+  zones: []  # empty means all zones
+  images: [] # empty means all images
+
+mode: Enforced

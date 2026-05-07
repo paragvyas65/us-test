@@ -1,0 +1,7 @@
+promption:
+  - name: dev
+    zones:
+      - name: dev_eastus2
+        priority: 0
+      - name: dev_westus2
+        priority: 1

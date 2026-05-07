@@ -1,0 +1,10 @@
+rule_type: RootUser
+enabled: true
+settings:
+  only_none_root_users: true
+
+scope:
+  zones: []  # empty means all zones
+  images: [] # empty means all images
+
+mode: Enforced

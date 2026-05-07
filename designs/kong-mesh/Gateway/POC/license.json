@@ -1,0 +1,16 @@
+{
+  "license": {
+    "payload": {
+      "admin_seats": "Unlimited",
+      "customer": "Finastra",
+      "dataplanes": "25",
+      "license_creation_date": "2021-10-21",
+      "license_expiration_date": "2022-10-28",
+      "license_key": "0014100000RaXetAAF_a1V1K0000085K3vUAE",
+      "product_subscription": "Kong Enterprise Edition",
+      "support_plan": "Platinum"
+    },
+    "signature": "28860d38a6977d6275e88cde5cab131ad53121526b91d89085e51e3fac4c195b6f22deebe44fe650f9e7a6ce41ac5ab7060f36a19c9374e62d840a4b478723e4",
+    "version": 1
+  }
+}

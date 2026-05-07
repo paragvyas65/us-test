@@ -1,0 +1,22 @@
+promotion:
+  - name: dev
+    zones:
+      - alias: eastus_nonprod
+        zoneName: platform-engineering-eastus-01
+        clusterName: pplac010043040201050a001
+        priority: 0 # Define priority for promotion within environment
+      - alias: westus_nonprod
+        name: platform-engineering-westus-01
+        clusterName: pplac060043040201050a001
+        priority: 0 # Define priority for promotion within environment
+
+  - name: prod
+    zones:
+      - alias: eastus_prod
+        zoneName: platform-customer-eastus-01
+        clusterName: pplac010044040201050a001
+        priority: 1 # Define priority for promotion within environment
+      - alias: westus_prod
+        name: platform-customer-westus-01
+        clusterName: pplac060044040201050a001
+        priority: 2 # Define priority for promotion within environment

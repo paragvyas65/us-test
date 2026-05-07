@@ -1,0 +1,17 @@
+rule_type: <string enum> # Example: VolumesBlocked
+name: <string> # Example: Volumes Blocked, optional
+description: <string> # optional
+enabled: <bool>
+settings: [<setting>]   # <setting>: {id, name, data: (bool | int | float | string enum | [strings] | [string tuples] )}
+
+scope:
+  zones: [<string>]  # list of zones,  if applicable. If not specified, no zone  restriction. Only relevant for runtime policies
+  images: [<tring>]  # list of images, if applicable. If not specified, no image restriction
+  #os (if ever needed)
+
+# mode: Possible values:
+#  - Audit
+#  - EnforcedOnNonRevenueGeneratingEnvs -> audit on all other envs
+#  - EnforcedOnRevenueGeneratingEnvs    -> audit on all other envs
+#  - Enforced
+mode: <string enum>

@@ -1,0 +1,11 @@
+zones:
+  - name: p21d11107025001 # Dev
+    revenueGenerating: false
+  - name: p21q11101025002 # LOBDev
+    revenueGenerating: false
+  - name: p01q11101025003 # Perf
+    revenueGenerating: false
+  - name: p01u11101025001 # PreProdEastUs
+    revenueGenerating: true
+  - name: p01p11101025002 # ProdEastUs
+    revenueGenerating: true

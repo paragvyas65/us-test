@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    8080.service.kuma.io/protocol: http
+    ingress.kubernetes.io/service-upstream: 'true'
+    konghq.com/path: /echo
+    konghq.com/plugins: add-response-header
+  name: echo-service
+  namespace: kong-mesh-test
+spec:
+  ports:
+    - name: http-port
+      port: 8080
+      protocol: TCP
+      targetPort: http-port
+  selector:
+    app: echo-server
+  sessionAffinity: None
+  type: ClusterIP

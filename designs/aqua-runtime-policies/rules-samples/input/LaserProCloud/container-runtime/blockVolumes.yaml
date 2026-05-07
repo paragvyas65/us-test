@@ -1,0 +1,12 @@
+rule_type: RootUser
+enabled: true
+settings:
+  blocked_volumes: # This will add to the default blocked volumes
+    - /exe
+    - NOT /lib
+
+scope:
+  zones: []  # empty means all zones
+  images: [] # empty means all images
+
+mode: EnforcedOnRevenueGeneratingEnvs

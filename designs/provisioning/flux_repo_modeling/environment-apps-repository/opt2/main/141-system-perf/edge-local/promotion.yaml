@@ -1,0 +1,4 @@
+promption:
+  - name: perf
+    zones:
+      - dev_eastus2

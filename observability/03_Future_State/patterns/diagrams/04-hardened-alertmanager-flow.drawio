@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net" modified="2026-05-07T19:50:00.000Z" agent="Antigravity" version="21.0.0" type="device">
+  <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <root>
+      <mxCell id="0" />
+      <mxCell id="1" parent="0" />
+      
+      <!-- Input -->
+      <mxCell id="in" value="&lt;b&gt;Alert Rule Submitted via PR&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#1b5e20;strokeWidth=2;" vertex="1" parent="1">
+        <mxGeometry x="270" y="20" width="260" height="60" as="geometry" />
+      </mxCell>
+      
+      <!-- Hardening subgraph -->
+      <mxCell id="sub" value="Hardened Alertmanager Flow" style="swimlane;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#e65100;strokeWidth=2;dashed=1;fontStyle=1;rounded=1;" vertex="1" parent="1">
+        <mxGeometry x="40" y="140" width="720" height="150" as="geometry" />
+      </mxCell>
+      
+      <!-- Guardrails -->
+      <mxCell id="g1" value="&lt;b&gt;Family Isolation&lt;/b&gt;&lt;br&gt;&lt;font face=&quot;Courier New&quot;&gt;alert_family label&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="sub">
+        <mxGeometry x="30" y="50" width="150" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="g2" value="&lt;b&gt;Identity Matching&lt;/b&gt;&lt;br&gt;&lt;font face=&quot;Courier New&quot;&gt;equal: namespace, cluster, name&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="sub">
+        <mxGeometry x="200" y="50" width="150" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="g3" value="&lt;b&gt;Jira vs OnCall Separation&lt;/b&gt;&lt;br&gt;&lt;font face=&quot;Courier New&quot;&gt;notify=jira or severity=page&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="sub">
+        <mxGeometry x="370" y="50" width="150" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="g4" value="&lt;b&gt;GitOps Enforcement&lt;/b&gt;&lt;br&gt;&lt;font face=&quot;Courier New&quot;&gt;CI rejects unlabeled rules&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="sub">
+        <mxGeometry x="540" y="50" width="150" height="70" as="geometry" />
+      </mxCell>
+      
+      <!-- Output -->
+      <mxCell id="out" value="&lt;b&gt;Tenant-Isolated Alert Delivery&lt;/b&gt;&lt;br&gt;&lt;i&gt;Cross-tenant suppression: structurally impossible&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#0d47a1;strokeWidth=2;" vertex="1" parent="1">
+        <mxGeometry x="200" y="360" width="400" height="80" as="geometry" />
+      </mxCell>
+      
+      <!-- Connectors -->
+      <mxCell id="f1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="in" target="g1" />
+      <mxCell id="f2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="in" target="g2" />
+      <mxCell id="f3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="in" target="g3" />
+      <mxCell id="f4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="in" target="g4" />
+      
+      <mxCell id="f5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="g1" target="out" />
+      <mxCell id="f6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="g2" target="out" />
+      <mxCell id="f7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="g3" target="out" />
+      <mxCell id="f8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="g4" target="out" />
+
+    </root>
+  </mxGraphModel>
+</mxfile>

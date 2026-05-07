@@ -1,0 +1,59 @@
+@startuml
+
+header Governance Process
+footer Page %page% of %lastpage%
+title Technical Decision Making
+
+actor    "BU Chief Architect\n(or delegate)"            as bu_architect
+actor    "Platform Architect\n(by domain)"              as platform_architect
+database "git://platformarch\n/main"                    as arch_repo_main
+database "git://platformarch\n/feature"                 as arch_repo_feature
+database "git://platformarch/issues"                    as arch_repo_issues
+
+bu_architect -> arch_repo_issues ++: Create Decision Issue
+
+note left
+types:
+  - new technology
+  - tech radar change
+  - patterns support
+  - new feature
+  - devex change
+  - global policy change
+end note
+
+arch_repo_issues -> platform_architect ++: ApproveOps notification
+    platform_architect -> arch_repo_issues: Discussion and curation
+    platform_architect -> arch_repo_issues: Create Backlog
+    note right
+    examples:
+    - POC
+    - cost model
+    - reliability model
+    - acceptance tests
+    - domain mapping
+    end note
+arch_repo_issues <- platform_architect --: approve
+
+platform_architect -> arch_repo_main ++: create branch(es) for decision backlog
+arch_repo_main -> arch_repo_feature ++:
+arch_repo_feature -> arch_repo_feature: standard development\nprocess for arch site
+bu_architect -> arch_repo_feature: participate in dev
+arch_repo_main <- arch_repo_feature --: PR created
+bu_architect -> arch_repo_main : PR approved
+platform_architect <- arch_repo_main --:
+
+platform_architect -> platform_architect : merge and publish \n site version with decision
+platform_architect -> platform_architect : review as release notes \n in monthly platform review
+
+bu_architect <- arch_repo_issues --:
+
+bu_architect -> bu_architect : Review with BU, create more issues
+
+' Depict
+' stages of docs/decisions
+' standard layering/classification of docs/diagrams
+' reference "knowledge in context" from Lending docs
+' readme with refs to other documentation and Teams links
+
+@enduml

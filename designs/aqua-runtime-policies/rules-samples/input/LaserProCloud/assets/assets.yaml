@@ -1,0 +1,23 @@
+zones: # STIZ
+  - name: zoneYYY # LP Dev
+    revenueGenerating: false
+  - name: zoneXXX # LP Prod
+    revenueGenerating: true
+
+tenantScope:
+# registries, namespaces and images used to build the LaserProCloud application scope:
+#      (aqua.registry.registry1 OR aqua.registry.registry2 OR ... OR aqua.registry."Ad Hoc Scans" )
+#  AND (kubernetes.namespace.ns1 OR kubernetes.namespace.ns2 OR ...)
+#  AND (image.repo.img1 OR image.repo.img2 OR ...)
+#
+# Maybe tenantScope can *as well* be defined as a single string to give more freedom.
+  registries: # if relevant
+    - p21d14104526001.azurecr.io
+    - p01p14102526001.azurecr.io
+
+  namespaces: # if relevant
+    - laserprocloud
+    - lp*
+
+  images: # required for Ad Hoc Scans
+    - laserprocloud/*
