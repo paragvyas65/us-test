@@ -51,16 +51,17 @@
     <polygon points="0 0, 10 3.5, 0 7" fill="#0d47a1" />
   </marker>
   <!-- Legend -->
-  <rect x="670" y="320" width="160" height="120" fill="#fff" stroke="#000" stroke-width="1"/>
-  <rect x="670" y="320" width="160" height="25" fill="#f0f0f0" stroke="#000" stroke-width="1"/>
-  <text x="750" y="337" class="label-bold" style="font-size: 12px;">Legend</text>
+  <rect x="720" y="350" width="115" height="95" rx="4" fill="#fff" stroke="#999" stroke-width="1"/>
+  <rect x="720" y="350" width="115" height="20" rx="4" fill="#f8f9fa" stroke="none"/>
+  <path d="M 720 370 L 835 370" stroke="#999" stroke-width="1"/>
+  <text x="777" y="364" style="font-family: Helvetica, Arial, sans-serif; font-size: 11px; font-weight: bold; fill: #333; text-anchor: middle;">Legend</text>
   
-  <rect x="680" y="355" width="60" height="20" rx="3" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
-  <text x="750" y="369" style="font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #000;" text-anchor="start">Source Event</text>
+  <rect x="730" y="380" width="30" height="15" rx="2" fill="#e8f5e9" stroke="#1b5e20" stroke-width="1.5"/>
+  <text x="765" y="391" style="font-family: Helvetica, Arial, sans-serif; font-size: 9px; fill: #333; text-anchor: start;">Source Event</text>
   
-  <rect x="680" y="385" width="60" height="20" rx="3" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
-  <text x="750" y="399" style="font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #000;" text-anchor="start">Enforcement</text>
+  <rect x="730" y="400" width="30" height="15" rx="2" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="765" y="411" style="font-family: Helvetica, Arial, sans-serif; font-size: 9px; fill: #333; text-anchor: start;">Enforcement</text>
   
-  <rect x="680" y="415" width="60" height="20" rx="3" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2"/>
-  <text x="750" y="429" style="font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #000;" text-anchor="start">Final State</text>
+  <rect x="730" y="420" width="30" height="15" rx="2" fill="#e3f2fd" stroke="#0d47a1" stroke-width="1.5"/>
+  <text x="765" y="431" style="font-family: Helvetica, Arial, sans-serif; font-size: 9px; fill: #333; text-anchor: start;">Final State</text>
 </svg>
