@@ -1,126 +1,208 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1100" viewBox="0 0 1200 1100">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" font-family="Arial, Helvetica, sans-serif">
   <defs>
-    <style type="text/css">
-      .title-tier { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 16px; fill: #424242; }
-      .container-title { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 14px; fill: #111; }
-      .label-bold { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 13px; fill: #000; text-anchor: middle; }
-      .label-small { font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #424242; text-anchor: middle; }
-      .label-italic { font-family: Helvetica, Arial, sans-serif; font-style: italic; font-size: 10px; fill: #424242; text-anchor: middle; }
-      .edge-label { font-family: Helvetica, Arial, sans-serif; font-size: 10px; fill: #333; text-anchor: middle; }
-    </style>
+    <marker id="arr-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 z" fill="#4a148c"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 z" fill="#1b5e20"/>
+    </marker>
+    <marker id="arr-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 z" fill="#0d47a1"/>
+    </marker>
+    <marker id="arr-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 z" fill="#666"/>
+    </marker>
   </defs>
-  
-  <rect width="1200" height="1100" fill="#fff"/>
-  
-  <!-- Tier Labels (Far Left) -->
-  <text x="20" y="40" class="title-tier">USERS &amp; IDENTITY</text>
-  <text x="20" y="240" class="title-tier">CONTROL PLANE</text>
-  <text x="20" y="460" class="title-tier">INGESTION</text>
-  <text x="20" y="710" class="title-tier">CLOUD BOUNDARY</text>
 
-  <!-- Tier 1: User & Identity -->
-  <rect x="260" y="20" width="900" height="150" rx="10" fill="#fff9c4" stroke="#fbc02d" stroke-width="2"/>
-  <text x="280" y="45" class="container-title">User &amp; Identity Tier</text>
-  
-  <rect x="280" y="60" width="200" height="80" rx="5" fill="#fff" stroke="#fbc02d" stroke-width="2"/>
-  <text x="380" y="85" class="label-bold">Product Developers</text>
-  <text x="380" y="105" class="label-small">View ONLY their product</text>
-  
-  <rect x="495" y="60" width="200" height="80" rx="5" fill="#fff" stroke="#fbc02d" stroke-width="2"/>
-  <text x="595" y="85" class="label-bold">DevOps &amp; SRE</text>
-  <text x="595" y="105" class="label-small">Cross-product view</text>
-  
-  <rect x="710" y="60" width="200" height="80" rx="5" fill="#fff" stroke="#fbc02d" stroke-width="2"/>
-  <text x="810" y="85" class="label-bold">VP / P&amp;L Owners</text>
-  <text x="810" y="105" class="label-small">Cost Showback</text>
-  
-  <rect x="925" y="60" width="200" height="80" rx="5" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
-  <text x="1025" y="85" class="label-bold">Azure Entra ID</text>
-  <text x="1025" y="105" class="label-small">SSO &amp; Security Groups</text>
+  <!-- Tier Labels (left side) -->
+  <text x="20" y="100" font-size="13" font-weight="bold" fill="#666" letter-spacing="1.5">USERS &amp;</text>
+  <text x="20" y="118" font-size="13" font-weight="bold" fill="#666" letter-spacing="1.5">IDENTITY</text>
 
-  <!-- User Access to Entra ID Lines -->
-  <path d="M 480 100 L 925 100" stroke="#fbc02d" stroke-width="2" marker-end="url(#arrow-yellow)"/>
+  <text x="20" y="320" font-size="13" font-weight="bold" fill="#666" letter-spacing="1.5">CONTROL</text>
+  <text x="20" y="338" font-size="13" font-weight="bold" fill="#666" letter-spacing="1.5">PLANE</text>
 
-  <!-- Tier 2: Control Plane -->
-  <rect x="260" y="220" width="900" height="150" rx="10" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
-  <text x="280" y="245" class="container-title">GitOps Control Plane</text>
-  
-  <rect x="290" y="270" width="220" height="60" rx="5" fill="#fff" stroke="#4a148c" stroke-width="2"/>
-  <text x="400" y="295" class="label-bold">GitHub Repositories</text>
-  <text x="400" y="315" class="label-small">CODEOWNERS Approvals</text>
-  
-  <rect x="580" y="270" width="220" height="60" rx="5" fill="#fff" stroke="#4a148c" stroke-width="2"/>
-  <text x="690" y="295" class="label-bold">Terraform Cloud</text>
-  <text x="690" y="315" class="label-small">Stateful Provisioning</text>
-  
-  <rect x="870" y="270" width="220" height="60" rx="5" fill="#fff" stroke="#4a148c" stroke-width="2"/>
-  <text x="980" y="295" class="label-bold">Azure Key Vault</text>
-  <text x="980" y="315" class="label-small">Secrets Management</text>
+  <text x="20" y="540" font-size="13" font-weight="bold" fill="#666" letter-spacing="1.5">INGESTION</text>
 
-  <!-- Control Flow Lines -->
-  <path d="M 510 300 L 580 300" stroke="#4a148c" stroke-width="2" marker-end="url(#arrow-purple)"/>
-  <text x="545" y="290" class="edge-label">On PR Merge</text>
-  
-  <path d="M 800 300 L 870 300" stroke="#4a148c" stroke-width="2" marker-end="url(#arrow-purple)"/>
-  <text x="835" y="290" class="edge-label">Fetches Secrets</text>
-  
-  <path d="M 690 270 L 690 200 L 1025 200 L 1025 140" fill="none" stroke="#4a148c" stroke-width="2" marker-end="url(#arrow-purple)"/>
-  <text x="850" y="195" class="edge-label">Syncs Groups</text>
+  <text x="20" y="780" font-size="13" font-weight="bold" fill="#666" letter-spacing="1.5">CLOUD</text>
+  <text x="20" y="798" font-size="13" font-weight="bold" fill="#666" letter-spacing="1.5">BOUNDARY</text>
 
-  <!-- Tier 3: Ingestion -->
-  <rect x="260" y="440" width="900" height="200" rx="10" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
-  <text x="280" y="465" class="container-title">Telemetry Ingestion</text>
-  
-  <rect x="290" y="490" width="180" height="80" rx="5" fill="#fff" stroke="#1b5e20" stroke-width="2"/>
-  <text x="380" y="515" class="label-bold">AKS Clusters</text>
-  <text x="380" y="535" class="label-small">LaserPro</text>
-  
-  <rect x="500" y="490" width="180" height="80" rx="5" fill="#fff" stroke="#1b5e20" stroke-width="2"/>
-  <text x="590" y="515" class="label-bold">Azure VMs</text>
-  <text x="590" y="535" class="label-small">Pay2Go</text>
-  
-  <rect x="710" y="490" width="180" height="80" rx="5" fill="#fff" stroke="#1b5e20" stroke-width="2"/>
-  <text x="800" y="515" class="label-bold">Databases</text>
-  <text x="800" y="535" class="label-small">U. Banking</text>
-  
-  <rect x="920" y="500" width="200" height="60" rx="5" fill="#fff" stroke="#1b5e20" stroke-width="2"/>
-  <text x="1020" y="525" class="label-bold">Grafana Alloy</text>
-  <text x="1020" y="545" class="label-small">Enforces Labeling</text>
+  <!-- =========================== -->
+  <!-- TIER 1: USERS & IDENTITY -->
+  <!-- =========================== -->
+  <rect x="160" y="40" width="1010" height="180" rx="8" fill="#fff9c4" stroke="#fbc02d" stroke-width="2"/>
+  <text x="180" y="68" font-size="14" font-weight="bold" fill="#5d4037">User &amp; Identity Tier</text>
 
-  <!-- Ingestion Flow Lines -->
-  <path d="M 470 530 L 920 530" stroke="#1b5e20" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <!-- Product Developers -->
+  <rect x="180" y="90" width="180" height="100" rx="6" fill="#ffffff" stroke="#fbc02d" stroke-width="2"/>
+  <text x="270" y="120" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Product Developers</text>
+  <text x="270" y="145" font-size="11" fill="#424242" text-anchor="middle">View ONLY their</text>
+  <text x="270" y="160" font-size="11" fill="#424242" text-anchor="middle">product</text>
 
-  <!-- Tier 4: Cloud Boundary -->
-  <rect x="260" y="690" width="900" height="350" rx="10" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2"/>
-  <text x="280" y="715" class="container-title">Grafana Cloud (Finastra Org)</text>
-  
-  <rect x="280" y="740" width="260" height="280" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
-  <text x="410" y="765" class="label-bold">Lending BU Stack</text>
-  
-  <rect x="560" y="740" width="260" height="280" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
-  <text x="690" y="765" class="label-bold">Payment BU Stack</text>
-  
-  <rect x="840" y="740" width="300" height="150" rx="5" fill="#f1f5f9" stroke="#64748b" stroke-width="2" stroke-dasharray="5,5"/>
-  <text x="990" y="765" class="label-bold">Central Stack</text>
+  <!-- DevOps & SRE -->
+  <rect x="380" y="90" width="180" height="100" rx="6" fill="#ffffff" stroke="#fbc02d" stroke-width="2"/>
+  <text x="470" y="120" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">DevOps &amp; SRE</text>
+  <text x="470" y="145" font-size="11" fill="#424242" text-anchor="middle">Cross-product</text>
+  <text x="470" y="160" font-size="11" fill="#424242" text-anchor="middle">operational view</text>
 
-  <!-- External Data Flow Lines -->
-  <path d="M 1020 560 L 1020 660 L 410 660 L 410 740" fill="none" stroke="#1b5e20" stroke-width="2" marker-end="url(#arrow-green)"/>
-  <text x="715" y="650" class="edge-label">OTLP (Metrics, Logs, Traces)</text>
-  
-  <path d="M 690 330 L 690 675 L 260 675" fill="none" stroke="#4a148c" stroke-width="2" marker-end="url(#arrow-purple)"/>
-  <text x="475" y="685" class="edge-label">Provisions API (Stacks, Folders, RBAC, LBAC)</text>
-  
-  <path d="M 1125 100 L 1170 100 L 1170 865 L 1160 865" fill="none" stroke="#4a148c" stroke-width="2" marker-end="url(#arrow-purple)" stroke-dasharray="5,5"/>
-  <text x="1150" y="480" class="edge-label" transform="rotate(90, 1150, 480)">Maps to RBAC/LBAC rules</text>
+  <!-- VP / P&L Owners -->
+  <rect x="580" y="90" width="180" height="100" rx="6" fill="#ffffff" stroke="#fbc02d" stroke-width="2"/>
+  <text x="670" y="120" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">VP / P&amp;L Owners</text>
+  <text x="670" y="145" font-size="11" fill="#424242" text-anchor="middle">Cost Showback &amp;</text>
+  <text x="670" y="160" font-size="11" fill="#424242" text-anchor="middle">Billing</text>
 
-  <!-- Markers -->
-  <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-    <polygon points="0 0, 10 3.5, 0 7" fill="#4a148c" />
-  </marker>
-  <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-    <polygon points="0 0, 10 3.5, 0 7" fill="#1b5e20" />
-  </marker>
-  <marker id="arrow-yellow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-    <polygon points="0 0, 10 3.5, 0 7" fill="#fbc02d" />
-  </marker>
+  <!-- Azure Entra ID -->
+  <rect x="850" y="90" width="200" height="100" rx="6" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+  <text x="950" y="120" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Azure Entra ID</text>
+  <text x="950" y="145" font-size="11" fill="#424242" text-anchor="middle">SSO &amp;</text>
+  <text x="950" y="160" font-size="11" fill="#424242" text-anchor="middle">Security Groups</text>
+
+  <!-- Arrows: Personas → Entra (subtle gray) -->
+  <path d="M 270 190 L 270 200 L 850 200 L 850 195" fill="none" stroke="#666" stroke-width="1.2" marker-end="url(#arr-gray)"/>
+  <path d="M 470 190 L 470 200 L 850 200" fill="none" stroke="#666" stroke-width="1.2"/>
+  <path d="M 670 190 L 670 200 L 850 200" fill="none" stroke="#666" stroke-width="1.2"/>
+
+  <!-- =========================== -->
+  <!-- TIER 2: CONTROL PLANE -->
+  <!-- =========================== -->
+  <rect x="160" y="260" width="1010" height="180" rx="8" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+  <text x="180" y="288" font-size="14" font-weight="bold" fill="#4a148c">GitOps Control Plane</text>
+
+  <!-- GitHub -->
+  <rect x="200" y="310" width="220" height="100" rx="6" fill="#ffffff" stroke="#4a148c" stroke-width="2"/>
+  <text x="310" y="340" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">GitHub Repositories</text>
+  <text x="310" y="365" font-size="11" fill="#424242" text-anchor="middle">CODEOWNERS</text>
+  <text x="310" y="380" font-size="11" fill="#424242" text-anchor="middle">Approvals</text>
+
+  <!-- Terraform Cloud -->
+  <rect x="490" y="310" width="220" height="100" rx="6" fill="#ffffff" stroke="#4a148c" stroke-width="2"/>
+  <text x="600" y="340" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Terraform Cloud</text>
+  <text x="600" y="365" font-size="11" fill="#424242" text-anchor="middle">Stateful</text>
+  <text x="600" y="380" font-size="11" fill="#424242" text-anchor="middle">Provisioning</text>
+
+  <!-- Azure Key Vault -->
+  <rect x="780" y="310" width="220" height="100" rx="6" fill="#ffffff" stroke="#4a148c" stroke-width="2"/>
+  <text x="890" y="340" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Azure Key Vault</text>
+  <text x="890" y="365" font-size="11" fill="#424242" text-anchor="middle">Secrets</text>
+  <text x="890" y="380" font-size="11" fill="#424242" text-anchor="middle">Management</text>
+
+  <!-- Arrow: GitHub → Terraform "On PR Merge" -->
+  <path d="M 420 360 L 490 360" fill="none" stroke="#4a148c" stroke-width="2" marker-end="url(#arr-purple)"/>
+  <text x="455" y="354" font-size="10" fill="#4a148c" text-anchor="middle" font-weight="bold">On PR Merge</text>
+
+  <!-- Arrow: Terraform → KeyVault "Fetches Secrets" -->
+  <path d="M 710 360 L 780 360" fill="none" stroke="#4a148c" stroke-width="2" marker-end="url(#arr-purple)"/>
+  <text x="745" y="354" font-size="10" fill="#4a148c" text-anchor="middle" font-weight="bold">Fetches Secrets</text>
+
+  <!-- Arrow: Terraform → Entra ID "Syncs Groups" (long curve up) -->
+  <path d="M 600 310 L 600 240 L 950 240 L 950 190" fill="none" stroke="#4a148c" stroke-width="2" marker-end="url(#arr-purple)"/>
+  <text x="775" y="234" font-size="10" fill="#4a148c" text-anchor="middle" font-weight="bold">Syncs Groups</text>
+
+  <!-- =========================== -->
+  <!-- TIER 3: INGESTION -->
+  <!-- =========================== -->
+  <rect x="160" y="480" width="1010" height="200" rx="8" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+  <text x="180" y="508" font-size="14" font-weight="bold" fill="#1b5e20">Telemetry Ingestion (With Enforced Taxonomy)</text>
+
+  <!-- AKS Clusters -->
+  <rect x="180" y="530" width="200" height="120" rx="6" fill="#ffffff" stroke="#1b5e20" stroke-width="2"/>
+  <text x="280" y="560" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">AKS Clusters</text>
+  <text x="280" y="585" font-size="12" fill="#1a1a1a" text-anchor="middle" font-weight="600">(LaserPro)</text>
+  <text x="280" y="615" font-size="11" fill="#424242" text-anchor="middle" font-style="italic">bu=lend,</text>
+  <text x="280" y="630" font-size="11" fill="#424242" text-anchor="middle" font-style="italic">env=prod/dev</text>
+
+  <!-- Azure VMs -->
+  <rect x="400" y="530" width="200" height="120" rx="6" fill="#ffffff" stroke="#1b5e20" stroke-width="2"/>
+  <text x="500" y="560" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Azure VMs</text>
+  <text x="500" y="585" font-size="12" fill="#1a1a1a" text-anchor="middle" font-weight="600">(Pay2Go)</text>
+  <text x="500" y="615" font-size="11" fill="#424242" text-anchor="middle" font-style="italic">bu=pay,</text>
+  <text x="500" y="630" font-size="11" fill="#424242" text-anchor="middle" font-style="italic">env=prod</text>
+
+  <!-- Databases -->
+  <rect x="620" y="530" width="200" height="120" rx="6" fill="#ffffff" stroke="#1b5e20" stroke-width="2"/>
+  <text x="720" y="560" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Databases</text>
+  <text x="720" y="585" font-size="12" fill="#1a1a1a" text-anchor="middle" font-weight="600">(Universal Banking)</text>
+  <text x="720" y="615" font-size="11" fill="#424242" text-anchor="middle" font-style="italic">bu=ubnk,</text>
+  <text x="720" y="630" font-size="11" fill="#424242" text-anchor="middle" font-style="italic">env=stage</text>
+
+  <!-- Grafana Alloy (highlighted) -->
+  <rect x="900" y="530" width="220" height="120" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="2.5"/>
+  <text x="1010" y="565" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Grafana Alloy</text>
+  <text x="1010" y="585" font-size="11" fill="#1a1a1a" text-anchor="middle">Collectors</text>
+  <text x="1010" y="615" font-size="11" fill="#e65100" text-anchor="middle" font-weight="bold">Enforces Label</text>
+  <text x="1010" y="630" font-size="11" fill="#e65100" text-anchor="middle" font-weight="bold">Discipline</text>
+
+  <!-- Arrows: Sources → Alloy -->
+  <path d="M 380 590 L 900 590" fill="none" stroke="#1b5e20" stroke-width="1.5" marker-end="url(#arr-green)"/>
+  <path d="M 600 590 L 900 590" fill="none" stroke="#1b5e20" stroke-width="1.5"/>
+  <path d="M 820 590 L 900 590" fill="none" stroke="#1b5e20" stroke-width="1.5"/>
+
+  <!-- =========================== -->
+  <!-- TIER 4: CLOUD BOUNDARY -->
+  <!-- =========================== -->
+  <rect x="160" y="720" width="1010" height="450" rx="8" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2"/>
+  <text x="180" y="748" font-size="14" font-weight="bold" fill="#0d47a1">Grafana Cloud SaaS (Finastra Global Org)</text>
+
+  <!-- Lending BU Stack -->
+  <rect x="190" y="775" width="305" height="380" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+  <text x="342" y="800" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Lending BU Stack</text>
+  <text x="342" y="818" font-size="11" fill="#e65100" text-anchor="middle" font-weight="bold">AZR-C03-LEND-0001</text>
+
+  <!-- LBAC node -->
+  <rect x="210" y="838" width="265" height="50" rx="4" fill="#ffffff" stroke="#424242" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="342" y="858" font-size="11" font-weight="bold" fill="#1a1a1a" text-anchor="middle">🔒 LBAC: Enforces 'product'</text>
+  <text x="342" y="875" font-size="11" font-weight="bold" fill="#1a1a1a" text-anchor="middle">isolation</text>
+
+  <!-- LaserPro folder -->
+  <rect x="210" y="900" width="265" height="60" rx="4" fill="#ffffff" stroke="#424242" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="342" y="922" font-size="12" font-weight="bold" fill="#1a1a1a" text-anchor="middle">📁 Folder: LaserPro</text>
+  <text x="342" y="942" font-size="10" fill="#424242" text-anchor="middle">Dashboards &amp; Alerts (Cross-Tier)</text>
+
+  <!-- LoanIQ folder -->
+  <rect x="210" y="975" width="265" height="60" rx="4" fill="#ffffff" stroke="#424242" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="342" y="997" font-size="12" font-weight="bold" fill="#1a1a1a" text-anchor="middle">📁 Folder: LoanIQ</text>
+  <text x="342" y="1017" font-size="10" fill="#424242" text-anchor="middle">Dashboards &amp; Alerts</text>
+
+  <!-- Payment BU Stack -->
+  <rect x="515" y="775" width="305" height="380" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+  <text x="667" y="800" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Payment BU Stack</text>
+  <text x="667" y="818" font-size="11" fill="#e65100" text-anchor="middle" font-weight="bold">AZR-C03-PAYM-0001</text>
+
+  <!-- LBAC node -->
+  <rect x="535" y="838" width="265" height="50" rx="4" fill="#ffffff" stroke="#424242" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="667" y="858" font-size="11" font-weight="bold" fill="#1a1a1a" text-anchor="middle">🔒 LBAC: Enforces 'product'</text>
+  <text x="667" y="875" font-size="11" font-weight="bold" fill="#1a1a1a" text-anchor="middle">isolation</text>
+
+  <!-- Pay2Go folder -->
+  <rect x="535" y="900" width="265" height="60" rx="4" fill="#ffffff" stroke="#424242" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="667" y="922" font-size="12" font-weight="bold" fill="#1a1a1a" text-anchor="middle">📁 Folder: Pay2Go</text>
+  <text x="667" y="942" font-size="10" fill="#424242" text-anchor="middle">Dashboards &amp; Alerts</text>
+
+  <!-- GlobalPay folder -->
+  <rect x="535" y="975" width="265" height="60" rx="4" fill="#ffffff" stroke="#424242" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="667" y="997" font-size="12" font-weight="bold" fill="#1a1a1a" text-anchor="middle">📁 Folder: GlobalPay</text>
+  <text x="667" y="1017" font-size="10" fill="#424242" text-anchor="middle">Dashboards &amp; Alerts</text>
+
+  <!-- Shared Services Stack -->
+  <rect x="840" y="775" width="305" height="380" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="992" y="800" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Shared Services /</text>
+  <text x="992" y="818" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Central Stack</text>
+
+  <!-- Central Billing folder -->
+  <rect x="860" y="900" width="265" height="80" rx="4" fill="#ffffff" stroke="#424242" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="992" y="925" font-size="12" font-weight="bold" fill="#1a1a1a" text-anchor="middle">📁 Folder: Central Billing</text>
+  <text x="992" y="950" font-size="10" fill="#424242" text-anchor="middle">Cost Attribution</text>
+  <text x="992" y="965" font-size="10" fill="#424242" text-anchor="middle">filterable by 'product'</text>
+
+  <!-- Arrow: Terraform Cloud → Cloud Org "Provisions API" -->
+  <path d="M 600 410 L 600 700 L 165 700 L 165 720" fill="none" stroke="#4a148c" stroke-width="2" marker-end="url(#arr-purple)"/>
+  <text x="380" y="694" font-size="10" fill="#4a148c" font-weight="bold">Provisions API (Stacks, Folders, RBAC, LBAC)</text>
+
+  <!-- Arrow: Alloy → Stacks "OTLP" -->
+  <path d="M 1010 650 L 1010 700 L 342 700 L 342 775" fill="none" stroke="#1b5e20" stroke-width="2" marker-end="url(#arr-green)"/>
+  <path d="M 1010 700 L 667 700 L 667 775" fill="none" stroke="#1b5e20" stroke-width="2" marker-end="url(#arr-green)"/>
+  <text x="780" y="694" font-size="10" fill="#1b5e20" font-weight="bold">OTLP (Metrics, Logs, Traces)</text>
+
+  <!-- Arrow: Entra → Org (dashed access flow) -->
+  <path d="M 1050 140 L 1170 140 L 1170 940" fill="none" stroke="#4a148c" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-purple)"/>
+  <text x="1085" y="135" font-size="10" fill="#4a148c" font-style="italic">Maps to RBAC/LBAC rules</text>
 </svg>

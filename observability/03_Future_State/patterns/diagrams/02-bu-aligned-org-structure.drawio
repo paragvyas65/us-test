@@ -1,89 +1,13 @@
-<mxfile host="app.diagrams.net" modified="2026-05-07T19:40:00.000Z" agent="Antigravity" version="21.0.0" type="device">
-  <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-    <root>
-      <mxCell id="0" />
-      <mxCell id="1" parent="0" />
-      
-      <!-- Finastra Org (Root) -->
-      <mxCell id="root" value="&lt;b&gt;Finastra Org&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#0d47a1;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
-        <mxGeometry x="340" y="20" width="160" height="60" as="geometry" />
-      </mxCell>
-      
-      <!-- BU Stacks (Level 2) -->
-      <mxCell id="bu1" value="&lt;b&gt;AZR-C03-LEND-0001&lt;/b&gt;&lt;br&gt;Lending BU" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="1">
-        <mxGeometry x="40" y="140" width="140" height="70" as="geometry" />
-      </mxCell>
-      <mxCell id="bu2" value="&lt;b&gt;AZR-C03-PAYM-0001&lt;/b&gt;&lt;br&gt;Payment BU" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="1">
-        <mxGeometry x="200" y="140" width="140" height="70" as="geometry" />
-      </mxCell>
-      <mxCell id="bu3" value="&lt;b&gt;AZR-C03-UBNK-0001&lt;/b&gt;&lt;br&gt;Universal Banking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="1">
-        <mxGeometry x="360" y="140" width="140" height="70" as="geometry" />
-      </mxCell>
-      <mxCell id="bu4" value="&lt;b&gt;AZR-C03-TCMG-0001&lt;/b&gt;&lt;br&gt;TCM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="1">
-        <mxGeometry x="520" y="140" width="140" height="70" as="geometry" />
-      </mxCell>
-      <mxCell id="bu5" value="&lt;b&gt;AZR-C03-CORN-0001&lt;/b&gt;&lt;br&gt;Cornerstone &amp; SES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;" vertex="1" parent="1">
-        <mxGeometry x="680" y="140" width="140" height="70" as="geometry" />
-      </mxCell>
-      
-      <!-- Connectors (Level 1 to 2) -->
-      <mxCell id="l1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="root" target="bu1" />
-      <mxCell id="l2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="root" target="bu2" />
-      <mxCell id="l3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="root" target="bu3" />
-      <mxCell id="l4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="root" target="bu4" />
-      <mxCell id="l5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="root" target="bu5" />
-      
-      <!-- Products (Level 3) -->
-      <!-- Lending -->
-      <mxCell id="p1" value="Product: LaserPro" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
-        <mxGeometry x="30" y="260" width="70" height="50" as="geometry" />
-      </mxCell>
-      <mxCell id="p2" value="Product: LoanIQ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
-        <mxGeometry x="110" y="260" width="70" height="50" as="geometry" />
-      </mxCell>
-      <mxCell id="lp1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu1" target="p1" />
-      <mxCell id="lp2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu1" target="p2" />
-      
-      <!-- Payment -->
-      <mxCell id="p3" value="Product: Pay2Go" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
-        <mxGeometry x="190" y="260" width="70" height="50" as="geometry" />
-      </mxCell>
-      <mxCell id="p4" value="Product: GlobalPay" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
-        <mxGeometry x="270" y="260" width="70" height="50" as="geometry" />
-      </mxCell>
-      <mxCell id="pp1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu2" target="p3" />
-      <mxCell id="pp2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu2" target="p4" />
-      
-      <!-- Universal Banking -->
-      <mxCell id="p5" value="Product: FusionBank" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
-        <mxGeometry x="350" y="260" width="70" height="50" as="geometry" />
-      </mxCell>
-      <mxCell id="p6" value="Product: Equation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
-        <mxGeometry x="430" y="260" width="70" height="50" as="geometry" />
-      </mxCell>
-      <mxCell id="up1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu3" target="p5" />
-      <mxCell id="up2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu3" target="p6" />
-      
-      <!-- TCM -->
-      <mxCell id="p7" value="Product: Kondor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
-        <mxGeometry x="510" y="260" width="70" height="50" as="geometry" />
-      </mxCell>
-      <mxCell id="p8" value="Product: Front Arena" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
-        <mxGeometry x="590" y="260" width="70" height="50" as="geometry" />
-      </mxCell>
-      <mxCell id="tp1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu4" target="p7" />
-      <mxCell id="tp2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu4" target="p8" />
-      
-      <!-- Cornerstone -->
-      <mxCell id="p9" value="Product: Cornerstone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
-        <mxGeometry x="670" y="260" width="70" height="50" as="geometry" />
-      </mxCell>
-      <mxCell id="p10" value="Product: SES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#424242;strokeWidth=2;strokeDasharray=5 5;" vertex="1" parent="1">
-        <mxGeometry x="750" y="260" width="70" height="50" as="geometry" />
-      </mxCell>
-      <mxCell id="cp1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu5" target="p9" />
-      <mxCell id="cp2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="bu5" target="p10" />
-
-    </root>
-  </mxGraphModel>
+<mxfile host="app.diagrams.net" agent="Antigravity" version="22.0.0">
+  <diagram name="Page-1" id="02-bu-aligned-org-structure">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="svg-image" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22950%22%20height%3D%22380%22%20viewBox%3D%220%200%20950%20380%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cstyle%20type%3D%22text/css%22%3E%0A%20%20%20%20%20%20.label-bold%20%7B%20font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-weight%3A%20bold%3B%20font-size%3A%2014px%3B%20fill%3A%20%23000%3B%20text-anchor%3A%20middle%3B%20%7D%0A%20%20%20%20%20%20.label-small%20%7B%20font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2011px%3B%20fill%3A%20%23000%3B%20text-anchor%3A%20middle%3B%20%7D%0A%20%20%20%20%20%20.product-label%20%7B%20font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2010px%3B%20fill%3A%20%23424242%3B%20text-anchor%3A%20middle%3B%20%7D%0A%20%20%20%20%3C/style%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22950%22%20height%3D%22380%22%20fill%3D%22%23fff%22/%3E%0A%20%20%0A%20%20%3C%21--%20Level%201%3A%20Root%20--%3E%0A%20%20%3Crect%20x%3D%22395%22%20y%3D%2210%22%20width%3D%22160%22%20height%3D%2260%22%20rx%3D%225%22%20fill%3D%22%23e3f2fd%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22475%22%20y%3D%2245%22%20class%3D%22label-bold%22%3EFinastra%20Org%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20Level%202%3A%20BU%20Stacks%20--%3E%0A%20%20%3C%21--%20Lending%20--%3E%0A%20%20%3Crect%20x%3D%2240%22%20y%3D%22120%22%20width%3D%22160%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23fff3e0%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22120%22%20y%3D%22145%22%20class%3D%22label-small%22%3EAZR-C03-LEND-0001%3C/text%3E%0A%20%20%3Ctext%20x%3D%22120%22%20y%3D%22165%22%20class%3D%22label-bold%22%3ELending%20BU%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20Payment%20--%3E%0A%20%20%3Crect%20x%3D%22220%22%20y%3D%22120%22%20width%3D%22160%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23fff3e0%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22145%22%20class%3D%22label-small%22%3EAZR-C03-PAYM-0001%3C/text%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22165%22%20class%3D%22label-bold%22%3EPayment%20BU%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20Universal%20Banking%20--%3E%0A%20%20%3Crect%20x%3D%22400%22%20y%3D%22120%22%20width%3D%22160%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23fff3e0%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22480%22%20y%3D%22145%22%20class%3D%22label-small%22%3EAZR-C03-UBNK-0001%3C/text%3E%0A%20%20%3Ctext%20x%3D%22480%22%20y%3D%22165%22%20class%3D%22label-bold%22%3EUniv.%20Banking%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20TCM%20--%3E%0A%20%20%3Crect%20x%3D%22580%22%20y%3D%22120%22%20width%3D%22160%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23fff3e0%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22660%22%20y%3D%22145%22%20class%3D%22label-small%22%3EAZR-C03-TCMG-0001%3C/text%3E%0A%20%20%3Ctext%20x%3D%22660%22%20y%3D%22165%22%20class%3D%22label-bold%22%3ETCM%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20Cornerstone%20--%3E%0A%20%20%3Crect%20x%3D%22760%22%20y%3D%22120%22%20width%3D%22160%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23fff3e0%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22840%22%20y%3D%22145%22%20class%3D%22label-small%22%3EAZR-C03-CORN-0001%3C/text%3E%0A%20%20%3Ctext%20x%3D%22840%22%20y%3D%22165%22%20class%3D%22label-bold%22%3ECornerstone%3C/text%3E%0A%0A%20%20%3C%21--%20Connectors%20L1%20to%20L2%20--%3E%0A%20%20%3Cpath%20d%3D%22M%20475%2070%20L%20475%2095%20L%20120%2095%20L%20120%20120%22%20fill%3D%22none%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20475%2070%20L%20475%2095%20L%20300%2095%20L%20300%20120%22%20fill%3D%22none%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20475%2070%20L%20475%20120%22%20fill%3D%22none%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20475%2070%20L%20475%2095%20L%20660%2095%20L%20660%20120%22%20fill%3D%22none%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20475%2070%20L%20475%2095%20L%20840%2095%20L%20840%20120%22%20fill%3D%22none%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%0A%20%20%3C%21--%20Level%203%3A%20Products%20--%3E%0A%20%20%3Crect%20x%3D%2240%22%20y%3D%22240%22%20width%3D%2275%22%20height%3D%2250%22%20rx%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%23424242%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%2C5%22/%3E%0A%20%20%3Ctext%20x%3D%2277%22%20y%3D%22270%22%20class%3D%22product-label%22%3ELaserPro%3C/text%3E%0A%20%20%3Crect%20x%3D%22125%22%20y%3D%22240%22%20width%3D%2275%22%20height%3D%2250%22%20rx%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%23424242%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%2C5%22/%3E%0A%20%20%3Ctext%20x%3D%22162%22%20y%3D%22270%22%20class%3D%22product-label%22%3ELoanIQ%3C/text%3E%0A%20%20%3Cpath%20d%3D%22M%20120%20190%20L%20120%20215%20L%2077%20215%20L%2077%20240%22%20fill%3D%22none%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20120%20190%20L%20120%20215%20L%20162%20215%20L%20162%20240%22%20fill%3D%22none%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%221%22/%3E%0A%0A%20%20%3Crect%20x%3D%22220%22%20y%3D%22240%22%20width%3D%2275%22%20height%3D%2250%22%20rx%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%23424242%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%2C5%22/%3E%0A%20%20%3Ctext%20x%3D%22257%22%20y%3D%22270%22%20class%3D%22product-label%22%3EPay2Go%3C/text%3E%0A%20%20%3Crect%20x%3D%22305%22%20y%3D%22240%22%20width%3D%2275%22%20height%3D%2250%22%20rx%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%23424242%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%2C5%22/%3E%0A%20%20%3Ctext%20x%3D%22342%22%20y%3D%22270%22%20class%3D%22product-label%22%3EGlobalPay%3C/text%3E%0A%20%20%3Cpath%20d%3D%22M%20300%20190%20L%20300%20215%20L%20257%20215%20L%20257%20240%22%20fill%3D%22none%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20300%20190%20L%20300%20215%20L%20342%20215%20L%20342%20240%22%20fill%3D%22none%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%221%22/%3E%0A%20%20%3C%21--%20Legend%20--%3E%0A%20%20%3Crect%20x%3D%22750%22%20y%3D%22240%22%20width%3D%22160%22%20height%3D%22120%22%20fill%3D%22%23fff%22%20stroke%3D%22%23000%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Crect%20x%3D%22750%22%20y%3D%22240%22%20width%3D%22160%22%20height%3D%2225%22%20fill%3D%22%23f0f0f0%22%20stroke%3D%22%23000%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Ctext%20x%3D%22830%22%20y%3D%22257%22%20class%3D%22label-bold%22%3ELegend%3C/text%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22760%22%20y%3D%22275%22%20width%3D%2260%22%20height%3D%2220%22%20rx%3D%223%22%20fill%3D%22%23e3f2fd%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22830%22%20y%3D%22289%22%20class%3D%22label-small%22%20text-anchor%3D%22start%22%3ERoot%20Org%3C/text%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22760%22%20y%3D%22305%22%20width%3D%2260%22%20height%3D%2220%22%20rx%3D%223%22%20fill%3D%22%23fff3e0%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22830%22%20y%3D%22319%22%20class%3D%22label-small%22%20text-anchor%3D%22start%22%3EBU%20Stack%3C/text%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22760%22%20y%3D%22335%22%20width%3D%2260%22%20height%3D%2220%22%20rx%3D%223%22%20fill%3D%22%23fff%22%20stroke%3D%22%23424242%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%2C5%22/%3E%0A%20%20%3Ctext%20x%3D%22830%22%20y%3D%22349%22%20class%3D%22label-small%22%20text-anchor%3D%22start%22%3EProduct%3C/text%3E%0A%3C/svg%3E%0A" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="950" height="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
 </mxfile>

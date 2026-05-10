@@ -1,36 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="680" height="200" viewBox="0 0 680 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
   <defs>
     <style type="text/css">
-      .label-small { font-family: Helvetica, Arial, sans-serif; font-size: 11px; fill: #424242; }
-      .label-large { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 18px; fill: #000; }
-      .example { font-family: Helvetica, Arial, sans-serif; font-size: 14px; fill: #424242; text-anchor: middle; }
+      .label-top { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 14px; fill: #000; text-anchor: middle; text-transform: uppercase; }
+      .label-bottom { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 24px; fill: #fff; text-anchor: middle; }
+      .example-text { font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 28px; fill: #000; text-anchor: middle; }
+      .leg-text { font-family: Helvetica, Arial, sans-serif; font-size: 12px; fill: #000; }
     </style>
   </defs>
-  <rect width="680" height="200" fill="#fff"/>
+  <rect width="800" height="450" fill="#fff"/>
   
-  <rect x="40" y="40" width="120" height="80" rx="10" fill="#fce4ec" stroke="#c2185b" stroke-width="2"/>
-  <text x="100" y="65" text-anchor="middle" class="label-small">Provider</text>
-  <text x="100" y="95" text-anchor="middle" class="label-large">AZR</text>
+  <!-- Box 1 -->
+  <rect x="50" y="40" width="160" height="100" stroke="#000" stroke-width="1"/>
+  <rect x="50" y="40" width="160" height="50" fill="#fff"/>
+  <rect x="50" y="90" width="160" height="50" fill="#e91e63"/>
+  <text x="130" y="70" class="label-top">Provider</text>
+  <text x="130" y="125" class="label-bottom">AZR</text>
   
-  <rect x="200" y="40" width="120" height="80" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
-  <text x="260" y="65" text-anchor="middle" class="label-small">Region</text>
-  <text x="260" y="95" text-anchor="middle" class="label-large">C03</text>
+  <!-- Box 2 -->
+  <rect x="230" y="40" width="160" height="100" stroke="#000" stroke-width="1"/>
+  <rect x="230" y="40" width="160" height="50" fill="#fff"/>
+  <rect x="230" y="90" width="160" height="50" fill="#2196f3"/>
+  <text x="310" y="70" class="label-top">Region</text>
+  <text x="310" y="125" class="label-bottom">C03</text>
   
-  <rect x="360" y="40" width="120" height="80" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
-  <text x="420" y="65" text-anchor="middle" class="label-small">Business Unit</text>
-  <text x="420" y="95" text-anchor="middle" class="label-large">LEND</text>
+  <!-- Box 3 -->
+  <rect x="410" y="40" width="160" height="100" stroke="#000" stroke-width="1"/>
+  <rect x="410" y="40" width="160" height="50" fill="#fff"/>
+  <rect x="410" y="90" width="160" height="50" fill="#4caf50"/>
+  <text x="490" y="70" class="label-top">Business Unit</text>
+  <text x="490" y="125" class="label-bottom">LEND</text>
   
-  <rect x="520" y="40" width="120" height="80" rx="10" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
-  <text x="580" y="65" text-anchor="middle" class="label-small">Index</text>
-  <text x="580" y="95" text-anchor="middle" class="label-large">0001</text>
+  <!-- Box 4 -->
+  <rect x="590" y="40" width="160" height="100" stroke="#000" stroke-width="1"/>
+  <rect x="590" y="40" width="160" height="50" fill="#fff"/>
+  <rect x="590" y="90" width="160" height="50" fill="#ff9800"/>
+  <text x="670" y="70" class="label-top">Index</text>
+  <text x="670" y="125" class="label-bottom">0001</text>
   
-  <path d="M 160 80 L 200 80" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
-  <path d="M 320 80 L 360 80" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
-  <path d="M 480 80 L 520 80" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Arrows -->
+  <path d="M 210 90 L 230 90" stroke="#e91e63" stroke-width="4" marker-end="url(#arrow-pink)"/>
+  <path d="M 390 90 L 410 90" stroke="#2196f3" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <path d="M 570 90 L 590 90" stroke="#4caf50" stroke-width="4" marker-end="url(#arrow-green)"/>
   
-  <text x="340" y="170" class="example">Example: <tspan font-weight="bold">AZR-C03-LEND-0001</tspan></text>
+  <text x="400" y="220" class="example-text">AZR-C03-LEND-0001</text>
   
-  <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-    <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+  <marker id="arrow-pink" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#e91e63" />
   </marker>
+  <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#2196f3" />
+  </marker>
+  <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#4caf50" />
+  </marker>
+  <!-- Legend -->
+  <rect x="320" y="270" width="160" height="150" fill="#fff" stroke="#000" stroke-width="1"/>
+  <rect x="320" y="270" width="160" height="25" fill="#f0f0f0" stroke="#000" stroke-width="1"/>
+  <text x="400" y="287" class="label-top" style="font-size: 12px;">Legend</text>
+  
+  <rect x="330" y="305" width="60" height="20" rx="3" fill="#e91e63" stroke="#000" stroke-width="1"/>
+  <text x="400" y="319" class="leg-text" text-anchor="start">Provider</text>
+  
+  <rect x="330" y="335" width="60" height="20" rx="3" fill="#2196f3" stroke="#000" stroke-width="1"/>
+  <text x="400" y="349" class="leg-text" text-anchor="start">Region</text>
+  
+  <rect x="330" y="365" width="60" height="20" rx="3" fill="#4caf50" stroke="#000" stroke-width="1"/>
+  <text x="400" y="379" class="leg-text" text-anchor="start">BU</text>
+
+  <rect x="330" y="395" width="60" height="20" rx="3" fill="#ff9800" stroke="#000" stroke-width="1"/>
+  <text x="400" y="409" class="leg-text" text-anchor="start">Index</text>
 </svg>
