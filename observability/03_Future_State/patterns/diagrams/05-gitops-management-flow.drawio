@@ -1,0 +1,380 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0" version="24.7.17">
+  <diagram name="GitOps Management Flow" id="gitops-mgmt-flow">
+    <mxGraphModel dx="1800" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- ====== TITLE ====== -->
+        <mxCell id="title" value="GitOps Management Flow: Zero Click-Ops Automation" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1720" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="subtitle" value="End-to-end pipeline from contributor PR to Grafana Cloud provisioning — fully automated, audited, and reversible" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="40" y="58" width="1720" height="24" as="geometry" />
+        </mxCell>
+        
+        <!-- ====== TIER LABELS (Top) ====== -->
+        <mxCell id="tier1Label" value="① CONTRIBUTOR" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#2E8B5F;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="105" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tier2Label" value="② VERSION CONTROL" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#2563EB;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="350" y="105" width="320" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tier3Label" value="③ ORCHESTRATION" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#7B2CBF;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="700" y="105" width="320" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tier4Label" value="④ PROVISIONING" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#E97B2A;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="105" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tier5Label" value="⑤ CLOUD STATE" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#D97706;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="105" width="300" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- TIER 1: CONTRIBUTOR -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="contributorContainer" value="Engineer / SRE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5EC;strokeColor=#2E8B5F;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="280" height="220" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="contributorPerson" value="👤 Contributor&#10;Product / BU / SRE Team" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E8B5F;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="240" height="55" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="contributorAction1" value="📝 Edits IaC files:&#10;• Dashboards (JSON)&#10;• Alert rules (YAML)&#10;• RBAC / LBAC config&#10;• Notification policies" style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="245" width="240" height="100" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow contributor → GitHub -->
+        <mxCell id="arrowCToGH" value="Opens PR" style="endArrow=classic;html=1;rounded=0;strokeColor=#0F2A47;strokeWidth=2;fontSize=10;fontStyle=2;fontColor=#0F2A47;labelBackgroundColor=#FFFFFF;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="250" as="sourcePoint" />
+            <mxPoint x="360" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- TIER 2: GITHUB -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="ghContainer" value="GitHub Repository" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F2FA;strokeColor=#2563EB;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=15;" vertex="1" parent="1">
+          <mxGeometry x="360" y="140" width="320" height="380" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="prBox" value="🔀 Pull Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="380" y="180" width="280" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="prValidation" value="✅ Automated Validation:&#10;• YAML / JSON lint&#10;• LBAC label match check&#10;• Alert rule label compliance" style="text;html=1;strokeColor=#2563EB;fillColor=#F0F9FF;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="230" width="280" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="codeownersBox" value="👥 CODEOWNERS Gate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="380" y="320" width="280" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="codeownersDetail" value="Approval required by:&#10;• BU-level owner&#10;• Product-level owner (for product files)" style="text;html=1;strokeColor=#2563EB;fillColor=#F0F9FF;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="370" width="280" height="55" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="mergeBox" value="🟢 Merge to main branch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#2E8B5F;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="380" y="435" width="280" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="actionsBox" value="⚡ GitHub Actions triggered" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="380" y="485" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow GitHub → Terraform Cloud -->
+        <mxCell id="arrowGHToTFC" value="Triggers run" style="endArrow=classic;html=1;rounded=0;strokeColor=#0F2A47;strokeWidth=2;fontSize=10;fontStyle=2;fontColor=#0F2A47;labelBackgroundColor=#FFFFFF;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="455" as="sourcePoint" />
+            <mxPoint x="720" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- TIER 3: TERRAFORM CLOUD -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="tfcContainer" value="Terraform Cloud Runners" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0E6F7;strokeColor=#7B2CBF;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=15;" vertex="1" parent="1">
+          <mxGeometry x="720" y="140" width="320" height="380" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="tfcStep1" value="1. Plan" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B2CBF;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="740" y="180" width="280" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="tfcStep1Detail" value="• Generates execution plan&#10;• Shows diff: current vs desired" style="text;html=1;strokeColor=none;fillColor=#F0E6F7;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="216" width="280" height="38" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="tfcStep2" value="2. Fetch Identity" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B2CBF;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="740" y="260" width="280" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="tfcStep2Detail" value="• Query Azure Entra ID&#10;• Get latest group memberships" style="text;html=1;strokeColor=none;fillColor=#F0E6F7;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="296" width="280" height="38" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="tfcStep3" value="3. Fetch Secrets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B2CBF;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="740" y="340" width="280" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="tfcStep3Detail" value="• Pull API tokens from&#10;  Azure Key Vault" style="text;html=1;strokeColor=none;fillColor=#F0E6F7;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="376" width="280" height="38" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="tfcStep4" value="4. Apply (auto)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#2E8B5F;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="740" y="420" width="280" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="tfcStep4Detail" value="• Calls Grafana Cloud API&#10;• Applies plan idempotently" style="text;html=1;strokeColor=none;fillColor=#F0E6F7;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="456" width="280" height="48" as="geometry" />
+        </mxCell>
+        
+        <!-- External services boxes (Entra + Key Vault) - positioned below -->
+        <mxCell id="entraIDBox" value="🔐 Azure Entra ID" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B2CBF;strokeWidth=1;dashed=1;fontSize=10;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="720" y="555" width="155" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="entraIDLabel" value="Source of identity truth" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="720" y="595" width="155" height="16" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="keyVaultBox" value="🗝️ Azure Key Vault" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B2CBF;strokeWidth=1;dashed=1;fontSize=10;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="885" y="555" width="155" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="keyVaultLabel" value="Secret management" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="885" y="595" width="155" height="16" as="geometry" />
+        </mxCell>
+        
+        <!-- Connecting lines -->
+        <mxCell id="entraConn" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#7B2CBF;strokeWidth=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="797" y="555" as="sourcePoint" />
+            <mxPoint x="797" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kvConn" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#7B2CBF;strokeWidth=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="962" y="555" as="sourcePoint" />
+            <mxPoint x="962" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Arrow TFC → Provisioning -->
+        <mxCell id="arrowTFCToProv" value="API calls" style="endArrow=classic;html=1;rounded=0;strokeColor=#0F2A47;strokeWidth=2;fontSize=10;fontStyle=2;fontColor=#0F2A47;labelBackgroundColor=#FFFFFF;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1040" y="437" as="sourcePoint" />
+            <mxPoint x="1080" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- TIER 4: PROVISIONING ACTIONS -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="provContainer" value="Grafana Cloud API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#E97B2A;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=15;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="140" width="350" height="380" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="provIntro" value="Provisions / syncs:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#0F2A47;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="175" width="350" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="provAction1" value="🏗️ Stacks&#10;BU-aligned org structure" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="200" width="310" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="provAction2" value="📁 Folders&#10;Product-level isolation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="248" width="310" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="provAction3" value="🔐 RBAC Policies&#10;Generated from Entra groups" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="296" width="310" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="provAction4" value="🛡️ LBAC Policies&#10;Label-based query filters" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="344" width="310" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="provAction5" value="📊 Dashboards &amp; Alerts&#10;Per-product configuration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="392" width="310" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="provAction6" value="🔔 Notification Policies&#10;Tenant-isolated alert routing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="440" width="310" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="provNote" value="✨ Idempotent: re-runs produce no drift" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2;fontColor=#E97B2A;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="488" width="350" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow Provisioning → Cloud State -->
+        <mxCell id="arrowProvToCloud" value="Updates" style="endArrow=classic;html=1;rounded=0;strokeColor=#0F2A47;strokeWidth=2;fontSize=10;fontStyle=2;fontColor=#0F2A47;labelBackgroundColor=#FFFFFF;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1430" y="320" as="sourcePoint" />
+            <mxPoint x="1470" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- TIER 5: CLOUD STATE -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="cloudContainer" value="Grafana Cloud (SaaS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=15;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="140" width="290" height="380" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="cloudOrg" value="🏢 Finastra Global Org" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D97706;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="180" width="250" height="35" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="cloudStack1" value="AZR-C03-LEND-0001" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#D97706;strokeWidth=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="225" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="cloudStack2" value="AZR-C03-PAYM-0001" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#D97706;strokeWidth=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="263" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="cloudStack3" value="AZR-C03-UBNK-0001" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#D97706;strokeWidth=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="301" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="cloudStack4" value="AZR-C03-TCMG-0001" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#D97706;strokeWidth=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="339" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="cloudStack5" value="AZR-C03-CORN-0001" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#D97706;strokeWidth=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="377" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="cloudStackMore" value="...and per-region replicas&#10;for multi-region products" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="415" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="cloudResult" value="✓ Live observability platform" style="text;html=1;strokeColor=none;fillColor=#DCFCE7;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="455" width="250" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- THREE PROPERTIES (Bottom row) -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="propertiesContainer" value="Three Core Properties of This Flow" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#0F2A47;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="660" width="1720" height="160" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="prop1Box" value="🔍 AUDITABLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="80" y="700" width="520" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prop1Detail" value="Every change is a PR with a CODEOWNER approval. Full git history shows who changed what, when, and why. Terraform Cloud retains audit logs of every plan and apply. Drift detection alerts on manual changes outside the GitOps flow." style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="745" width="520" height="65" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="prop2Box" value="📋 STANDARDIZED" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="640" y="700" width="520" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prop2Detail" value="Same workflow applies to all BUs — Lending, Payment, Universal Banking, TCM, Cornerstone. Identical validation rules, approval gates, and provisioning paths. Onboarding a new product follows the established pattern, not a bespoke process." style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="640" y="745" width="520" height="65" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="prop3Box" value="🚀 SELF-SERVICE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="700" width="520" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prop3Detail" value="Product teams operate within the rails — they create dashboards, define alerts, and request access via PR. No central team bottleneck. Platform team owns the rails (Terraform modules, validation logic), not the day-to-day changes." style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="745" width="520" height="65" as="geometry" />
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- LEGEND -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="legendContainer" value="LEGEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0F2A47;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="840" width="1720" height="140" as="geometry" />
+        </mxCell>
+        
+        <!-- Col 1: Tier Colors -->
+        <mxCell id="legCol1Title" value="TIER COLOR CODING" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="868" width="200" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legGreen" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F5EC;strokeColor=#2E8B5F;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="892" width="24" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legGreenLabel" value="Contributor (Engineer/SRE)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="92" y="892" width="220" height="16" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legBlue" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6F2FA;strokeColor=#2563EB;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="914" width="24" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legBlueLabel" value="Version Control (GitHub)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="92" y="914" width="220" height="16" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legPurple" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F0E6F7;strokeColor=#7B2CBF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="936" width="24" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legPurpleLabel" value="Orchestration (Terraform Cloud)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="92" y="936" width="220" height="16" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legOrange" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#E97B2A;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="892" width="24" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legOrangeLabel" value="Provisioning (Grafana Cloud API)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="352" y="892" width="240" height="16" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legAmber" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="914" width="24" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legAmberLabel" value="Cloud State (Grafana SaaS Org)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="352" y="914" width="240" height="16" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legDashedExt" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B2CBF;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="936" width="24" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legDashedExtLabel" value="External Azure services (Entra/Key Vault)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="352" y="936" width="270" height="16" as="geometry" />
+        </mxCell>
+        
+        <!-- Col 2: Symbols -->
+        <mxCell id="legCol2Title" value="KEY SYMBOLS" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="868" width="200" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legSym1" value="👤  Human actor" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="640" y="892" width="170" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legSym2" value="✅  Automated validation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="640" y="914" width="170" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legSym3" value="👥  CODEOWNERS gate" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="640" y="936" width="170" height="16" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legSym4" value="🔐  Identity / Auth" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="830" y="892" width="170" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legSym5" value="🗝️  Secrets store" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="830" y="914" width="170" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legSym6" value="✨  Idempotent operation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="830" y="936" width="170" height="16" as="geometry" />
+        </mxCell>
+        
+        <!-- Col 3: Key Insight -->
+        <mxCell id="legCol3Title" value="KEY INSIGHT" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="868" width="200" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="keyInsight" value="Mechanically identical to Pattern 005's GitOps flow — only the resource definitions change.&#10;&#10;Every Grafana Cloud resource (Stack, Folder, RBAC, LBAC, Notification Policy) is declared as code.&#10;&#10;Reverting a configuration is a git revert.&#10;&#10;No manual UI clicks. Ever." style="text;html=1;strokeColor=none;fillColor=#F9FAFB;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#0F2A47;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="892" width="700" height="78" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

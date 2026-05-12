@@ -1,0 +1,380 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0" version="24.7.17">
+  <diagram name="Adoption Strategy" id="adoption-strategy">
+    <mxGraphModel dx="1800" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- ====== TITLE ====== -->
+        <mxCell id="title" value="Adoption Strategy: Zero-Disruption Migration from Pattern 005 to Pattern 006" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1720" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="subtitle" value="Five-phase rollout with parallel running. Rollback possible through Phase 3. Old and new stacks coexist during transition." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="40" y="58" width="1720" height="24" as="geometry" />
+        </mxCell>
+        
+        <!-- ====== TIMELINE TRACK (Horizontal arrow) ====== -->
+        <mxCell id="timelineTrack" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#0F2A47;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="135" as="sourcePoint" />
+            <mxPoint x="1750" y="135" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="timeStart" value="WEEK 0" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="110" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="timeMid1" value="WEEK 2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="110" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="timeMid2" value="WEEK 6" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="110" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="timeMid3" value="WEEK 10" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="110" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="timeMid4" value="WEEK 11+" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="110" width="100" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- PHASE 0 — PREPARATION -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="phase0Marker" value="0" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;strokeWidth=3;fontSize=22;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="100" y="115" width="40" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase0Box" value="PHASE 0: PREPARATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#0F2A47;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="175" width="320" height="370" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase0Duration" value="Week 0 (pre-migration)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="60" y="210" width="320" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase0Risk" value="🟢 RISK: NONE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="80" y="238" width="280" height="28" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase0Goal" value="GOAL: Get ready" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="275" width="280" height="22" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase0Activities" value="Activities:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="298" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase0List" value="• Pattern doc reviewed &amp; approved&#10;• Stakeholder alignment (Vladimir, Johann, Archie)&#10;• Backstage repo slot identified&#10;• Terraform foundation tested in sandbox&#10;• Team onboarded (helpers assigned)&#10;• PR templates &amp; CODEOWNERS configured" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="320" width="280" height="115" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase0Output" value="✓ Output: Ready to provision" style="text;html=1;strokeColor=#0F2A47;fillColor=#F9FAFB;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="80" y="465" width="280" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase0Note" value="Vladimir: &quot;Take it a little bit slower&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontStyle=2;fontColor=#7B2CBF;" vertex="1" parent="1">
+          <mxGeometry x="60" y="505" width="320" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- PHASE 1 — PROVISION -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="phase1Marker" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#16A34A;strokeColor=#16A34A;strokeWidth=3;fontSize=22;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="420" y="115" width="40" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase1Box" value="PHASE 1: PROVISION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="175" width="320" height="370" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase1Duration" value="Weeks 1-2 (2 weeks)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="400" y="210" width="320" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase1Risk" value="🟢 RISK: LOW" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="420" y="238" width="280" height="28" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase1Goal" value="GOAL: Create new stacks" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="420" y="275" width="280" height="22" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase1Activities" value="Activities:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="420" y="298" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase1List" value="• Terraform-provision 5 BU stacks:&#10;  AZR-C03-LEND, PAYM, UBNK, TCMG, CORN&#10;• Create product folders inside each&#10;• Configure RBAC + LBAC policies&#10;• Set up Notification Policies&#10;• No traffic shifted yet" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="420" y="320" width="280" height="115" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase1Output" value="✓ Output: New stacks live, empty" style="text;html=1;strokeColor=#16A34A;fillColor=#F0FDF4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="420" y="465" width="280" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase1Note" value="Rollback: Just delete new stacks" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontStyle=2;fontColor=#7B2CBF;" vertex="1" parent="1">
+          <mxGeometry x="400" y="505" width="320" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- PHASE 2 — UPDATE COLLECTORS -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="phase2Marker" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D97706;strokeColor=#D97706;strokeWidth=3;fontSize=22;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="760" y="115" width="40" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase2Box" value="PHASE 2: UPDATE COLLECTORS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#D97706;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="175" width="320" height="370" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase2Duration" value="Weeks 3-6 (4 weeks)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="740" y="210" width="320" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase2Risk" value="🟡 RISK: MEDIUM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#92400E;" vertex="1" parent="1">
+          <mxGeometry x="760" y="238" width="280" height="28" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase2Goal" value="GOAL: Dual-write telemetry" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="760" y="275" width="280" height="22" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase2Activities" value="Activities:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="760" y="298" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase2List" value="• Configure Alloy to dual-write&#10;  (old stack + new BU stack)&#10;• Enforce label injection at edge:&#10;  product, env, bu, region&#10;• Validate label compliance via CI&#10;• Monitor for ingestion errors" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="760" y="320" width="280" height="115" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase2Output" value="✓ Output: Both stacks receive data" style="text;html=1;strokeColor=#D97706;fillColor=#FFFBEB;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=1;fontColor=#92400E;" vertex="1" parent="1">
+          <mxGeometry x="760" y="465" width="280" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase2Note" value="Rollback: Stop dual-write, keep old" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontStyle=2;fontColor=#7B2CBF;" vertex="1" parent="1">
+          <mxGeometry x="740" y="505" width="320" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- PHASE 3 — MIGRATE ASSETS -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="phase3Marker" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D97706;strokeColor=#D97706;strokeWidth=3;fontSize=22;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="115" width="40" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase3Box" value="PHASE 3: MIGRATE ASSETS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#D97706;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="175" width="320" height="370" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase3Duration" value="Weeks 7-10 (4 weeks)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="210" width="320" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase3Risk" value="🟡 RISK: MEDIUM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#92400E;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="238" width="280" height="28" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase3Goal" value="GOAL: Copy dashboards &amp; alerts" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="275" width="280" height="22" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase3Activities" value="Activities:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="298" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase3List" value="• Automated dashboard migration&#10;  to per-product folders in new stack&#10;• Migrate alert rules with labels&#10;• Validate parity: old vs new&#10;• Team UAT and acceptance signoff&#10;• Final cutover: route reads to new" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="320" width="280" height="115" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase3Output" value="✓ Output: New stacks fully operational" style="text;html=1;strokeColor=#D97706;fillColor=#FFFBEB;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=1;fontColor=#92400E;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="465" width="280" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase3Note" value="⚠️ Last point to rollback safely" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontStyle=2;fontColor=#C0392B;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="505" width="320" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- PHASE 4 — DEPRECATE -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="phase4Marker" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#16A34A;strokeColor=#16A34A;strokeWidth=3;fontSize=22;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="115" width="40" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase4Box" value="PHASE 4: DEPRECATE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="175" width="320" height="370" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase4Duration" value="Week 11+ (60-day grace)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="210" width="320" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase4Risk" value="🟢 RISK: LOW" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="238" width="280" height="28" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase4Goal" value="GOAL: Retire old stacks" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="275" width="280" height="22" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase4Activities" value="Activities:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="298" width="280" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase4List" value="• Set old per-product stacks&#10;  to READ-ONLY mode&#10;• 60-day grace window for any&#10;  late-discovered issues&#10;• Send deprecation comms to teams&#10;• Final deletion via Terraform" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="320" width="280" height="115" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase4Output" value="✓ Output: Pattern 006 fully adopted" style="text;html=1;strokeColor=#16A34A;fillColor=#F0FDF4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="465" width="280" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="phase4Note" value="100+ stacks reduced to 5-6" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontStyle=2;fontColor=#16A34A;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="505" width="320" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- PARALLEL RUNNING INDICATOR -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="parallelBox" value="PARALLEL RUNNING WINDOW — OLD AND NEW STACKS COEXIST" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E7FF;strokeColor=#4F46E5;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#3730A3;verticalAlign=middle;spacingTop=8;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="580" width="1000" height="38" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="parallelArrowLeft" value="" style="endArrow=classicThin;startArrow=classicThin;html=1;rounded=0;strokeColor=#4F46E5;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="599" as="sourcePoint" />
+            <mxPoint x="1400" y="599" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="parallelLabel" value="🔄 Rollback safely possible through end of Phase 3 (Week 10). After that, deprecation begins." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2;fontColor=#4F46E5;" vertex="1" parent="1">
+          <mxGeometry x="400" y="625" width="1000" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- BOTTOM ROW: KEY GUARANTEES -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="guaranteesContainer" value="Migration Guarantees" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#0F2A47;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="675" width="1700" height="155" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="guarantee1Box" value="🛡️ ZERO DISRUPTION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="80" y="715" width="400" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="guarantee1Detail" value="Old per-product stacks remain fully operational throughout Phases 1-3. Teams continue using their existing dashboards and alerts. No forced cutover dates. Migration happens on a rolling basis per BU." style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="80" y="755" width="400" height="65" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="guarantee2Box" value="↩️ ROLLBACK CAPABLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="500" y="715" width="400" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="guarantee2Detail" value="Through Phase 3, switching back to the old per-product stacks requires only routing changes — no data loss. Alloy collectors can revert to single-write. Old stacks retain full read/write capability until Phase 4 begins." style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="500" y="755" width="400" height="65" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="guarantee3Box" value="✅ VALIDATED" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="920" y="715" width="400" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="guarantee3Detail" value="Phase 2's dual-write enables side-by-side validation. Phase 3's parity checks confirm new stack data matches old. Team UAT and sign-off required before final cutover. No team forced into new state without verification." style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="920" y="755" width="400" height="65" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="guarantee4Box" value="🤝 STAKEHOLDER ALIGNED" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="715" width="400" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="guarantee4Detail" value="Each phase concludes with a stakeholder checkpoint. Vladimir, Johann, and BU leads confirm completion before next phase begins. CODEOWNERS gate all infrastructure changes. No surprise migrations." style="text;html=1;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="755" width="400" height="65" as="geometry" />
+        </mxCell>
+        
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- LEGEND -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        
+        <mxCell id="legendContainer" value="LEGEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0F2A47;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="850" width="1700" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Col 1: Phase Colors -->
+        <mxCell id="legCol1Title" value="PHASE COLOR CODING" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="878" width="220" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legPhase0" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#0F2A47;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="902" width="22" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="legPhase0Label" value="Preparation phase (no risk)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="110" y="900" width="220" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legPhaseGreen" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="922" width="22" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="legPhaseGreenLabel" value="Low-risk phase (provision/deprecate)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="110" y="920" width="270" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legPhaseAmber" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#D97706;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="942" width="22" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="legPhaseAmberLabel" value="Medium-risk phase (active migration)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="110" y="940" width="270" height="18" as="geometry" />
+        </mxCell>
+        
+        <!-- Col 2: Risk Indicators -->
+        <mxCell id="legCol2Title" value="RISK INDICATORS" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="878" width="220" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legRiskLow" value="🟢 LOW" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=1;fontSize=9;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="430" y="900" width="60" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="legRiskLowLabel" value="Reversible, low blast radius" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="498" y="900" width="220" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legRiskMed" value="🟡 MEDIUM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1;fontSize=9;fontStyle=1;fontColor=#92400E;" vertex="1" parent="1">
+          <mxGeometry x="430" y="922" width="80" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="legRiskMedLabel" value="Active changes, validation required" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="518" y="922" width="240" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legRiskNote" value="No HIGH-risk phases — parallel running mitigates impact" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="430" y="942" width="320" height="18" as="geometry" />
+        </mxCell>
+        
+        <!-- Col 3: Timing -->
+        <mxCell id="legCol3Title" value="TIMING SUMMARY" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="878" width="220" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legTimingTotal" value="Active Migration:  11 weeks (Phases 1-3)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="900" width="320" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="legTimingGrace" value="Deprecation Window:  60 days post-Phase 3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="800" y="920" width="320" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="legTimingTotalAll" value="End-to-End Timeline:  ~19 weeks (~4.5 months)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0F2A47;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="940" width="320" height="18" as="geometry" />
+        </mxCell>
+        
+        <!-- Col 4: Key Insight -->
+        <mxCell id="legCol4Title" value="KEY INSIGHT" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="878" width="220" height="18" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="keyInsight" value="Phased rollout prioritizes safety over speed.&#10;&#10;Vladimir's guidance: &quot;Take it a little bit slower.&quot;&#10;&#10;Each phase has explicit rollback criteria.&#10;Stakeholder sign-off gates every transition.&#10;Old stacks live until new are proven." style="text;html=1;strokeColor=none;fillColor=#F9FAFB;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#0F2A47;spacingLeft=10;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="900" width="560" height="58" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

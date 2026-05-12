@@ -1,12 +1,224 @@
-<mxfile host="app.diagrams.net" agent="Antigravity" version="22.0.0">
-  <diagram name="Page-1" id="03-naming-convention">
-    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1200" math="0" shadow="0">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0" version="24.7.17">
+  <diagram name="Naming Convention" id="naming-convention">
+    <mxGraphModel dx="1800" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="svg-image" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22800%22%20height%3D%22450%22%20viewBox%3D%220%200%20800%20450%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cstyle%20type%3D%22text/css%22%3E%0A%20%20%20%20%20%20.label-top%20%7B%20font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-weight%3A%20bold%3B%20font-size%3A%2014px%3B%20fill%3A%20%23000%3B%20text-anchor%3A%20middle%3B%20text-transform%3A%20uppercase%3B%20%7D%0A%20%20%20%20%20%20.label-bottom%20%7B%20font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-weight%3A%20bold%3B%20font-size%3A%2024px%3B%20fill%3A%20%23fff%3B%20text-anchor%3A%20middle%3B%20%7D%0A%20%20%20%20%20%20.example-text%20%7B%20font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-weight%3A%20bold%3B%20font-size%3A%2028px%3B%20fill%3A%20%23000%3B%20text-anchor%3A%20middle%3B%20%7D%0A%20%20%20%20%20%20.leg-text%20%7B%20font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2012px%3B%20fill%3A%20%23000%3B%20%7D%0A%20%20%20%20%3C/style%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22800%22%20height%3D%22450%22%20fill%3D%22%23fff%22/%3E%0A%20%20%0A%20%20%3C%21--%20Box%201%20--%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22160%22%20height%3D%22100%22%20stroke%3D%22%23000%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22160%22%20height%3D%2250%22%20fill%3D%22%23fff%22/%3E%0A%20%20%3Crect%20x%3D%2250%22%20y%3D%2290%22%20width%3D%22160%22%20height%3D%2250%22%20fill%3D%22%23e91e63%22/%3E%0A%20%20%3Ctext%20x%3D%22130%22%20y%3D%2270%22%20class%3D%22label-top%22%3EProvider%3C/text%3E%0A%20%20%3Ctext%20x%3D%22130%22%20y%3D%22125%22%20class%3D%22label-bottom%22%3EAZR%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20Box%202%20--%3E%0A%20%20%3Crect%20x%3D%22230%22%20y%3D%2240%22%20width%3D%22160%22%20height%3D%22100%22%20stroke%3D%22%23000%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Crect%20x%3D%22230%22%20y%3D%2240%22%20width%3D%22160%22%20height%3D%2250%22%20fill%3D%22%23fff%22/%3E%0A%20%20%3Crect%20x%3D%22230%22%20y%3D%2290%22%20width%3D%22160%22%20height%3D%2250%22%20fill%3D%22%232196f3%22/%3E%0A%20%20%3Ctext%20x%3D%22310%22%20y%3D%2270%22%20class%3D%22label-top%22%3ERegion%3C/text%3E%0A%20%20%3Ctext%20x%3D%22310%22%20y%3D%22125%22%20class%3D%22label-bottom%22%3EC03%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20Box%203%20--%3E%0A%20%20%3Crect%20x%3D%22410%22%20y%3D%2240%22%20width%3D%22160%22%20height%3D%22100%22%20stroke%3D%22%23000%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Crect%20x%3D%22410%22%20y%3D%2240%22%20width%3D%22160%22%20height%3D%2250%22%20fill%3D%22%23fff%22/%3E%0A%20%20%3Crect%20x%3D%22410%22%20y%3D%2290%22%20width%3D%22160%22%20height%3D%2250%22%20fill%3D%22%234caf50%22/%3E%0A%20%20%3Ctext%20x%3D%22490%22%20y%3D%2270%22%20class%3D%22label-top%22%3EBusiness%20Unit%3C/text%3E%0A%20%20%3Ctext%20x%3D%22490%22%20y%3D%22125%22%20class%3D%22label-bottom%22%3ELEND%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20Box%204%20--%3E%0A%20%20%3Crect%20x%3D%22590%22%20y%3D%2240%22%20width%3D%22160%22%20height%3D%22100%22%20stroke%3D%22%23000%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Crect%20x%3D%22590%22%20y%3D%2240%22%20width%3D%22160%22%20height%3D%2250%22%20fill%3D%22%23fff%22/%3E%0A%20%20%3Crect%20x%3D%22590%22%20y%3D%2290%22%20width%3D%22160%22%20height%3D%2250%22%20fill%3D%22%23ff9800%22/%3E%0A%20%20%3Ctext%20x%3D%22670%22%20y%3D%2270%22%20class%3D%22label-top%22%3EIndex%3C/text%3E%0A%20%20%3Ctext%20x%3D%22670%22%20y%3D%22125%22%20class%3D%22label-bottom%22%3E0001%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20Arrows%20--%3E%0A%20%20%3Cpath%20d%3D%22M%20210%2090%20L%20230%2090%22%20stroke%3D%22%23e91e63%22%20stroke-width%3D%224%22%20marker-end%3D%22url%28%23arrow-pink%29%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20390%2090%20L%20410%2090%22%20stroke%3D%22%232196f3%22%20stroke-width%3D%224%22%20marker-end%3D%22url%28%23arrow-blue%29%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20570%2090%20L%20590%2090%22%20stroke%3D%22%234caf50%22%20stroke-width%3D%224%22%20marker-end%3D%22url%28%23arrow-green%29%22/%3E%0A%20%20%0A%20%20%3Ctext%20x%3D%22400%22%20y%3D%22220%22%20class%3D%22example-text%22%3EAZR-C03-LEND-0001%3C/text%3E%0A%20%20%0A%20%20%3Cmarker%20id%3D%22arrow-pink%22%20markerWidth%3D%2210%22%20markerHeight%3D%227%22%20refX%3D%2210%22%20refY%3D%223.5%22%20orient%3D%22auto%22%3E%0A%20%20%20%20%3Cpolygon%20points%3D%220%200%2C%2010%203.5%2C%200%207%22%20fill%3D%22%23e91e63%22%20/%3E%0A%20%20%3C/marker%3E%0A%20%20%3Cmarker%20id%3D%22arrow-blue%22%20markerWidth%3D%2210%22%20markerHeight%3D%227%22%20refX%3D%2210%22%20refY%3D%223.5%22%20orient%3D%22auto%22%3E%0A%20%20%20%20%3Cpolygon%20points%3D%220%200%2C%2010%203.5%2C%200%207%22%20fill%3D%22%232196f3%22%20/%3E%0A%20%20%3C/marker%3E%0A%20%20%3Cmarker%20id%3D%22arrow-green%22%20markerWidth%3D%2210%22%20markerHeight%3D%227%22%20refX%3D%2210%22%20refY%3D%223.5%22%20orient%3D%22auto%22%3E%0A%20%20%20%20%3Cpolygon%20points%3D%220%200%2C%2010%203.5%2C%200%207%22%20fill%3D%22%234caf50%22%20/%3E%0A%20%20%3C/marker%3E%0A%20%20%3C%21--%20Legend%20--%3E%0A%20%20%3Crect%20x%3D%22650%22%20y%3D%22300%22%20width%3D%22120%22%20height%3D%22115%22%20rx%3D%224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23999%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Crect%20x%3D%22650%22%20y%3D%22300%22%20width%3D%22120%22%20height%3D%2220%22%20rx%3D%224%22%20fill%3D%22%23f8f9fa%22%20stroke%3D%22none%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20650%20320%20L%20770%20320%22%20stroke%3D%22%23999%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Ctext%20x%3D%22710%22%20y%3D%22314%22%20style%3D%22font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2011px%3B%20font-weight%3A%20bold%3B%20fill%3A%20%23333%3B%20text-anchor%3A%20middle%3B%22%3ELegend%3C/text%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22660%22%20y%3D%22330%22%20width%3D%2230%22%20height%3D%2215%22%20rx%3D%222%22%20fill%3D%22%23e91e63%22%20stroke%3D%22%23000%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Ctext%20x%3D%22695%22%20y%3D%22342%22%20style%3D%22font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2010px%3B%20fill%3A%20%23333%3B%20text-anchor%3A%20start%3B%22%3EProvider%3C/text%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22660%22%20y%3D%22350%22%20width%3D%2230%22%20height%3D%2215%22%20rx%3D%222%22%20fill%3D%22%232196f3%22%20stroke%3D%22%23000%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Ctext%20x%3D%22695%22%20y%3D%22362%22%20style%3D%22font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2010px%3B%20fill%3A%20%23333%3B%20text-anchor%3A%20start%3B%22%3ERegion%3C/text%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22660%22%20y%3D%22370%22%20width%3D%2230%22%20height%3D%2215%22%20rx%3D%222%22%20fill%3D%22%234caf50%22%20stroke%3D%22%23000%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Ctext%20x%3D%22695%22%20y%3D%22382%22%20style%3D%22font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2010px%3B%20fill%3A%20%23333%3B%20text-anchor%3A%20start%3B%22%3EBU%3C/text%3E%0A%0A%20%20%3Crect%20x%3D%22660%22%20y%3D%22390%22%20width%3D%2230%22%20height%3D%2215%22%20rx%3D%222%22%20fill%3D%22%23ff9800%22%20stroke%3D%22%23000%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Ctext%20x%3D%22695%22%20y%3D%22402%22%20style%3D%22font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2010px%3B%20fill%3A%20%23333%3B%20text-anchor%3A%20start%3B%22%3EIndex%3C/text%3E%0A%3C/svg%3E%0A" vertex="1" parent="1">
-          <mxGeometry x="0" y="0" width="800" height="450" as="geometry" />
+
+        <!-- TITLE -->
+        <mxCell id="title" value="Naming Convention: Provider-Region-BU-Index" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=20;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1720" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="subtitle" value="The only structural change from Pattern 005: Product ID tier → Business Unit tier. Provider, Region, Index unchanged." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="40" y="58" width="1720" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- BIG EXAMPLE: AZR-C03-LEND-0001 -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <mxCell id="exampleLabel" value="EXAMPLE STACK NAME" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;fontColor=#5A6A7E;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="110" width="1720" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- AZR -->
+        <mxCell id="tierAZR" value="AZR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E97B2A;strokeColor=#E97B2A;strokeWidth=3;fontSize=36;fontStyle=1;fontColor=#FFFFFF;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="200" y="150" width="320" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Separator 1 -->
+        <mxCell id="sep1" value="—" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=36;fontStyle=1;fontColor=#5A6A7E;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="520" y="150" width="40" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- C03 -->
+        <mxCell id="tierC03" value="C03" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;strokeWidth=3;fontSize=36;fontStyle=1;fontColor=#FFFFFF;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="560" y="150" width="320" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Separator 2 -->
+        <mxCell id="sep2" value="—" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=36;fontStyle=1;fontColor=#5A6A7E;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="880" y="150" width="40" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- LEND -->
+        <mxCell id="tierLEND" value="LEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2E8B5F;strokeColor=#2E8B5F;strokeWidth=3;fontSize=36;fontStyle=1;fontColor=#FFFFFF;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="920" y="150" width="320" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Separator 3 -->
+        <mxCell id="sep3" value="—" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=36;fontStyle=1;fontColor=#5A6A7E;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="150" width="40" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- 0001 -->
+        <mxCell id="tier0001" value="0001" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B2CBF;strokeColor=#7B2CBF;strokeWidth=3;fontSize=36;fontStyle=1;fontColor=#FFFFFF;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="150" width="320" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- TIER EXPLANATIONS (below each tier) -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+
+        <!-- AZR Detail -->
+        <mxCell id="azrLabel" value="① PROVIDER" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;fontColor=#E97B2A;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="200" y="285" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="azrDescBox" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#E97B2A;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="200" y="315" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="azrDesc" value="Cloud Provider" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="200" y="325" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="azrExample" value="AZR  =  Azure&#10;AWS  =  Amazon Web Services&#10;GCP  =  Google Cloud" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="200" y="355" width="320" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="azrSource" value="Source: Naming API&#10;Inherited from Pattern 005" style="text;html=1;strokeColor=none;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#92400E;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="430" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="azrStatus" value="✓ UNCHANGED" style="text;html=1;strokeColor=none;fillColor=#DCFCE7;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#0F4F2C;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="480" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- C03 Detail -->
+        <mxCell id="c03Label" value="② REGION" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;fontColor=#2563EB;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="560" y="285" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c03DescBox" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F2FA;strokeColor=#2563EB;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="560" y="315" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c03Desc" value="Cloud Region" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="560" y="325" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c03Example" value="C03  =  US Central&#10;E01  =  US East&#10;WE1  =  West Europe&#10;NE1  =  North Europe" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="560" y="355" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c03Source" value="Source: Naming API&#10;Inherited from Pattern 005" style="text;html=1;strokeColor=none;fillColor=#DBEAFE;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#1E40AF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="430" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c03Status" value="✓ UNCHANGED" style="text;html=1;strokeColor=none;fillColor=#DCFCE7;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#0F4F2C;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="480" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- LEND Detail (highlighted as the change) -->
+        <mxCell id="lendLabel" value="③ BUSINESS UNIT" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;fontColor=#2E8B5F;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="920" y="285" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="lendDescBox" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5EC;strokeColor=#2E8B5F;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="920" y="315" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lendDesc" value="Owning Business Unit" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="920" y="325" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="lendExample" value="LEND  =  Lending&#10;PAYM  =  Payment&#10;UBNK  =  Universal Banking&#10;TCMG  =  TCM&#10;CORN  =  Cornerstone &amp; SES" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="920" y="350" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lendSource" value="Replaces Pattern 005&#39;s&#10;Product ID tier" style="text;html=1;strokeColor=none;fillColor=#DCFCE7;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#0F4F2C;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="430" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lendStatus" value="🔄 CHANGED (the structural shift)" style="text;html=1;strokeColor=none;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#92400E;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="480" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- 0001 Detail -->
+        <mxCell id="indexLabel" value="④ INDEX" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;fontColor=#7B2CBF;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="285" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="indexDescBox" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0E6F7;strokeColor=#7B2CBF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="315" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="indexDesc" value="Sequence Number" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="325" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="indexExample" value="0001  =  First stack for BU&#10;0002  =  Second stack (scaling)&#10;&#10;Supports horizontal scaling&#10;if active series limits hit" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="350" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="indexSource" value="Source: Naming API&#10;Inherited from Pattern 005" style="text;html=1;strokeColor=none;fillColor=#E9D5FF;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#5B21B6;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="430" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="indexStatus" value="✓ UNCHANGED" style="text;html=1;strokeColor=none;fillColor=#DCFCE7;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#0F4F2C;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="480" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- ENV CALLOUT (Critical clarification) -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <mxCell id="envBanner" value="⚠️  IMPORTANT — Why env is NOT in the stack name" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=3;fontSize=14;fontStyle=1;fontColor=#92400E;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="545" width="1620" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="envExplanation" value="In BOTH Pattern 005 AND Pattern 006, environment (Dev/Stage/Prod) is represented as a telemetry label (env=prod | stage | dev), NOT as a separate stack." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#0F2A47;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="80" y="580" width="1580" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="envBenefit" value="✓ This label-based approach is what enables Pattern 006&#39;s native cross-tier views — Dev/Stage/Prod for the same BU coexist in one stack and are filtered logically at query time." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#0F4F2C;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="80" y="605" width="1580" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="envClarification" value="Common misconception: &quot;env was removed in Pattern 006.&quot;  Reality: env was NEVER in the stack name — neither in 005 nor 006." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#C0392B;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="80" y="635" width="1580" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- COMPARISON TABLE (Pattern 005 vs 006) -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <mxCell id="compTitle" value="NAMING TIER COMPARISON: PATTERN 005 vs PATTERN 006" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;fontColor=#5A6A7E;letterSpacing=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="700" width="1720" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Table headers -->
+        <mxCell id="thTier" value="TIER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;fontSize=11;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="60" y="735" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="th005" value="PATTERN 005" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;fontSize=11;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="180" y="735" width="480" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="th006" value="PATTERN 006" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;fontSize=11;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="660" y="735" width="480" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="thSource" value="SOURCE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;fontSize=11;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="735" width="540" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Row 1: Provider -->
+        <mxCell id="r1c1" value="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F7FA;strokeColor=#CCCCCC;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="60" y="770" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r1c2" value="Provider (e.g., AZR)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CCCCCC;fontSize=10;fontFamily=Courier New;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="180" y="770" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r1c3" value="Provider (e.g., AZR)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CCCCCC;fontSize=10;fontFamily=Courier New;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="660" y="770" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r1c4" value="Naming API — unchanged" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F7FA;strokeColor=#CCCCCC;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="770" width="540" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2: Region -->
+        <mxCell id="r2c1" value="2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CCCCCC;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="60" y="810" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r2c2" value="Region (e.g., C03)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F7FA;strokeColor=#CCCCCC;fontSize=10;fontFamily=Courier New;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="180" y="810" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r2c3" value="Region (e.g., C03)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F7FA;strokeColor=#CCCCCC;fontSize=10;fontFamily=Courier New;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="660" y="810" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r2c4" value="Naming API — unchanged" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CCCCCC;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="810" width="540" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Row 3: BU (the change!) -->
+        <mxCell id="r3c1" value="3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#2E8B5F;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="60" y="850" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r3c2" value="Product ID (e.g., LASERPRO)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FCE6E6;strokeColor=#C0392B;strokeWidth=2;fontSize=10;fontStyle=1;fontFamily=Courier New;fontColor=#C0392B;" vertex="1" parent="1">
+          <mxGeometry x="180" y="850" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r3c3" value="Business Unit (e.g., LEND)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#2E8B5F;strokeWidth=2;fontSize=10;fontStyle=1;fontFamily=Courier New;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="660" y="850" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r3c4" value="🔄 CHANGED — enables consolidation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FED7AA;strokeColor=#E97B2A;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#92400E;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="850" width="540" height="40" as="geometry" />
+        </mxCell>
+
       </root>
     </mxGraphModel>
   </diagram>

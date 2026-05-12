@@ -1,12 +1,319 @@
-<mxfile host="app.diagrams.net" agent="Antigravity" version="22.0.0">
-  <diagram name="Page-1" id="02-bu-aligned-org-structure">
-    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1200" math="0" shadow="0">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0" version="24.7.17">
+  <diagram name="BU-Aligned Org Structure" id="bu-aligned-org">
+    <mxGraphModel dx="1800" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="svg-image" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22950%22%20height%3D%22380%22%20viewBox%3D%220%200%20950%20380%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cstyle%20type%3D%22text/css%22%3E%0A%20%20%20%20%20%20.label-bold%20%7B%20font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-weight%3A%20bold%3B%20font-size%3A%2014px%3B%20fill%3A%20%23000%3B%20text-anchor%3A%20middle%3B%20%7D%0A%20%20%20%20%20%20.label-small%20%7B%20font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2011px%3B%20fill%3A%20%23000%3B%20text-anchor%3A%20middle%3B%20%7D%0A%20%20%20%20%20%20.product-label%20%7B%20font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2010px%3B%20fill%3A%20%23424242%3B%20text-anchor%3A%20middle%3B%20%7D%0A%20%20%20%20%3C/style%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22950%22%20height%3D%22380%22%20fill%3D%22%23fff%22/%3E%0A%20%20%0A%20%20%3C%21--%20Level%201%3A%20Root%20--%3E%0A%20%20%3Crect%20x%3D%22395%22%20y%3D%2210%22%20width%3D%22160%22%20height%3D%2260%22%20rx%3D%225%22%20fill%3D%22%23e3f2fd%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22475%22%20y%3D%2245%22%20class%3D%22label-bold%22%3EFinastra%20Org%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20Level%202%3A%20BU%20Stacks%20--%3E%0A%20%20%3C%21--%20Lending%20--%3E%0A%20%20%3Crect%20x%3D%2240%22%20y%3D%22120%22%20width%3D%22160%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23fff3e0%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22120%22%20y%3D%22145%22%20class%3D%22label-small%22%3EAZR-C03-LEND-0001%3C/text%3E%0A%20%20%3Ctext%20x%3D%22120%22%20y%3D%22165%22%20class%3D%22label-bold%22%3ELending%20BU%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20Payment%20--%3E%0A%20%20%3Crect%20x%3D%22220%22%20y%3D%22120%22%20width%3D%22160%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23fff3e0%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22145%22%20class%3D%22label-small%22%3EAZR-C03-PAYM-0001%3C/text%3E%0A%20%20%3Ctext%20x%3D%22300%22%20y%3D%22165%22%20class%3D%22label-bold%22%3EPayment%20BU%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20Universal%20Banking%20--%3E%0A%20%20%3Crect%20x%3D%22400%22%20y%3D%22120%22%20width%3D%22160%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23fff3e0%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22480%22%20y%3D%22145%22%20class%3D%22label-small%22%3EAZR-C03-UBNK-0001%3C/text%3E%0A%20%20%3Ctext%20x%3D%22480%22%20y%3D%22165%22%20class%3D%22label-bold%22%3EUniv.%20Banking%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20TCM%20--%3E%0A%20%20%3Crect%20x%3D%22580%22%20y%3D%22120%22%20width%3D%22160%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23fff3e0%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22660%22%20y%3D%22145%22%20class%3D%22label-small%22%3EAZR-C03-TCMG-0001%3C/text%3E%0A%20%20%3Ctext%20x%3D%22660%22%20y%3D%22165%22%20class%3D%22label-bold%22%3ETCM%3C/text%3E%0A%20%20%0A%20%20%3C%21--%20Cornerstone%20--%3E%0A%20%20%3Crect%20x%3D%22760%22%20y%3D%22120%22%20width%3D%22160%22%20height%3D%2270%22%20rx%3D%225%22%20fill%3D%22%23fff3e0%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Ctext%20x%3D%22840%22%20y%3D%22145%22%20class%3D%22label-small%22%3EAZR-C03-CORN-0001%3C/text%3E%0A%20%20%3Ctext%20x%3D%22840%22%20y%3D%22165%22%20class%3D%22label-bold%22%3ECornerstone%3C/text%3E%0A%0A%20%20%3C%21--%20Connectors%20L1%20to%20L2%20--%3E%0A%20%20%3Cpath%20d%3D%22M%20475%2070%20L%20475%2095%20L%20120%2095%20L%20120%20120%22%20fill%3D%22none%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20475%2070%20L%20475%2095%20L%20300%2095%20L%20300%20120%22%20fill%3D%22none%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20475%2070%20L%20475%20120%22%20fill%3D%22none%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20475%2070%20L%20475%2095%20L%20660%2095%20L%20660%20120%22%20fill%3D%22none%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20475%2070%20L%20475%2095%20L%20840%2095%20L%20840%20120%22%20fill%3D%22none%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%222%22/%3E%0A%0A%20%20%3C%21--%20Level%203%3A%20Products%20--%3E%0A%20%20%3Crect%20x%3D%2240%22%20y%3D%22240%22%20width%3D%2275%22%20height%3D%2250%22%20rx%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%23424242%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%2C5%22/%3E%0A%20%20%3Ctext%20x%3D%2277%22%20y%3D%22270%22%20class%3D%22product-label%22%3ELaserPro%3C/text%3E%0A%20%20%3Crect%20x%3D%22125%22%20y%3D%22240%22%20width%3D%2275%22%20height%3D%2250%22%20rx%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%23424242%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%2C5%22/%3E%0A%20%20%3Ctext%20x%3D%22162%22%20y%3D%22270%22%20class%3D%22product-label%22%3ELoanIQ%3C/text%3E%0A%20%20%3Cpath%20d%3D%22M%20120%20190%20L%20120%20215%20L%2077%20215%20L%2077%20240%22%20fill%3D%22none%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20120%20190%20L%20120%20215%20L%20162%20215%20L%20162%20240%22%20fill%3D%22none%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%221%22/%3E%0A%0A%20%20%3Crect%20x%3D%22220%22%20y%3D%22240%22%20width%3D%2275%22%20height%3D%2250%22%20rx%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%23424242%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%2C5%22/%3E%0A%20%20%3Ctext%20x%3D%22257%22%20y%3D%22270%22%20class%3D%22product-label%22%3EPay2Go%3C/text%3E%0A%20%20%3Crect%20x%3D%22305%22%20y%3D%22240%22%20width%3D%2275%22%20height%3D%2250%22%20rx%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%23424242%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%2C5%22/%3E%0A%20%20%3Ctext%20x%3D%22342%22%20y%3D%22270%22%20class%3D%22product-label%22%3EGlobalPay%3C/text%3E%0A%20%20%3Cpath%20d%3D%22M%20300%20190%20L%20300%20215%20L%20257%20215%20L%20257%20240%22%20fill%3D%22none%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20300%20190%20L%20300%20215%20L%20342%20215%20L%20342%20240%22%20fill%3D%22none%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%221%22/%3E%0A%20%20%3C%21--%20Legend%20--%3E%0A%20%20%3Crect%20x%3D%22810%22%20y%3D%22270%22%20width%3D%22120%22%20height%3D%2295%22%20rx%3D%224%22%20fill%3D%22%23fff%22%20stroke%3D%22%23999%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Crect%20x%3D%22810%22%20y%3D%22270%22%20width%3D%22120%22%20height%3D%2220%22%20rx%3D%224%22%20fill%3D%22%23f8f9fa%22%20stroke%3D%22none%22/%3E%0A%20%20%3Cpath%20d%3D%22M%20810%20290%20L%20930%20290%22%20stroke%3D%22%23999%22%20stroke-width%3D%221%22/%3E%0A%20%20%3Ctext%20x%3D%22870%22%20y%3D%22284%22%20style%3D%22font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2011px%3B%20font-weight%3A%20bold%3B%20fill%3A%20%23333%3B%20text-anchor%3A%20middle%3B%22%3ELegend%3C/text%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22820%22%20y%3D%22300%22%20width%3D%2230%22%20height%3D%2215%22%20rx%3D%222%22%20fill%3D%22%23e3f2fd%22%20stroke%3D%22%230d47a1%22%20stroke-width%3D%221.5%22/%3E%0A%20%20%3Ctext%20x%3D%22855%22%20y%3D%22312%22%20style%3D%22font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2010px%3B%20fill%3A%20%23333%3B%20text-anchor%3A%20start%3B%22%3ERoot%20Org%3C/text%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22820%22%20y%3D%22322%22%20width%3D%2230%22%20height%3D%2215%22%20rx%3D%222%22%20fill%3D%22%23fff3e0%22%20stroke%3D%22%23e65100%22%20stroke-width%3D%221.5%22/%3E%0A%20%20%3Ctext%20x%3D%22855%22%20y%3D%22334%22%20style%3D%22font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2010px%3B%20fill%3A%20%23333%3B%20text-anchor%3A%20start%3B%22%3EBU%20Stack%3C/text%3E%0A%20%20%0A%20%20%3Crect%20x%3D%22820%22%20y%3D%22344%22%20width%3D%2230%22%20height%3D%2215%22%20rx%3D%222%22%20fill%3D%22%23fff%22%20stroke%3D%22%23424242%22%20stroke-width%3D%221.5%22%20stroke-dasharray%3D%223%2C3%22/%3E%0A%20%20%3Ctext%20x%3D%22855%22%20y%3D%22356%22%20style%3D%22font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2010px%3B%20fill%3A%20%23333%3B%20text-anchor%3A%20start%3B%22%3EProduct%3C/text%3E%0A%3C/svg%3E%0A" vertex="1" parent="1">
-          <mxGeometry x="0" y="0" width="950" height="380" as="geometry" />
+
+        <!-- TITLE -->
+        <mxCell id="title" value="BU-Aligned Org Structure: From 100+ Stacks to 5-6 Stacks" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=20;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1720" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="subtitle" value="One Finastra Org → 5 BU Stacks → Multiple Product Folders. Logical isolation via LBAC + RBAC replaces physical separation." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="40" y="58" width="1720" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- ROOT: FINASTRA ORG -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <mxCell id="finastraOrg" value="🏢 Finastra Global Org&#10;(Single Grafana Cloud Organization)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;strokeWidth=3;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="700" y="110" width="400" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- 5 BU STACKS (in a row) -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+
+        <!-- Connection lines (top to each stack) -->
+        <mxCell id="orgToStack1" value="" style="endArrow=classic;html=1;strokeColor=#0F2A47;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="180" as="sourcePoint" />
+            <mxPoint x="190" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="orgToStack2" value="" style="endArrow=classic;html=1;strokeColor=#0F2A47;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="180" as="sourcePoint" />
+            <mxPoint x="510" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="orgToStack3" value="" style="endArrow=classic;html=1;strokeColor=#0F2A47;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="180" as="sourcePoint" />
+            <mxPoint x="900" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="orgToStack4" value="" style="endArrow=classic;html=1;strokeColor=#0F2A47;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="180" as="sourcePoint" />
+            <mxPoint x="1290" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="orgToStack5" value="" style="endArrow=classic;html=1;strokeColor=#0F2A47;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="180" as="sourcePoint" />
+            <mxPoint x="1610" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- BU 1: LENDING -->
+        <mxCell id="stackLending" value="🏦 Lending BU" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#E97B2A;strokeWidth=3;fontSize=14;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="240" width="280" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="stackLendingName" value="AZR-C03-LEND-0001" style="text;html=1;strokeColor=none;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="240" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="stackLendingLBAC" value="🛡️ LBAC enforced" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#E97B2A;" vertex="1" parent="1">
+          <mxGeometry x="80" y="312" width="240" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prodLaserPro" value="📁 LaserPro" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;dashed=1;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="80" y="345" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prodLaserProDetail" value="dashboards/  alerts/  rbac.tf" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontFamily=Courier New;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="80" y="385" width="240" height="14" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prodLoanIQ" value="📁 LoanIQ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;dashed=1;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="80" y="410" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prodLoanIQDetail" value="dashboards/  alerts/  rbac.tf" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontFamily=Courier New;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="80" y="450" width="240" height="14" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lendingMore" value="...more products as folders" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="80" y="475" width="240" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- BU 2: PAYMENT -->
+        <mxCell id="stackPayment" value="💳 Payment BU" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#E97B2A;strokeWidth=3;fontSize=14;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="240" width="280" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="stackPaymentName" value="AZR-C03-PAYM-0001" style="text;html=1;strokeColor=none;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="400" y="280" width="240" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="stackPaymentLBAC" value="🛡️ LBAC enforced" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#E97B2A;" vertex="1" parent="1">
+          <mxGeometry x="400" y="312" width="240" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prodPay2Go" value="📁 Pay2Go" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;dashed=1;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="400" y="345" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prodPay2GoDetail" value="dashboards/  alerts/  rbac.tf" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontFamily=Courier New;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="400" y="385" width="240" height="14" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prodGlobalPay" value="📁 GlobalPay" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;dashed=1;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="400" y="410" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prodGlobalPayDetail" value="dashboards/  alerts/  rbac.tf" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontFamily=Courier New;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="400" y="450" width="240" height="14" as="geometry" />
+        </mxCell>
+
+        <mxCell id="paymentMore" value="...more products as folders" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="400" y="475" width="240" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- BU 3: UNIVERSAL BANKING -->
+        <mxCell id="stackUBNK" value="🏛️ Universal Banking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#E97B2A;strokeWidth=3;fontSize=14;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="700" y="240" width="280" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="stackUBNKName" value="AZR-C03-UBNK-0001" style="text;html=1;strokeColor=none;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="720" y="280" width="240" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="stackUBNKLBAC" value="🛡️ LBAC enforced" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#E97B2A;" vertex="1" parent="1">
+          <mxGeometry x="720" y="312" width="240" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prodFusionBank" value="📁 FusionBank" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;dashed=1;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="720" y="345" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prodFusionBankDetail" value="dashboards/  alerts/  rbac.tf" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontFamily=Courier New;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="720" y="385" width="240" height="14" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prodEquation" value="📁 Equation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;dashed=1;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="720" y="410" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prodEquationDetail" value="dashboards/  alerts/  rbac.tf" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontFamily=Courier New;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="720" y="450" width="240" height="14" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ubnkMore" value="...more products as folders" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="720" y="475" width="240" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- BU 4: TCM -->
+        <mxCell id="stackTCM" value="📊 TCM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#E97B2A;strokeWidth=3;fontSize=14;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="240" width="280" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="stackTCMName" value="AZR-C03-TCMG-0001" style="text;html=1;strokeColor=none;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="280" width="240" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="stackTCMLBAC" value="🛡️ LBAC enforced" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#E97B2A;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="312" width="240" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prodKondor" value="📁 Kondor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;dashed=1;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="345" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prodKondorDetail" value="dashboards/  alerts/  rbac.tf" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontFamily=Courier New;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="385" width="240" height="14" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prodFrontArena" value="📁 Front Arena" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;dashed=1;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="410" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prodFrontArenaDetail" value="dashboards/  alerts/  rbac.tf" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontFamily=Courier New;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="450" width="240" height="14" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tcmMore" value="...more products as folders" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="475" width="240" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- BU 5: CORNERSTONE -->
+        <mxCell id="stackCorn" value="🏗️ Cornerstone &amp; SES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#E97B2A;strokeWidth=3;fontSize=14;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="240" width="280" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="stackCornName" value="AZR-C03-CORN-0001" style="text;html=1;strokeColor=none;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#0F2A47;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="280" width="240" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="stackCornLBAC" value="🛡️ LBAC enforced" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#E97B2A;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="312" width="240" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prodCornerstone" value="📁 Cornerstone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;dashed=1;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="345" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prodCornerstoneDetail" value="dashboards/  alerts/  rbac.tf" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontFamily=Courier New;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="385" width="240" height="14" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prodSES" value="📁 SES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;dashed=1;fontSize=11;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="410" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="prodSESDetail" value="dashboards/  alerts/  rbac.tf" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontFamily=Courier New;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="450" width="240" height="14" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cornMore" value="...more products as folders" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="475" width="240" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- COMPARISON BANNERS (in each stack) -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+
+        <mxCell id="comparisonNote1" value="Each product gets:&#10;• Editor RBAC on its folder&#10;• LBAC: {product=&quot;...&quot;}&#10;• Dedicated alert routing&#10;&#10;Cannot access other&#10;products&#39; data." style="text;html=1;strokeColor=#E97B2A;fillColor=#FFFBEB;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=9;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="510" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="comparisonNote2" value="Each product gets:&#10;• Editor RBAC on its folder&#10;• LBAC: {product=&quot;...&quot;}&#10;• Dedicated alert routing&#10;&#10;Cannot access other&#10;products&#39; data." style="text;html=1;strokeColor=#E97B2A;fillColor=#FFFBEB;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=9;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="400" y="510" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="comparisonNote3" value="Each product gets:&#10;• Editor RBAC on its folder&#10;• LBAC: {product=&quot;...&quot;}&#10;• Dedicated alert routing&#10;&#10;Cannot access other&#10;products&#39; data." style="text;html=1;strokeColor=#E97B2A;fillColor=#FFFBEB;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=9;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="720" y="510" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="comparisonNote4" value="Each product gets:&#10;• Editor RBAC on its folder&#10;• LBAC: {product=&quot;...&quot;}&#10;• Dedicated alert routing&#10;&#10;Cannot access other&#10;products&#39; data." style="text;html=1;strokeColor=#E97B2A;fillColor=#FFFBEB;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=9;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="510" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="comparisonNote5" value="Each product gets:&#10;• Editor RBAC on its folder&#10;• LBAC: {product=&quot;...&quot;}&#10;• Dedicated alert routing&#10;&#10;Cannot access other&#10;products&#39; data." style="text;html=1;strokeColor=#E97B2A;fillColor=#FFFBEB;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=9;fontStyle=0;fontColor=#0F2A47;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="510" width="240" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Bottom notes per stack (Data Residency) -->
+        <mxCell id="residency1" value="🌎 Multi-region support&#10;via AZR-WE1-LEND-0001&#10;(when needed)" style="text;html=1;strokeColor=#E97B2A;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=9;fontStyle=2;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="80" y="650" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="residency2" value="🌍 Multi-region support&#10;via AZR-WE1-PAYM-0001&#10;(Pay2Go GDPR)" style="text;html=1;strokeColor=#E97B2A;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=9;fontStyle=2;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="400" y="650" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="residency3" value="🌐 Single-region&#10;(US Central)" style="text;html=1;strokeColor=#E97B2A;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=9;fontStyle=2;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="720" y="650" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="residency4" value="🌐 Single-region&#10;(US Central)" style="text;html=1;strokeColor=#E97B2A;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=9;fontStyle=2;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="650" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="residency5" value="🌐 Single-region&#10;(US Central)" style="text;html=1;strokeColor=#E97B2A;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=9;fontStyle=2;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="650" width="240" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Status badge per stack -->
+        <mxCell id="status1" value="✓ Production Ready" style="text;html=1;strokeColor=none;fillColor=#DCFCE7;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="80" y="720" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="status2" value="✓ Production Ready" style="text;html=1;strokeColor=none;fillColor=#DCFCE7;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="400" y="720" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="status3" value="✓ Production Ready" style="text;html=1;strokeColor=none;fillColor=#DCFCE7;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="720" y="720" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="status4" value="✓ Production Ready" style="text;html=1;strokeColor=none;fillColor=#DCFCE7;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="720" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="status5" value="✓ Production Ready" style="text;html=1;strokeColor=none;fillColor=#DCFCE7;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="720" width="240" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- COMPARISON BAR (v1 vs v2) -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <mxCell id="comparisonBar" value="THE STRUCTURAL SHIFT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#FFFFFF;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="800" width="1620" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="v1Box" value="Pattern 005 (v1): Per-Product Stacks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE6E6;strokeColor=#C0392B;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="840" width="780" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="v1Detail" value="100+ stateful stacks  •  Asset duplication  •  Cross-tier views impossible  •  SRE access sprawl" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="80" y="867" width="780" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="v2Box" value="Pattern 006 (v2): BU-Aligned Stacks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#2E8B5F;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="880" y="840" width="780" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="v2Detail" value="5-6 BU stacks  •  Shared dashboards  •  Native cross-tier views  •  Centralized identity via Entra ID" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="880" y="867" width="780" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- LEGEND -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <mxCell id="legendContainer" value="LEGEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0F2A47;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="915" width="1620" height="75" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legCol1Title" value="HIERARCHY" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="942" width="150" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legNavy" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="80" y="965" width="20" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="legNavyLabel" value="Org Level (Finastra)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="106" y="962" width="160" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legOrange" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#E97B2A;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="280" y="965" width="20" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="legOrangeLabel" value="BU Level (Stack)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="306" y="962" width="160" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legFolder" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="965" width="20" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="legFolderLabel" value="Product Level (Folder)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="506" y="962" width="180" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legCol2Title" value="ENFORCEMENT" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="942" width="200" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legEnfText" value="🛡️ LBAC enforces product isolation at query time  |  RBAC scopes folder access  |  Both auto-generated via Terraform from Entra ID groups" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#0F2A47;" vertex="1" parent="1">
+          <mxGeometry x="720" y="962" width="940" height="18" as="geometry" />
+        </mxCell>
+
       </root>
     </mxGraphModel>
   </diagram>
