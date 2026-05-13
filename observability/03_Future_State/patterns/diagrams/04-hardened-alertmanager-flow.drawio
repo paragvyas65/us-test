@@ -1,250 +1,111 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0" version="24.7.17">
-  <diagram name="Hardened Alertmanager Flow" id="hardened-alertmanager">
-    <mxGraphModel dx="1800" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1000" math="0" shadow="0">
+<mxfile host="app.diagrams.net" agent="Pattern-006-Gen-v6" version="24.7.17">
+  <diagram name="Hardened Alertmanager Flow" id="exec-60679">
+    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-
-        <!-- TITLE -->
-        <mxCell id="title" value="Hardened Alertmanager Flow: Tenant-Isolated Alert Delivery" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=20;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="40" y="20" width="1720" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="subtitle" value="Four hardening guardrails ensure cross-tenant alert suppression is STRUCTURALLY IMPOSSIBLE in a shared Alertmanager" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=2;fontColor=#5A6A7E;" vertex="1" parent="1">
-          <mxGeometry x="40" y="58" width="1720" height="24" as="geometry" />
-        </mxCell>
-
-        <!-- ════════════════════════════════════════════════════════════════ -->
-        <!-- INPUT -->
-        <!-- ════════════════════════════════════════════════════════════════ -->
-        <mxCell id="inputContainer" value="① INPUT — Alert Rule Submitted via PR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5EC;strokeColor=#2E8B5F;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
-          <mxGeometry x="600" y="105" width="600" height="120" as="geometry" />
-        </mxCell>
-
-        <mxCell id="inputBox" value="📝 PrometheusRule YAML" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E8B5F;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="620" y="140" width="560" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="inputLabels" value="Required labels: product, env, bu, alert_family, severity, namespace" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=2;fontColor=#5A6A7E;fontFamily=Courier New;" vertex="1" parent="1">
-          <mxGeometry x="620" y="185" width="560" height="30" as="geometry" />
-        </mxCell>
-
-        <!-- Arrow down to hardening -->
-        <mxCell id="arrowToHardening" value="" style="endArrow=classic;html=1;strokeColor=#0F2A47;strokeWidth=3;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="900" y="225" as="sourcePoint" />
-            <mxPoint x="900" y="265" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-
-        <!-- ════════════════════════════════════════════════════════════════ -->
-        <!-- HARDENING FLOW (4 GUARDRAILS) -->
-        <!-- ════════════════════════════════════════════════════════════════ -->
-        <mxCell id="hardeningContainer" value="② HARDENED ALERTMANAGER FLOW — Four Guardrails (All Must Pass)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#E97B2A;strokeWidth=3;dashed=1;fontSize=13;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
-          <mxGeometry x="60" y="270" width="1680" height="420" as="geometry" />
-        </mxCell>
-
-        <!-- Guardrail 1: Family Isolation -->
-        <mxCell id="g1Container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="100" y="320" width="380" height="340" as="geometry" />
-        </mxCell>
-        <mxCell id="g1Number" value="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E97B2A;strokeColor=#E97B2A;fontSize=32;fontStyle=1;fontColor=#FFFFFF;fontFamily=Courier New;" vertex="1" parent="1">
-          <mxGeometry x="120" y="340" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="g1Title" value="Family Isolation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="200" y="340" width="260" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="g1SubTitle" value="alert_family label" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#5A6A7E;fontFamily=Courier New;" vertex="1" parent="1">
-          <mxGeometry x="200" y="370" width="260" height="20" as="geometry" />
-        </mxCell>
-
-        <mxCell id="g1Code" value="alert_family:&#10;  - app-availability&#10;  - custom-resource&#10;  - infra-health" style="text;html=1;strokeColor=#E97B2A;fillColor=#0F2A47;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontFamily=Courier New;fontColor=#E97B2A;rounded=1;spacingLeft=15;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="120" y="410" width="340" height="100" as="geometry" />
-        </mxCell>
-
-        <mxCell id="g1How" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#0F2A47;letterSpacing=1;" vertex="1" parent="1">
-          <mxGeometry x="120" y="520" width="340" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="g1Detail" value="All alerts are strictly categorized into families. A critical alert in one family CANNOT inhibit alerts in another family." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="120" y="540" width="340" height="50" as="geometry" />
-        </mxCell>
-
-        <mxCell id="g1Block" value="🚫 Blocks: cross-family suppression" style="text;html=1;strokeColor=none;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#92400E;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="120" y="610" width="340" height="34" as="geometry" />
-        </mxCell>
-
-        <!-- Guardrail 2: Identity Matching -->
-        <mxCell id="g2Container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="500" y="320" width="380" height="340" as="geometry" />
-        </mxCell>
-        <mxCell id="g2Number" value="2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E97B2A;strokeColor=#E97B2A;fontSize=32;fontStyle=1;fontColor=#FFFFFF;fontFamily=Courier New;" vertex="1" parent="1">
-          <mxGeometry x="520" y="340" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="g2Title" value="Identity Matching" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="600" y="340" width="260" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="g2SubTitle" value="equal labels match" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#5A6A7E;fontFamily=Courier New;" vertex="1" parent="1">
-          <mxGeometry x="600" y="370" width="260" height="20" as="geometry" />
-        </mxCell>
-
-        <mxCell id="g2Code" value="equal:&#10;  - namespace&#10;  - cluster&#10;  - name" style="text;html=1;strokeColor=#E97B2A;fillColor=#0F2A47;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontFamily=Courier New;fontColor=#E97B2A;rounded=1;spacingLeft=15;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="520" y="410" width="340" height="100" as="geometry" />
-        </mxCell>
-
-        <mxCell id="g2How" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#0F2A47;letterSpacing=1;" vertex="1" parent="1">
-          <mxGeometry x="520" y="520" width="340" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="g2Detail" value="Inhibit rules strictly match on namespace, cluster, and name. Team A&#39;s alerts can only suppress Team A&#39;s alerts — never Team B&#39;s." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="520" y="540" width="340" height="50" as="geometry" />
-        </mxCell>
-
-        <mxCell id="g2Block" value="🚫 Blocks: cross-tenant suppression" style="text;html=1;strokeColor=none;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#92400E;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="520" y="610" width="340" height="34" as="geometry" />
-        </mxCell>
-
-        <!-- Guardrail 3: Jira/OnCall Separation -->
-        <mxCell id="g3Container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="900" y="320" width="380" height="340" as="geometry" />
-        </mxCell>
-        <mxCell id="g3Number" value="3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E97B2A;strokeColor=#E97B2A;fontSize=32;fontStyle=1;fontColor=#FFFFFF;fontFamily=Courier New;" vertex="1" parent="1">
-          <mxGeometry x="920" y="340" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="g3Title" value="Jira vs OnCall" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="1000" y="340" width="260" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="g3SubTitle" value="routing separation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#5A6A7E;fontFamily=Courier New;" vertex="1" parent="1">
-          <mxGeometry x="1000" y="370" width="260" height="20" as="geometry" />
-        </mxCell>
-
-        <mxCell id="g3Code" value="notify: jira&#10;  priority: P3&#10;---&#10;notify: page&#10;  severity: critical" style="text;html=1;strokeColor=#E97B2A;fillColor=#0F2A47;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontFamily=Courier New;fontColor=#E97B2A;rounded=1;spacingLeft=15;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="920" y="410" width="340" height="100" as="geometry" />
-        </mxCell>
-
-        <mxCell id="g3How" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#0F2A47;letterSpacing=1;" vertex="1" parent="1">
-          <mxGeometry x="920" y="520" width="340" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="g3Detail" value="Alerts generating Jira tickets are logically separated from OnCall paging. Ticket-routing rules can never mute active pages." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="920" y="540" width="340" height="50" as="geometry" />
-        </mxCell>
-
-        <mxCell id="g3Block" value="🚫 Blocks: pages muted by tickets" style="text;html=1;strokeColor=none;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#92400E;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="920" y="610" width="340" height="34" as="geometry" />
-        </mxCell>
-
-        <!-- Guardrail 4: GitOps Enforcement -->
-        <mxCell id="g4Container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E97B2A;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="1300" y="320" width="380" height="340" as="geometry" />
-        </mxCell>
-        <mxCell id="g4Number" value="4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E97B2A;strokeColor=#E97B2A;fontSize=32;fontStyle=1;fontColor=#FFFFFF;fontFamily=Courier New;" vertex="1" parent="1">
-          <mxGeometry x="1320" y="340" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="g4Title" value="GitOps Enforcement" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="1400" y="340" width="260" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="g4SubTitle" value="CI/CD validation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#5A6A7E;fontFamily=Courier New;" vertex="1" parent="1">
-          <mxGeometry x="1400" y="370" width="260" height="20" as="geometry" />
-        </mxCell>
-
-        <mxCell id="g4Code" value="CI/CD checks:&#10;  ✓ namespace label&#10;  ✓ alert_family label&#10;  ✗ REJECT if missing" style="text;html=1;strokeColor=#E97B2A;fillColor=#0F2A47;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontFamily=Courier New;fontColor=#E97B2A;rounded=1;spacingLeft=15;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="1320" y="410" width="340" height="100" as="geometry" />
-        </mxCell>
-
-        <mxCell id="g4How" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#0F2A47;letterSpacing=1;" vertex="1" parent="1">
-          <mxGeometry x="1320" y="520" width="340" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="g4Detail" value="GitOps pipeline auto-rejects any alert rules missing mandatory namespace and alert_family labels. No escape hatch." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="1320" y="540" width="340" height="50" as="geometry" />
-        </mxCell>
-
-        <mxCell id="g4Block" value="🚫 Blocks: unlabeled rules at PR time" style="text;html=1;strokeColor=none;fillColor=#FED7AA;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#92400E;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="1320" y="610" width="340" height="34" as="geometry" />
-        </mxCell>
-
-        <!-- Arrows from each guardrail to output -->
-        <mxCell id="g1ToOut" value="" style="endArrow=classic;html=1;strokeColor=#0F2A47;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="290" y="660" as="sourcePoint" />
-            <mxPoint x="700" y="750" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="g2ToOut" value="" style="endArrow=classic;html=1;strokeColor=#0F2A47;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="690" y="660" as="sourcePoint" />
-            <mxPoint x="800" y="750" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="g3ToOut" value="" style="endArrow=classic;html=1;strokeColor=#0F2A47;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1090" y="660" as="sourcePoint" />
-            <mxPoint x="900" y="750" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="g4ToOut" value="" style="endArrow=classic;html=1;strokeColor=#0F2A47;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1490" y="660" as="sourcePoint" />
-            <mxPoint x="1100" y="750" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-
-        <!-- ════════════════════════════════════════════════════════════════ -->
-        <!-- OUTPUT -->
-        <!-- ════════════════════════════════════════════════════════════════ -->
-        <mxCell id="outputContainer" value="③ OUTPUT — Tenant-Isolated Alert Delivery" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F2FA;strokeColor=#2563EB;strokeWidth=3;fontSize=13;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
-          <mxGeometry x="500" y="710" width="800" height="155" as="geometry" />
-        </mxCell>
-
-        <mxCell id="outputBox" value="✓ Alert delivered to correct tenant&#39;s on-call rotation only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#2E8B5F;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F4F2C;" vertex="1" parent="1">
-          <mxGeometry x="520" y="750" width="760" height="40" as="geometry" />
-        </mxCell>
-
-        <mxCell id="outputGuarantee" value="🛡️ Cross-tenant suppression: STRUCTURALLY IMPOSSIBLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F2A47;strokeColor=#0F2A47;fontSize=13;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="520" y="800" width="760" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- ════════════════════════════════════════════════════════════════ -->
-        <!-- LEGEND -->
-        <!-- ════════════════════════════════════════════════════════════════ -->
-        <mxCell id="legendContainer" value="LEGEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0F2A47;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#0F2A47;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
-          <mxGeometry x="40" y="880" width="1720" height="100" as="geometry" />
-        </mxCell>
-
-        <mxCell id="legCol1Title" value="FLOW STAGES" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
-          <mxGeometry x="60" y="910" width="200" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="legGreen" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F5EC;strokeColor=#2E8B5F;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="60" y="935" width="22" height="16" as="geometry" />
-        </mxCell>
-        <mxCell id="legGreenLabel" value="① Input (PR submission)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="90" y="935" width="200" height="16" as="geometry" />
-        </mxCell>
-        <mxCell id="legOrangeDashed" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#E97B2A;strokeWidth=2;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="60" y="956" width="22" height="16" as="geometry" />
-        </mxCell>
-        <mxCell id="legOrangeLabel" value="② Hardened Flow (4 guardrails)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="90" y="956" width="230" height="16" as="geometry" />
-        </mxCell>
-
-        <mxCell id="legCol2Title" value="GUARDRAIL OUTCOMES" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
-          <mxGeometry x="380" y="910" width="200" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="legBlue" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6F2FA;strokeColor=#2563EB;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="380" y="935" width="22" height="16" as="geometry" />
-        </mxCell>
-        <mxCell id="legBlueLabel" value="③ Output (delivery)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="410" y="935" width="200" height="16" as="geometry" />
-        </mxCell>
-        <mxCell id="legBlock" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FED7AA;strokeColor=#E97B2A;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="380" y="956" width="22" height="16" as="geometry" />
-        </mxCell>
-        <mxCell id="legBlockLabel" value="🚫 What this guardrail blocks" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="410" y="956" width="230" height="16" as="geometry" />
-        </mxCell>
-
-        <mxCell id="legCol3Title" value="KEY INSIGHT" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#5A6A7E;letterSpacing=1;" vertex="1" parent="1">
-          <mxGeometry x="720" y="910" width="200" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="keyInsight" value="Centralizing Alertmanager creates risk: a single bad inhibit rule could silence another team&#39;s critical alerts.&#10;&#10;Four guardrails make this STRUCTURALLY IMPOSSIBLE — not just discouraged by convention, but blocked at the&#10;label/CI/routing level. Team A&#39;s alerts cannot silence Team B&#39;s, even with a shared Alertmanager." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=10;fontColor=#0F2A47;" vertex="1" parent="1">
-          <mxGeometry x="720" y="928" width="1020" height="55" as="geometry" />
-        </mxCell>
-
+        <mxCell id="c2" value="Hardened Alertmanager Flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=22;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="0" y="18" width="1800" height="30" as="geometry" /></mxCell>
+        <mxCell id="c3" value="Four guardrails make cross-tenant alert suppression STRUCTURALLY IMPOSSIBLE in a shared stack — by design." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="0" y="50" width="1800" height="22" as="geometry" /></mxCell>
+        <mxCell id="c4" value="" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#93C5FD;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="40" y="100" width="1720" height="130" as="geometry" /></mxCell>
+        <mxCell id="c5" value="① INPUT — Alert Rule Submitted via PR" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;fontColor=#FFFFFF;fontSize=12;fontStyle=1;letterSpacing=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="60" y="116" width="380" height="26" as="geometry" /></mxCell>
+        <mxCell id="c6" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E5E7EB;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="60" y="152" width="1680" height="70" as="geometry" /></mxCell>
+        <mxCell id="c7" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=15;strokeColor=#2563EB;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="87.5" y="169.5" width="35.0" height="35.0" as="geometry" /></mxCell>
+        <mxCell id="c8" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;" vertex="1" parent="1"><mxGeometry x="99.0" y="181.0" width="12.0" height="12.0" as="geometry" /></mxCell>
+        <mxCell id="c9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="123.0" y="183.0" width="4" height="8" as="geometry" /></mxCell>
+        <mxCell id="c10" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="117.14213562373095" y="197.14213562373095" width="4" height="8" as="geometry" /></mxCell>
+        <mxCell id="c11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="103.0" y="203.0" width="4" height="8" as="geometry" /></mxCell>
+        <mxCell id="c12" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="88.85786437626905" y="197.14213562373095" width="4" height="8" as="geometry" /></mxCell>
+        <mxCell id="c13" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="83.0" y="183.0" width="4" height="8" as="geometry" /></mxCell>
+        <mxCell id="c14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="88.85786437626905" y="168.85786437626905" width="4" height="8" as="geometry" /></mxCell>
+        <mxCell id="c15" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="103.0" y="163.0" width="4" height="8" as="geometry" /></mxCell>
+        <mxCell id="c16" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="117.14213562373095" y="168.85786437626905" width="4" height="8" as="geometry" /></mxCell>
+        <mxCell id="c17" value="PrometheusRule YAML" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="150" y="158" width="600" height="24" as="geometry" /></mxCell>
+        <mxCell id="c18" value="Required labels: product, env, bu, alert_family, severity, namespace" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="150" y="184" width="600" height="18" as="geometry" /></mxCell>
+        <mxCell id="c19" value="Validated at PR time" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#10B981;strokeColor=#10B981;fontColor=#FFFFFF;fontSize=9;fontStyle=1;align=center;verticalAlign=middle;letterSpacing=1;" vertex="1" parent="1"><mxGeometry x="1530" y="180" width="200" height="20" as="geometry" /></mxCell>
+        <mxCell id="c20" value="" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#FDBA74;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="40" y="250" width="1720" height="580" as="geometry" /></mxCell>
+        <mxCell id="c21" value="② HARDENED ALERTMANAGER FLOW — Four Guardrails" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#EA580C;fontColor=#FFFFFF;fontSize=12;fontStyle=1;letterSpacing=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="60" y="266" width="540" height="26" as="geometry" /></mxCell>
+        <mxCell id="c22" value="All four must pass — failure of any blocks delivery" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="620" y="266" width="1100" height="26" as="geometry" /></mxCell>
+        <mxCell id="c23" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="60" y="310" width="410" height="470" as="geometry" /></mxCell>
+        <mxCell id="c24" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#FFFFFF;strokeWidth=3;fontColor=white;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="73" y="323" width="44" height="44" as="geometry" /></mxCell>
+        <mxCell id="c25" value="Family Isolation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="130" y="320" width="320" height="24" as="geometry" /></mxCell>
+        <mxCell id="c26" value="alert_family label" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="130" y="344" width="320" height="18" as="geometry" /></mxCell>
+        <mxCell id="c27" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#F1F5F9;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="76" y="385" width="378" height="96" as="geometry" /></mxCell>
+        <mxCell id="c28" value="CONFIG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#94A3B8;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="76" y="389" width="378" height="18" as="geometry" /></mxCell>
+        <mxCell id="c29" value="alert_family:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="90" y="409" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c30" value="  - app-availability" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="90" y="426" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c31" value="  - custom-resource" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="90" y="443" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c32" value="  - infra-health" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="90" y="460" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c33" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="76" y="497" width="378" height="18" as="geometry" /></mxCell>
+        <mxCell id="c34" value="Strictly categorized. A critical alert in one" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="76" y="517" width="378" height="16" as="geometry" /></mxCell>
+        <mxCell id="c35" value="family CANNOT inhibit alerts in another" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="76" y="533" width="378" height="16" as="geometry" /></mxCell>
+        <mxCell id="c36" value="family." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="76" y="549" width="378" height="16" as="geometry" /></mxCell>
+        <mxCell id="c37" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="76" y="730" width="378" height="35" as="geometry" /></mxCell>
+        <mxCell id="c38" value="🚫  Blocks: cross-family suppression" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="76" y="730" width="378" height="35" as="geometry" /></mxCell>
+        <mxCell id="c39" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="485" y="310" width="410" height="470" as="geometry" /></mxCell>
+        <mxCell id="c40" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#FFFFFF;strokeWidth=3;fontColor=white;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="498" y="323" width="44" height="44" as="geometry" /></mxCell>
+        <mxCell id="c41" value="Identity Matching" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="555" y="320" width="320" height="24" as="geometry" /></mxCell>
+        <mxCell id="c42" value="equal labels match" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="555" y="344" width="320" height="18" as="geometry" /></mxCell>
+        <mxCell id="c43" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#F1F5F9;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="501" y="385" width="378" height="96" as="geometry" /></mxCell>
+        <mxCell id="c44" value="CONFIG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#94A3B8;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="501" y="389" width="378" height="18" as="geometry" /></mxCell>
+        <mxCell id="c45" value="equal:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="515" y="409" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c46" value="  - namespace" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="515" y="426" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c47" value="  - cluster" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="515" y="443" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c48" value="  - name" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="515" y="460" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c49" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="501" y="497" width="378" height="18" as="geometry" /></mxCell>
+        <mxCell id="c50" value="Inhibit rules strictly match on" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="501" y="517" width="378" height="16" as="geometry" /></mxCell>
+        <mxCell id="c51" value="namespace+cluster+name. Team A's alerts only" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="501" y="533" width="378" height="16" as="geometry" /></mxCell>
+        <mxCell id="c52" value="suppress Team A's." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="501" y="549" width="378" height="16" as="geometry" /></mxCell>
+        <mxCell id="c53" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="501" y="730" width="378" height="35" as="geometry" /></mxCell>
+        <mxCell id="c54" value="🚫  Blocks: cross-tenant suppression" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="501" y="730" width="378" height="35" as="geometry" /></mxCell>
+        <mxCell id="c55" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="910" y="310" width="410" height="470" as="geometry" /></mxCell>
+        <mxCell id="c56" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#FFFFFF;strokeWidth=3;fontColor=white;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="923" y="323" width="44" height="44" as="geometry" /></mxCell>
+        <mxCell id="c57" value="Jira vs OnCall" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="980" y="320" width="320" height="24" as="geometry" /></mxCell>
+        <mxCell id="c58" value="routing separation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="980" y="344" width="320" height="18" as="geometry" /></mxCell>
+        <mxCell id="c59" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#F1F5F9;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="926" y="385" width="378" height="113" as="geometry" /></mxCell>
+        <mxCell id="c60" value="CONFIG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#94A3B8;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="926" y="389" width="378" height="18" as="geometry" /></mxCell>
+        <mxCell id="c61" value="notify: jira" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="940" y="409" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c62" value="priority: P3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="940" y="426" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c63" value="---" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="940" y="443" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c64" value="notify: page" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="940" y="460" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c65" value="severity: critical" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="940" y="477" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c66" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="926" y="514" width="378" height="18" as="geometry" /></mxCell>
+        <mxCell id="c67" value="Ticketing alerts logically separated from" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="926" y="534" width="378" height="16" as="geometry" /></mxCell>
+        <mxCell id="c68" value="paging. Ticket rules cannot mute page alerts." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="926" y="550" width="378" height="16" as="geometry" /></mxCell>
+        <mxCell id="c69" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="926" y="730" width="378" height="35" as="geometry" /></mxCell>
+        <mxCell id="c70" value="🚫  Blocks: pages muted by tickets" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="926" y="730" width="378" height="35" as="geometry" /></mxCell>
+        <mxCell id="c71" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="1335" y="310" width="410" height="470" as="geometry" /></mxCell>
+        <mxCell id="c72" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#FFFFFF;strokeWidth=3;fontColor=white;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="1348" y="323" width="44" height="44" as="geometry" /></mxCell>
+        <mxCell id="c73" value="GitOps Enforcement" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1405" y="320" width="320" height="24" as="geometry" /></mxCell>
+        <mxCell id="c74" value="CI/CD validation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1405" y="344" width="320" height="18" as="geometry" /></mxCell>
+        <mxCell id="c75" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#F1F5F9;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="1351" y="385" width="378" height="96" as="geometry" /></mxCell>
+        <mxCell id="c76" value="CONFIG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#94A3B8;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1351" y="389" width="378" height="18" as="geometry" /></mxCell>
+        <mxCell id="c77" value="validation:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="1365" y="409" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c78" value="  - required-labels" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="1365" y="426" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c79" value="  - family-defined" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="1365" y="443" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c80" value="  - tenant-match" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="1365" y="460" width="350" height="16" as="geometry" /></mxCell>
+        <mxCell id="c81" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1351" y="497" width="378" height="18" as="geometry" /></mxCell>
+        <mxCell id="c82" value="Unlabeled or unfamilied rules rejected at PR" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1351" y="517" width="378" height="16" as="geometry" /></mxCell>
+        <mxCell id="c83" value="time. They never reach production." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1351" y="533" width="378" height="16" as="geometry" /></mxCell>
+        <mxCell id="c84" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="1351" y="730" width="378" height="35" as="geometry" /></mxCell>
+        <mxCell id="c85" value="🚫  Blocks: misconfigured rules entering" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1351" y="730" width="378" height="35" as="geometry" /></mxCell>
+        <mxCell id="c86" value="AND" style="endArrow=classic;html=1;strokeColor=#EA580C;strokeWidth=2;fontSize=10;fontStyle=2;labelBackgroundColor=#FFFFFF;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="468" y="545" as="sourcePoint" /><mxPoint x="487" y="545" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="c87" value="AND" style="endArrow=classic;html=1;strokeColor=#EA580C;strokeWidth=2;fontSize=10;fontStyle=2;labelBackgroundColor=#FFFFFF;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="893" y="545" as="sourcePoint" /><mxPoint x="912" y="545" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="c88" value="AND" style="endArrow=classic;html=1;strokeColor=#EA580C;strokeWidth=2;fontSize=10;fontStyle=2;labelBackgroundColor=#FFFFFF;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="1318" y="545" as="sourcePoint" /><mxPoint x="1337" y="545" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="c89" value="" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#86EFAC;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="40" y="850" width="1720" height="110" as="geometry" /></mxCell>
+        <mxCell id="c90" value="③ OUTPUT — Delivery Decision" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#10B981;strokeColor=#10B981;fontColor=#FFFFFF;fontSize=12;fontStyle=1;letterSpacing=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="60" y="866" width="380" height="26" as="geometry" /></mxCell>
+        <mxCell id="c91" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#86EFAC;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="80" y="905" width="820" height="45" as="geometry" /></mxCell>
+        <mxCell id="c92" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#10B981;fillOpacity=15;strokeColor=#10B981;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="95.0" y="912.0" width="28.0" height="28.0" as="geometry" /></mxCell>
+        <mxCell id="c93" value="ALL 4 PASS → Alert routed to correct tenant" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;fontColor=#10B981;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="135" y="908" width="800" height="20" as="geometry" /></mxCell>
+        <mxCell id="c94" value="Reaches Jira / OnCall / dashboard for the right BU + product team" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="135" y="928" width="800" height="18" as="geometry" /></mxCell>
+        <mxCell id="c95" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="900" y="905" width="820" height="45" as="geometry" /></mxCell>
+        <mxCell id="c96" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DC2626;fillOpacity=15;strokeColor=#DC2626;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="915.0" y="912.0" width="28.0" height="28.0" as="geometry" /></mxCell>
+        <mxCell id="c97" value="ANY FAILS → Rule rejected, blocked from prod" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="955" y="908" width="800" height="20" as="geometry" /></mxCell>
+        <mxCell id="c98" value="PR fails CI / runtime rule never matches / cross-tenant suppression impossible" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="955" y="928" width="800" height="18" as="geometry" /></mxCell>
+        <mxCell id="c99" value="" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#0F1F3F;strokeColor=#0F1F3F;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="40" y="980" width="1720" height="100" as="geometry" /></mxCell>
+        <mxCell id="c100" value="KEY INSIGHT" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="65" y="990" width="200" height="18" as="geometry" /></mxCell>
+        <mxCell id="c101" value="Cross-tenant suppression is structurally impossible — not by convention, by design." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;fontColor=#FFFFFF;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="65" y="1012" width="1670" height="24" as="geometry" /></mxCell>
+        <mxCell id="c102" value="Family + identity match + routing separation + CI enforcement. Each guardrail independent; all four must pass." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#CBD5E1;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="65" y="1038" width="1670" height="20" as="geometry" /></mxCell>
+        <mxCell id="c103" value="Vladimir's Q4 — Alertmanager in shared stack — resolved. Five failure modes documented in markdown." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=2;fontColor=#94A3B8;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="65" y="1060" width="1670" height="16" as="geometry" /></mxCell>
       </root>
     </mxGraphModel>
   </diagram>

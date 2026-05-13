@@ -36,7 +36,7 @@ This Pattern (v2) represents the strategic evolution of the Grafana Cloud stack 
 
 While Pattern 005 established the foundational principles that have served Finastra well — a single tenant, GitOps-driven workflow, and Terraform-based automation — its implementation choice of a **per-Product stack model** has, at scale, produced significant architectural debt. This debt manifests as unsustainable operational sprawl, an escalating Total Cost of Ownership (TCO), and fragmented cross-product observability that impedes the operational excellence the platform was designed to enable.
 
-Pattern 006 introduces a deliberate architectural shift to a **Business Unit (BU) aligned stack model**, consolidating an ecosystem of more than one hundred per-product stacks into approximately five to six BU-aligned stacks (Lending, Payment, Universal Banking, TCM, and Cornerstone). This consolidation is achieved without compromising the enterprise-grade security guarantees that Pattern 005 established.
+Pattern 006 introduces a deliberate architectural shift to a **Business Unit (BU) aligned stack model**, consolidating an ecosystem of more than one hundred per-product stacks into two BU-aligned stacks — **Lending** and **Payment** — per client requirement. This consolidation is achieved without compromising the enterprise-grade security guarantees that Pattern 005 established.
 
 The architectural insight that makes this consolidation safe is a clear separation between two distinct boundaries:
 
@@ -107,11 +107,11 @@ The diagram below illustrates the end-to-end control plane, telemetry ingestion 
 
 *Editable source: [01-high-level-architecture.drawio](./diagrams/01-high-level-architecture.drawio)*
 
-The architecture is organized into four cooperating tiers: a Users and Identity tier anchored on Azure Entra ID; a GitOps Control Plane that orchestrates all configuration changes through Terraform Cloud; a Telemetry Ingestion tier where Grafana Alloy enforces label discipline at the edge; and the Grafana Cloud SaaS environment where five to six BU-aligned stacks host product folders and provide isolation through LBAC and RBAC policies.
+The architecture is organized into four cooperating tiers: a Users and Identity tier anchored on Azure Entra ID; a GitOps Control Plane that orchestrates all configuration changes through Terraform Cloud; a Telemetry Ingestion tier where Grafana Alloy enforces label discipline at the edge; and the Grafana Cloud SaaS environment where two BU-aligned stacks (Lending and Payment) host product folders and provide isolation through LBAC and RBAC policies.
 
 ### BU-Aligned Org Structure
 
-The physical boundary transitions from over one hundred per-product stacks to approximately five to six BU-aligned stacks. Within each BU stack, individual products are logically segregated into dedicated folders.
+The physical boundary transitions from over one hundred per-product stacks to two BU-aligned stacks (Lending and Payment) per client requirement. Within each BU stack, individual products are logically segregated into dedicated folders.
 
 ![BU-Aligned Org Structure](./diagrams/02-bu-aligned-org-structure.png)
 
@@ -183,7 +183,7 @@ Representative examples:
 - `GRP_Grafana_LEND_LaserPro_Dev` — LaserPro developers, read-only access
 - `GRP_Grafana_LEND_LaserPro_Admin` — LaserPro administrators, full folder control
 - `GRP_Grafana_LEND_SRE` — Cross-product SRE access within the Lending BU
-- `GRP_Grafana_PAYM_VP` — Payment BU Vice President, cost showback visibility
+- `GRP_Grafana_PAYM_BU_Owner` — Payment BU Owner, cost showback visibility
 
 **Worked Example — Jane, a LaserPro Engineer in the Lending BU**
 
@@ -401,7 +401,7 @@ The repository layout is structured to group configurations first by Business Un
 
 #### Story 1 — Cost Attribution
 
-> **As** a Finastra Vice President
+> **As** a Finastra BU Owner
 > **I want** to see precisely how much Grafana Cloud consumption is attributable to the LaserPro product
 > **So that** I can accurately chargeback the cost to the appropriate P&L.
 
@@ -453,7 +453,7 @@ End-to-end provisioning typically completes within fifteen to thirty minutes fol
 
 | Dimension | Pattern 005 (Per-Product Stacks) | Pattern 006 (BU-Aligned Stacks) |
 |-----------|----------------------------------|----------------------------------|
-| **Management Overhead** | High — over 100 stacks to maintain | Low — approximately 5 to 6 stacks |
+| **Management Overhead** | High — over 100 stacks to maintain | Low — 2 stacks (Lending + Payment) |
 | **Cross-Tier Environment Views** | Structurally impossible | Natively supported via `env` label |
 | **Cross-Region Single Pane of Glass** | Difficult — requires stack switching | Native via region labels and datasource federation |
 | **SRE Multi-Product Access** | Complex — multi-stack access management | Simple — combined LBAC and RBAC in one stack |
@@ -462,7 +462,7 @@ End-to-end provisioning typically completes within fifteen to thirty minutes fol
 | **Identity Integration** | Per-stack RBAC | Centralized via Entra ID groups |
 | **Alert Tenant Isolation** | Implicit (separate Alertmanagers) | Explicit (Hardened Alertmanager with label routing) |
 | **Operational Blast Radius** | Contained to a single product | Mitigated by hardened guardrails |
-| **Upgrade and Patching** | Coordinated across 100+ instances | Coordinated across approximately 5 to 6 |
+| **Upgrade and Patching** | Coordinated across 100+ instances | Coordinated across 2 |
 
 ---
 
@@ -557,7 +557,7 @@ The successful adoption of Pattern 006 depends on bringing the entire platform u
 
 - **Label Taxonomy Governance.** The labeling taxonomy (`bu`, `product`, `env`, `region`) will be documented as a strict governance artefact with examples, validation rules, and consequences for non-compliance.
 
-- **Persona-Based Runbooks.** Onboarding runbooks will be created for each of the three primary personas — Product Developer, DevOps and SRE, and VP/P&L Owner — guiding each persona through their specific workflows in the new model.
+- **Persona-Based Runbooks.** Onboarding runbooks will be created for each of the three primary personas — Developers, DevOps and SRE, and BU Owners — guiding each persona through their specific workflows in the new model.
 
 - **Migration Guide.** A comprehensive migration guide will be authored for teams transitioning from Pattern 005 per-product stacks to Pattern 006 BU-aligned folders, including step-by-step instructions, validation checkpoints, and rollback procedures.
 
