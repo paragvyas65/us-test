@@ -1,112 +1,325 @@
-<mxfile host="app.diagrams.net" agent="Pattern-006-Gen-v6" version="24.7.17">
-  <diagram name="Hardened Alertmanager Flow" id="exec-60679">
-    <mxGraphModel dx="1800" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="c2" value="Hardened Alertmanager Flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=22;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="0" y="18" width="1800" height="30" as="geometry" /></mxCell>
-        <mxCell id="c3" value="Four guardrails make cross-tenant alert suppression STRUCTURALLY IMPOSSIBLE in a shared stack — by design." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="0" y="50" width="1800" height="22" as="geometry" /></mxCell>
-        <mxCell id="c4" value="" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#93C5FD;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="40" y="100" width="1720" height="130" as="geometry" /></mxCell>
-        <mxCell id="c5" value="① INPUT — Alert Rule Submitted via PR" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;fontColor=#FFFFFF;fontSize=12;fontStyle=1;letterSpacing=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="60" y="116" width="380" height="26" as="geometry" /></mxCell>
-        <mxCell id="c6" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E5E7EB;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="60" y="152" width="1680" height="70" as="geometry" /></mxCell>
-        <mxCell id="c7" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=15;strokeColor=#2563EB;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="87.5" y="169.5" width="35.0" height="35.0" as="geometry" /></mxCell>
-        <mxCell id="c8" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;" vertex="1" parent="1"><mxGeometry x="99.0" y="181.0" width="12.0" height="12.0" as="geometry" /></mxCell>
-        <mxCell id="c9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="123.0" y="183.0" width="4" height="8" as="geometry" /></mxCell>
-        <mxCell id="c10" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="117.14213562373095" y="197.14213562373095" width="4" height="8" as="geometry" /></mxCell>
-        <mxCell id="c11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="103.0" y="203.0" width="4" height="8" as="geometry" /></mxCell>
-        <mxCell id="c12" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="88.85786437626905" y="197.14213562373095" width="4" height="8" as="geometry" /></mxCell>
-        <mxCell id="c13" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="83.0" y="183.0" width="4" height="8" as="geometry" /></mxCell>
-        <mxCell id="c14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="88.85786437626905" y="168.85786437626905" width="4" height="8" as="geometry" /></mxCell>
-        <mxCell id="c15" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="103.0" y="163.0" width="4" height="8" as="geometry" /></mxCell>
-        <mxCell id="c16" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="117.14213562373095" y="168.85786437626905" width="4" height="8" as="geometry" /></mxCell>
-        <mxCell id="c17" value="PrometheusRule YAML" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="150" y="158" width="600" height="24" as="geometry" /></mxCell>
-        <mxCell id="c18" value="Required labels: product, env, bu, alert_family, severity, namespace" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="150" y="184" width="600" height="18" as="geometry" /></mxCell>
-        <mxCell id="c19" value="Validated at PR time" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#10B981;strokeColor=#10B981;fontColor=#FFFFFF;fontSize=9;fontStyle=1;align=center;verticalAlign=middle;letterSpacing=1;" vertex="1" parent="1"><mxGeometry x="1530" y="180" width="200" height="20" as="geometry" /></mxCell>
-        <mxCell id="c20" value="" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#FDBA74;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="40" y="250" width="1720" height="580" as="geometry" /></mxCell>
-        <mxCell id="c21" value="② HARDENED ALERTMANAGER FLOW — Four Guardrails" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#EA580C;fontColor=#FFFFFF;fontSize=12;fontStyle=1;letterSpacing=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="60" y="266" width="540" height="26" as="geometry" /></mxCell>
-        <mxCell id="c22" value="All four must pass — failure of any blocks delivery" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="620" y="266" width="1100" height="26" as="geometry" /></mxCell>
-        <mxCell id="c23" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="60" y="310" width="410" height="470" as="geometry" /></mxCell>
-        <mxCell id="c24" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#FFFFFF;strokeWidth=3;fontColor=white;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="73" y="323" width="44" height="44" as="geometry" /></mxCell>
-        <mxCell id="c25" value="Family Isolation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="130" y="320" width="320" height="24" as="geometry" /></mxCell>
-        <mxCell id="c26" value="alert_family label" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="130" y="344" width="320" height="18" as="geometry" /></mxCell>
-        <mxCell id="c27" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#F1F5F9;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="76" y="385" width="378" height="96" as="geometry" /></mxCell>
-        <mxCell id="c28" value="CONFIG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#94A3B8;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="76" y="389" width="378" height="18" as="geometry" /></mxCell>
-        <mxCell id="c29" value="alert_family:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="90" y="409" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c30" value="  - app-availability" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="90" y="426" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c31" value="  - custom-resource" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="90" y="443" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c32" value="  - infra-health" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="90" y="460" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c33" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="76" y="497" width="378" height="18" as="geometry" /></mxCell>
-        <mxCell id="c34" value="Strictly categorized. A critical alert in one" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="76" y="517" width="378" height="16" as="geometry" /></mxCell>
-        <mxCell id="c35" value="family CANNOT inhibit alerts in another" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="76" y="533" width="378" height="16" as="geometry" /></mxCell>
-        <mxCell id="c36" value="family." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="76" y="549" width="378" height="16" as="geometry" /></mxCell>
-        <mxCell id="c37" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="76" y="730" width="378" height="35" as="geometry" /></mxCell>
-        <mxCell id="c38" value="🚫  Blocks: cross-family suppression" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="76" y="730" width="378" height="35" as="geometry" /></mxCell>
-        <mxCell id="c39" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="485" y="310" width="410" height="470" as="geometry" /></mxCell>
-        <mxCell id="c40" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#FFFFFF;strokeWidth=3;fontColor=white;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="498" y="323" width="44" height="44" as="geometry" /></mxCell>
-        <mxCell id="c41" value="Identity Matching" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="555" y="320" width="320" height="24" as="geometry" /></mxCell>
-        <mxCell id="c42" value="equal labels match" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="555" y="344" width="320" height="18" as="geometry" /></mxCell>
-        <mxCell id="c43" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#F1F5F9;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="501" y="385" width="378" height="96" as="geometry" /></mxCell>
-        <mxCell id="c44" value="CONFIG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#94A3B8;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="501" y="389" width="378" height="18" as="geometry" /></mxCell>
-        <mxCell id="c45" value="equal:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="515" y="409" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c46" value="  - namespace" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="515" y="426" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c47" value="  - cluster" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="515" y="443" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c48" value="  - name" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="515" y="460" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c49" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="501" y="497" width="378" height="18" as="geometry" /></mxCell>
-        <mxCell id="c50" value="Inhibit rules strictly match on" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="501" y="517" width="378" height="16" as="geometry" /></mxCell>
-        <mxCell id="c51" value="namespace+cluster+name. Team A's alerts only" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="501" y="533" width="378" height="16" as="geometry" /></mxCell>
-        <mxCell id="c52" value="suppress Team A's." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="501" y="549" width="378" height="16" as="geometry" /></mxCell>
-        <mxCell id="c53" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="501" y="730" width="378" height="35" as="geometry" /></mxCell>
-        <mxCell id="c54" value="🚫  Blocks: cross-tenant suppression" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="501" y="730" width="378" height="35" as="geometry" /></mxCell>
-        <mxCell id="c55" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="910" y="310" width="410" height="470" as="geometry" /></mxCell>
-        <mxCell id="c56" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#FFFFFF;strokeWidth=3;fontColor=white;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="923" y="323" width="44" height="44" as="geometry" /></mxCell>
-        <mxCell id="c57" value="Jira vs OnCall" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="980" y="320" width="320" height="24" as="geometry" /></mxCell>
-        <mxCell id="c58" value="routing separation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="980" y="344" width="320" height="18" as="geometry" /></mxCell>
-        <mxCell id="c59" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#F1F5F9;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="926" y="385" width="378" height="113" as="geometry" /></mxCell>
-        <mxCell id="c60" value="CONFIG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#94A3B8;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="926" y="389" width="378" height="18" as="geometry" /></mxCell>
-        <mxCell id="c61" value="notify: jira" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="940" y="409" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c62" value="priority: P3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="940" y="426" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c63" value="---" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="940" y="443" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c64" value="notify: page" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="940" y="460" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c65" value="severity: critical" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="940" y="477" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c66" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="926" y="514" width="378" height="18" as="geometry" /></mxCell>
-        <mxCell id="c67" value="Ticketing alerts logically separated from" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="926" y="534" width="378" height="16" as="geometry" /></mxCell>
-        <mxCell id="c68" value="paging. Ticket rules cannot mute page alerts." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="926" y="550" width="378" height="16" as="geometry" /></mxCell>
-        <mxCell id="c69" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="926" y="730" width="378" height="35" as="geometry" /></mxCell>
-        <mxCell id="c70" value="🚫  Blocks: pages muted by tickets" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="926" y="730" width="378" height="35" as="geometry" /></mxCell>
-        <mxCell id="c71" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="1335" y="310" width="410" height="470" as="geometry" /></mxCell>
-        <mxCell id="c72" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#FFFFFF;strokeWidth=3;fontColor=white;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="1348" y="323" width="44" height="44" as="geometry" /></mxCell>
-        <mxCell id="c73" value="GitOps Enforcement" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1405" y="320" width="320" height="24" as="geometry" /></mxCell>
-        <mxCell id="c74" value="CI/CD validation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1405" y="344" width="320" height="18" as="geometry" /></mxCell>
-        <mxCell id="c75" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#F1F5F9;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="1351" y="385" width="378" height="96" as="geometry" /></mxCell>
-        <mxCell id="c76" value="CONFIG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#94A3B8;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1351" y="389" width="378" height="18" as="geometry" /></mxCell>
-        <mxCell id="c77" value="validation:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="1365" y="409" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c78" value="  - required-labels" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="1365" y="426" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c79" value="  - family-defined" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="1365" y="443" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c80" value="  - tenant-match" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" vertex="1" parent="1"><mxGeometry x="1365" y="460" width="350" height="16" as="geometry" /></mxCell>
-        <mxCell id="c81" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1351" y="497" width="378" height="18" as="geometry" /></mxCell>
-        <mxCell id="c82" value="Unlabeled or unfamilied rules rejected at PR" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1351" y="517" width="378" height="16" as="geometry" /></mxCell>
-        <mxCell id="c83" value="time. They never reach production." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1351" y="533" width="378" height="16" as="geometry" /></mxCell>
-        <mxCell id="c84" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="1351" y="730" width="378" height="35" as="geometry" /></mxCell>
-        <mxCell id="c85" value="🚫  Blocks: misconfigured rules entering" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="1351" y="730" width="378" height="35" as="geometry" /></mxCell>
-        <mxCell id="c86" value="AND" style="endArrow=classic;html=1;strokeColor=#EA580C;strokeWidth=2;fontSize=10;fontStyle=2;labelBackgroundColor=#FFFFFF;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="468" y="545" as="sourcePoint" /><mxPoint x="487" y="545" as="targetPoint" /></mxGeometry></mxCell>
-        <mxCell id="c87" value="AND" style="endArrow=classic;html=1;strokeColor=#EA580C;strokeWidth=2;fontSize=10;fontStyle=2;labelBackgroundColor=#FFFFFF;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="893" y="545" as="sourcePoint" /><mxPoint x="912" y="545" as="targetPoint" /></mxGeometry></mxCell>
-        <mxCell id="c88" value="AND" style="endArrow=classic;html=1;strokeColor=#EA580C;strokeWidth=2;fontSize=10;fontStyle=2;labelBackgroundColor=#FFFFFF;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="1318" y="545" as="sourcePoint" /><mxPoint x="1337" y="545" as="targetPoint" /></mxGeometry></mxCell>
-        <mxCell id="c89" value="" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#86EFAC;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="40" y="850" width="1720" height="110" as="geometry" /></mxCell>
-        <mxCell id="c90" value="③ OUTPUT — Delivery Decision" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#10B981;strokeColor=#10B981;fontColor=#FFFFFF;fontSize=12;fontStyle=1;letterSpacing=1;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="60" y="866" width="380" height="26" as="geometry" /></mxCell>
-        <mxCell id="c91" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#86EFAC;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="80" y="905" width="820" height="45" as="geometry" /></mxCell>
-        <mxCell id="c92" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#10B981;fillOpacity=15;strokeColor=#10B981;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="95.0" y="912.0" width="28.0" height="28.0" as="geometry" /></mxCell>
-        <mxCell id="c93" value="ALL 4 PASS → Alert routed to correct tenant" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;fontColor=#10B981;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="135" y="908" width="800" height="20" as="geometry" /></mxCell>
-        <mxCell id="c94" value="Reaches Jira / OnCall / dashboard for the right BU + product team" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="135" y="928" width="800" height="18" as="geometry" /></mxCell>
-        <mxCell id="c95" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="900" y="905" width="820" height="45" as="geometry" /></mxCell>
-        <mxCell id="c96" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DC2626;fillOpacity=15;strokeColor=#DC2626;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="915.0" y="912.0" width="28.0" height="28.0" as="geometry" /></mxCell>
-        <mxCell id="c97" value="ANY FAILS → Rule rejected, blocked from prod" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="955" y="908" width="800" height="20" as="geometry" /></mxCell>
-        <mxCell id="c98" value="PR fails CI / runtime rule never matches / cross-tenant suppression impossible" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="955" y="928" width="800" height="18" as="geometry" /></mxCell>
-        <mxCell id="c99" value="" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#0F1F3F;strokeColor=#0F1F3F;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="40" y="980" width="1720" height="100" as="geometry" /></mxCell>
-        <mxCell id="c100" value="KEY INSIGHT" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="65" y="990" width="200" height="18" as="geometry" /></mxCell>
-        <mxCell id="c101" value="Cross-tenant suppression is structurally impossible — not by convention, by design." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;fontColor=#FFFFFF;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="65" y="1012" width="1670" height="24" as="geometry" /></mxCell>
-        <mxCell id="c102" value="Family + identity match + routing separation + CI enforcement. Each guardrail independent; all four must pass." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#CBD5E1;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="65" y="1038" width="1670" height="20" as="geometry" /></mxCell>
-        <mxCell id="c103" value="Vladimir's Q4 — Alertmanager in shared stack — resolved. Five failure modes documented in markdown." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=2;fontColor=#94A3B8;fontFamily=Helvetica;" vertex="1" parent="1"><mxGeometry x="65" y="1060" width="1670" height="16" as="geometry" /></mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e">
+    <diagram name="Hardened Alertmanager Flow" id="exec-60679">
+        <mxGraphModel dx="829" dy="784" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="c2" value="Hardened Alertmanager Flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=22;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry y="18" width="1800" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="c3" value="Four guardrails make cross-tenant alert suppression STRUCTURALLY IMPOSSIBLE in a shared stack — by design." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry y="50" width="1800" height="22" as="geometry"/>
+                </mxCell>
+                <mxCell id="c4" value="" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#93C5FD;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="100" width="1720" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="c5" value="① INPUT — Alert Rule Submitted via PR" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;fontColor=#FFFFFF;fontSize=12;fontStyle=1;letterSpacing=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="116" width="380" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="c6" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E5E7EB;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="152" width="1680" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="c7" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=15;strokeColor=#2563EB;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="87.5" y="169.5" width="35" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="c8" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#2563EB;" parent="1" vertex="1">
+                    <mxGeometry x="99" y="181" width="12" height="12" as="geometry"/>
+                </mxCell>
+                <mxCell id="c9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="123" y="183" width="4" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="c10" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="117.14213562373095" y="197.14213562373095" width="4" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="c11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="103" y="203" width="4" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="c12" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="88.85786437626905" y="197.14213562373095" width="4" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="c13" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="83" y="183" width="4" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="c14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="88.85786437626905" y="168.85786437626905" width="4" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="c15" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="103" y="163" width="4" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="c16" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2563EB;fillOpacity=60;strokeColor=#2563EB;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="117.14213562373095" y="168.85786437626905" width="4" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="c17" value="PrometheusRule YAML" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="158" width="600" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="c18" value="Required labels: productid, env, bu, alert_family, severity, namespace" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="150" y="184" width="600" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c19" value="Validated at PR time" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#10B981;strokeColor=#10B981;fontColor=#FFFFFF;fontSize=9;fontStyle=1;align=center;verticalAlign=middle;letterSpacing=1;" parent="1" vertex="1">
+                    <mxGeometry x="1530" y="180" width="200" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="c20" value="" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#FDBA74;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="250" width="1720" height="580" as="geometry"/>
+                </mxCell>
+                <mxCell id="c21" value="② HARDENED ALERTMANAGER FLOW — Four Guardrails" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#EA580C;fontColor=#FFFFFF;fontSize=12;fontStyle=1;letterSpacing=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="266" width="540" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="c22" value="All four must pass — failure of any blocks delivery" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="266" width="1100" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="c23" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="310" width="410" height="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="c24" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#FFFFFF;strokeWidth=3;fontColor=white;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                    <mxGeometry x="73" y="323" width="44" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="c25" value="Family Isolation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="320" width="320" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="c26" value="alert_family label" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="344" width="320" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c27" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#F1F5F9;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="76" y="385" width="378" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="c28" value="CONFIG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#94A3B8;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="76" y="389" width="378" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c29" value="alert_family:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="90" y="409" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c30" value="  - app-availability" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="90" y="426" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c31" value="  - custom-resource" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="90" y="443" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c32" value="  - infra-health" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="90" y="460" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c33" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="76" y="497" width="378" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c34" value="Strictly categorized. A critical alert in one" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="76" y="517" width="378" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c35" value="family CANNOT inhibit alerts in another" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="76" y="533" width="378" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c36" value="family." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="76" y="549" width="378" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c37" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="76" y="730" width="378" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="c38" value="🚫  Blocks: cross-family suppression" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="76" y="730" width="378" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="c39" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="485" y="310" width="410" height="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="c40" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#FFFFFF;strokeWidth=3;fontColor=white;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                    <mxGeometry x="498" y="323" width="44" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="c41" value="Identity Matching" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="555" y="320" width="320" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="c42" value="equal labels match" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="555" y="344" width="320" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c43" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#F1F5F9;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="501" y="385" width="378" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="c44" value="CONFIG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#94A3B8;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="501" y="389" width="378" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c45" value="equal:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="515" y="409" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c46" value="  - namespace" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="515" y="426" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c47" value="  - cluster" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="515" y="443" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c48" value="  - name" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="515" y="460" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c49" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="501" y="497" width="378" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c50" value="Inhibit rules strictly match on" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="501" y="517" width="378" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c51" value="namespace+cluster+name. Team A's alerts only" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="501" y="533" width="378" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c52" value="suppress Team A's." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="501" y="549" width="378" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c53" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="501" y="730" width="378" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="c54" value="🚫  Blocks: cross-tenant suppression" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="501" y="730" width="378" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="c55" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="310" width="410" height="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="c56" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#FFFFFF;strokeWidth=3;fontColor=white;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                    <mxGeometry x="923" y="323" width="44" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="c57" value="Jira vs OnCall" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="980" y="320" width="320" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="c58" value="routing separation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="980" y="344" width="320" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c59" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#F1F5F9;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="926" y="385" width="378" height="113" as="geometry"/>
+                </mxCell>
+                <mxCell id="c60" value="CONFIG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#94A3B8;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="926" y="389" width="378" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c61" value="notify: jira" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="940" y="409" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c62" value="priority: P3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="940" y="426" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c63" value="---" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="940" y="443" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c64" value="notify: page" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="940" y="460" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c65" value="severity: critical" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="940" y="477" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c66" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="926" y="514" width="378" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c67" value="Ticketing alerts logically separated from" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="926" y="534" width="378" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c68" value="paging. Ticket rules cannot mute page alerts." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="926" y="550" width="378" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c69" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="926" y="730" width="378" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="c70" value="🚫  Blocks: pages muted by tickets" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="926" y="730" width="378" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="c71" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1335" y="310" width="410" height="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="c72" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#FFFFFF;strokeWidth=3;fontColor=white;fontSize=22;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                    <mxGeometry x="1348" y="323" width="44" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="c73" value="GitOps Enforcement" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontStyle=1;fontColor=#0F1F3F;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="1405" y="320" width="320" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="c74" value="CI/CD validation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=2;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="1405" y="344" width="320" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c75" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#F1F5F9;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1351" y="385" width="378" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="c76" value="CONFIG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#94A3B8;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="1351" y="389" width="378" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c77" value="validation:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="1365" y="409" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c78" value="  - required-labels" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="1365" y="426" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c79" value="  - family-defined" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="1365" y="443" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c80" value="  - tenant-match" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#0F1F3F;fontFamily='Courier New';" parent="1" vertex="1">
+                    <mxGeometry x="1365" y="460" width="350" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c81" value="HOW IT WORKS:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="1351" y="497" width="378" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c82" value="Unlabeled or unfamilied rules rejected at PR" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="1351" y="517" width="378" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c83" value="time. They never reach production." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="1351" y="533" width="378" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="c84" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1351" y="730" width="378" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="c85" value="🚫  Blocks: misconfigured rules entering" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="1351" y="730" width="378" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="c86" value="AND" style="endArrow=classic;html=1;strokeColor=#EA580C;strokeWidth=2;fontSize=10;fontStyle=2;labelBackgroundColor=#FFFFFF;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="468" y="545" as="sourcePoint"/>
+                        <mxPoint x="487" y="545" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="c87" value="AND" style="endArrow=classic;html=1;strokeColor=#EA580C;strokeWidth=2;fontSize=10;fontStyle=2;labelBackgroundColor=#FFFFFF;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="893" y="545" as="sourcePoint"/>
+                        <mxPoint x="912" y="545" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="c88" value="AND" style="endArrow=classic;html=1;strokeColor=#EA580C;strokeWidth=2;fontSize=10;fontStyle=2;labelBackgroundColor=#FFFFFF;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1318" y="545" as="sourcePoint"/>
+                        <mxPoint x="1337" y="545" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="c89" value="" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#86EFAC;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="850" width="1720" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="c90" value="③ OUTPUT — Delivery Decision" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#10B981;strokeColor=#10B981;fontColor=#FFFFFF;fontSize=12;fontStyle=1;letterSpacing=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="866" width="380" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="c91" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#86EFAC;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="905" width="820" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="c92" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#10B981;fillOpacity=15;strokeColor=#10B981;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="95" y="912" width="28" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="c93" value="ALL 4 PASS → Alert routed to correct tenant" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;fontColor=#10B981;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="135" y="908" width="800" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="c94" value="Reaches Jira / OnCall / dashboard for the right BU + product team" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="135" y="928" width="800" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c95" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="900" y="905" width="820" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="c96" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DC2626;fillOpacity=15;strokeColor=#DC2626;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="915" y="912" width="28" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="c97" value="ANY FAILS → Rule rejected, blocked from prod" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;fontColor=#DC2626;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="955" y="908" width="800" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="c98" value="PR fails CI / runtime rule never matches / cross-tenant suppression impossible" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=0;fontColor=#475569;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="955" y="928" width="800" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c99" value="" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#0F1F3F;strokeColor=#0F1F3F;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="980" width="1720" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="c100" value="KEY INSIGHT" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;fontColor=#EA580C;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="65" y="990" width="200" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="c101" value="Cross-tenant suppression is structurally impossible — not by convention, by design." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;fontColor=#FFFFFF;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="65" y="1012" width="1670" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="c102" value="Family + identity match + routing separation + CI enforcement. Each guardrail independent; all four must pass." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=0;fontColor=#CBD5E1;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="65" y="1038" width="1670" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="c103" value="Vladimir's Q4 — Alertmanager in shared stack — resolved. Five failure modes documented in markdown." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=2;fontColor=#94A3B8;fontFamily=Helvetica;" parent="1" vertex="1">
+                    <mxGeometry x="65" y="1060" width="1670" height="16" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>
