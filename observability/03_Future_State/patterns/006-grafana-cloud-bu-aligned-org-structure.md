@@ -19,6 +19,10 @@
     - [Operational Flow — A 3 AM Incident Walkthrough](#operational-flow--a-3-am-incident-walkthrough)
   - [Management Flow](#management-flow)
     - [Dashboard as Code](#dashboard-as-code)
+  - [Observability Flow — End to End](#observability-flow--end-to-end)
+    - [Telemetry Ingestion](#telemetry-ingestion)
+    - [Single Pane of Glass Consumption](#single-pane-of-glass-consumption)
+    - [ServiceNow Handoff](#servicenow-handoff)
   - [Repository Layout](#repository-layout)
   - [User Stories](#user-stories)
 - [Comparative Analysis — Pattern 005 vs Pattern 006](#comparative-analysis--pattern-005-vs-pattern-006)
@@ -447,7 +451,61 @@ A new dashboard is onboarded by either workflow above. There is no separate prov
 
 Because development, staging, and production data co-reside in the same BU stack under the `env` label, dashboard promotion across environments is **not a deployment problem** — it is a query-variable problem. A single dashboard JSON serves all three tiers; the `env` template variable selects which tier the panels render. This is impossible under Pattern 005's per-product stack model and is one of the operational gains that Pattern 006 specifically enables.
 
-### Repository Layout
+### Observability Flow — End to End
+
+Pattern 006 separates **how telemetry enters the platform**, **how users consume it**, and **how alerts hand off to ServiceNow** into three distinct flows. Each flow operates in a single direction, and the three together describe the runtime behavior of the platform from data emission to incident creation. The diagram below captures the end-to-end picture; two drill-down diagrams (10 and 11) expand the two layers that benefit most from a closer look.
+
+![Observability Flow](./diagrams/08-observability-flow.png)
+
+*Editable source: [08-observability-flow.drawio](./diagrams/08-observability-flow.drawio)*
+
+#### Telemetry Ingestion
+
+Telemetry originates in runtime workloads — VM-hosted applications and Kubernetes-hosted services across US East, US West 3, West Europe, and North Europe. Each workload emits raw metrics, logs, and traces using standard OpenTelemetry instrumentation. At this stage the telemetry carries no platform-level labels; attribution is added at the next hop.
+
+A **local Grafana Alloy agent** runs co-located with each workload — one agent per VM, one DaemonSet per Kubernetes node. Alloy injects the mandatory label taxonomy (`bu`, `productid`, `env`, `region`) into every datapoint at ingestion, rejects telemetry that cannot be attributed, and forwards the labeled output over TLS to the nearest Geo Grafana stack.
+
+The destination is determined by the `region` label. US-originated telemetry forwards to the **US Geo stack** (`AZR-C03-PAYM-0001` for Payment, with parallel stacks for Lending). EU-originated telemetry forwards to the **EU Geo stack** (`AZR-WE1-PAYM-0001`). This split is not a performance optimization — it is a data residency boundary. Raw user data captured in EU never leaves EU storage; raw user data captured in US never leaves US storage. The boundary is enforced by Alloy's outbound configuration and is auditable through the Terraform-managed endpoint declarations.
+
+![Telemetry Ingestion Detail](./diagrams/09-telemetry-ingestion-detail.png)
+
+*Editable source: [09-telemetry-ingestion-detail.drawio](./diagrams/09-telemetry-ingestion-detail.drawio)*
+
+The drill-down (Diagram 09) traces a representative datapoint through Alloy's discover → inject → validate → forward pipeline, and shows the before-and-after payload shape. A raw `http_requests_total 1` from a Pay2Go VM in US East leaves Alloy as `http_requests_total{bu="paym", productid="10k", env="prod", region="us-east-1"} 1` — the same numerical value, now fully attributable to a specific product, environment, and region.
+
+A worked example for Pay2Go: a metric emitted from a US East VM is routed to `AZR-C03-PAYM-0001`; the same metric type emitted from a West Europe VM is routed to `AZR-WE1-PAYM-0001`. Two stacks, two data residency zones, the same product — and no cross-flow at the ingestion layer.
+
+#### Single Pane of Glass Consumption
+
+Users consume telemetry through a **single Top-Level Grafana stack**, regardless of how many Geo stacks back it. The Top stack is the entry point for browsers, the host of unified dashboards, and the federation layer that proxies queries out to the regional Geo stacks. It does not store raw telemetry — that remains on the Geo stacks, in the regions where it was generated.
+
+Authentication is delegated to Azure Entra ID via Single Sign-On. Entra group memberships are resolved at login, and the Top stack uses those memberships to compose two policies for the session:
+
+- **RBAC** determines which folders are visible. A Pay2Go developer sees only the Pay2Go folder; a Lending SRE sees LaserPro and LoanIQ folders within the Lending stack; a Payment BU Owner sees the billing folder.
+- **LBAC** filters the data that any query can return. A Pay2Go developer's query carries an appended `{productid="10k"}` filter that the query engine enforces. A Lending SRE's query carries `{productid=~"141|145"}`. The filter is structural — the developer cannot construct a query that returns data outside their authorized scope.
+
+![SPoG Federation Detail](./diagrams/10-spog-federation-detail.png)
+
+*Editable source: [10-spog-federation-detail.drawio](./diagrams/10-spog-federation-detail.drawio)*
+
+The drill-down (Diagram 10) traces a query from the dashboard panel through the Top stack proxy, fan-out to both Geo stacks via Mixed Datasource, and merge of results into a single response. A Pay2Go SRE viewing a global latency dashboard issues one query; the Top stack issues two — one to PAYM-US, one to PAYM-EU — and presents the merged result as if it came from a single source. Raw data stays in its origin region; only the aggregated time series traverses the boundary.
+
+Three personas are catalogued in Diagram 10 to illustrate how the same dashboard renders differently for a Developer, an SRE, and a BU Owner — driven entirely by the Entra group memberships the user holds, not by per-dashboard configuration.
+
+#### ServiceNow Handoff
+
+Alerts produced inside a Geo stack are handed off to **ServiceNow** for incident creation. Pattern 006 is responsible for the handoff itself; the incident's downstream lifecycle in SNOW (assignment, escalation, resolution) is out of scope for this pattern and tracked separately by the Enterprise Monitoring team.
+
+The handoff sequence operates as follows. A PrometheusRule defined in the product's `alerts/` directory fires inside the Geo stack. The alert carries the mandatory routing labels (`productid`, `env`, `bu`, `severity`, `alert_family`, `namespace`) and is evaluated by the **Hardened Alertmanager** documented earlier in this pattern — Notification Policies route by `productid`, the four guardrails prevent cross-tenant suppression, and per-product receivers ensure that no two products share a notification channel. The matching receiver for SNOW-routed alerts forwards the payload to a configured **SNOW endpoint**.
+
+Two integration options are supported, with the choice determined by the receiver type configured in Terraform:
+
+- **Grafana IRM native integration.** Grafana Cloud's IRM (Incident Response Management) ships a first-class ServiceNow connector that handles authentication, payload formatting, and bidirectional state synchronization. This is the recommended path for new product onboardings. Reference documentation: [ServiceNow integration for Grafana IRM](https://grafana.com/docs/grafana-cloud/alerting-and-irm/irm/integrations/alert-sources/servicenow/).
+- **Webhook to SNOW REST API.** Alertmanager's standard webhook receiver POSTs the alert payload to a SNOW endpoint configured per BU. This option is available where the IRM native integration is not yet provisioned, or where a custom payload transformation is required.
+
+The specific SNOW endpoint URL and the payload schema expected by the Finastra SNOW instance are owned by the Enterprise Monitoring team and resolved during product onboarding rather than declared in this pattern. The Akeyless pod's recent integration (lead: Sendhil Ramasamy, Enterprise Architect) serves as a working reference for new BU onboardings. The bidirectional sync path — where SNOW state transitions can flow back to alert resolution in Grafana — is supported by the IRM native option and is recommended for production rollouts.
+
+
 
 The repository layout is structured to group configurations first by Business Unit and then by Product, mirroring the operational hierarchy:
 
@@ -585,9 +643,9 @@ Three alternative architectures were considered and explicitly rejected:
 
 The adoption strategy is intentionally measured. Per the architecture review guidance, the rollout prioritizes safety and validation over speed. Old and new stacks operate in parallel throughout the transition, and rollback is technically possible through the end of Phase 3.
 
-![Adoption Strategy](./diagrams/08-adoption-strategy.png)
+![Adoption Strategy](./diagrams/11-adoption-strategy.png)
 
-*Editable source: [08-adoption-strategy.drawio](./diagrams/08-adoption-strategy.drawio)*
+*Editable source: [11-adoption-strategy.drawio](./diagrams/11-adoption-strategy.drawio)*
 
 **Phase 0 — Preparation (Week 0).** Before any provisioning begins, several preconditions must be met:
 
@@ -628,6 +686,10 @@ The adoption strategy is intentionally measured. Per the architecture review gui
 
 **Resolution:** The [Operational Flow — A 3 AM Incident Walkthrough](#operational-flow--a-3-am-incident-walkthrough) provides an end-to-end trace from alert firing through inhibition checks to tenant-isolated delivery, including failure modes and their handling. The walkthrough demonstrates that cross-tenant suppression is structurally impossible by design.
 
+**Q5: What is the end-to-end observability flow — telemetry ingestion across geographies, Single Pane of Glass consumption, and ServiceNow handoff?**
+
+**Resolution:** The [Observability Flow — End to End](#observability-flow--end-to-end) section documents all three runtime flows. Diagram 08 captures the top-level view; Diagram 09 drills into telemetry ingestion (Alloy pipeline, label injection, geo routing); Diagram 10 drills into SPoG federation (RBAC, LBAC, Mixed Datasource query fan-out, persona variations). The ServiceNow handoff is scoped to the handoff itself; downstream incident lifecycle in SNOW remains owned by the Enterprise Monitoring team.
+
 ### Open Items — To Be Resolved
 
 - **Backstage Repository Integration Slot.** Pending synchronization with the Platform Engineering team (Taylor and Johann) to identify the precise location within the Backstage repository layout where Grafana Cloud integration will reside.
@@ -639,6 +701,8 @@ The adoption strategy is intentionally measured. Per the architecture review gui
 - **Sandbox Environment Specifications.** Resource sizing and access controls for the sandbox stack used during Phase 0 are pending capacity review.
 
 - **Grafana Git Sync Production Readiness.** Confirm with the Grafana team the production-readiness timeline of Git Sync, behavior of webhook delivery behind the Finastra firewall, compatibility with Entra-ID-backed authentication, and roadmap visibility on extending Git Sync to alert rules and folder permissions.
+
+- **ServiceNow Endpoint and Payload Schema.** The specific SNOW endpoint URL and required payload schema for the Finastra SNOW instance are pending input from Ruben Rubio (Enterprise Monitoring) and Sendhil Ramasamy (Enterprise Architect — Akeyless pod reference setup). Until resolved, the pattern documents both supported handoff options (Grafana IRM native integration and webhook to REST API) without binding to a specific configuration.
 
 ---
 
